@@ -1,0 +1,7 @@
+{
+  "name": "CamperPowerApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
