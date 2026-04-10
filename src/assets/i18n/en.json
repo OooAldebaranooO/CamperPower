@@ -1,0 +1,60 @@
+{
+  "COMMON": {
+    "REMOVE": "Remove",
+    "RESET": "Reset"
+  },
+  "HOME": {
+    "BADGE": "Energy independence",
+    "TITLE": "Design your onboard electrical setup",
+    "SUBTITLE": "A simple, clear and reliable way to size battery, solar and inverter for van, caravan and motorhome use.",
+    "CTA_START": "Start configuration",
+    "CTA_RESULTS": "View results",
+    "FEATURE_1_TITLE": "Battery",
+    "FEATURE_1_TEXT": "Size a battery that matches your real use.",
+    "FEATURE_2_TITLE": "Solar",
+    "FEATURE_2_TEXT": "Estimate the solar power you need every day.",
+    "FEATURE_3_TITLE": "Inverter",
+    "FEATURE_3_TEXT": "Define the minimum power for your appliances."
+  },
+  "CONFIG": {
+    "BADGE": "Configurator",
+    "TITLE": "Build your setup",
+    "SUBTITLE": "Add your appliances and calculate a consistent setup for life on the road.",
+    "SYSTEM_KICKER": "System",
+    "SYSTEM_TITLE": "Base settings",
+    "APPLIANCES_KICKER": "Consumption",
+    "APPLIANCES_TITLE": "Appliances",
+    "ADD_DEVICE": "+ Add",
+    "DEVICE": "DEVICE",
+    "NEW_DEVICE": "New device",
+    "ESTIMATED_CONSUMPTION": "Estimated consumption",
+    "CALCULATE": "Calculate my setup"
+  },
+  "FIELDS": {
+    "BATTERY_VOLTAGE": "Battery voltage",
+    "AUTONOMY_DAYS": "Autonomy days",
+    "DEPTH_OF_DISCHARGE": "Depth of discharge",
+    "SOLAR_HOURS": "Solar hours / day",
+    "LOSS_FACTOR": "Loss factor",
+    "NAME": "Name",
+    "POWER": "Power (W)",
+    "HOURS_PER_DAY": "Hours / day",
+    "QUANTITY": "Quantity",
+    "STARTUP_FACTOR": "Startup factor"
+  },
+  "RESULTS": {
+    "BADGE": "Results",
+    "TITLE": "Your recommended setup",
+    "SUBTITLE": "A clear estimate to start your onboard installation.",
+    "TOTAL_CONSUMPTION": "Total consumption",
+    "RECOMMENDED_BATTERY": "Recommended battery",
+    "RECOMMENDED_SOLAR": "Recommended solar",
+    "MINIMUM_INVERTER": "Minimum inverter",
+    "INFO": "Reliable first estimate for a mobile electrical setup. More precise tuning can be added later based on battery type, climate and real solar production.",
+    "EDIT": "Edit configuration",
+    "HOME": "Back home",
+    "EMPTY_TITLE": "No result available",
+    "EMPTY_TEXT": "Start by creating a configuration to view recommendations.",
+    "EMPTY_CTA": "Create a configuration"
+  }
+}

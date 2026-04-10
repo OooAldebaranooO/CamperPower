@@ -1,0 +1,60 @@
+{
+  "COMMON": {
+    "REMOVE": "Rimuovi",
+    "RESET": "Reimposta"
+  },
+  "HOME": {
+    "BADGE": "Indipendenza energetica",
+    "TITLE": "Progetta il tuo impianto elettrico di bordo",
+    "SUBTITLE": "Un modo semplice, chiaro e affidabile per dimensionare batteria, solare e inverter per van, caravan e camper.",
+    "CTA_START": "Inizia configurazione",
+    "CTA_RESULTS": "Vedi risultati",
+    "FEATURE_1_TITLE": "Batteria",
+    "FEATURE_1_TEXT": "Dimensiona una batteria adatta al tuo utilizzo reale.",
+    "FEATURE_2_TITLE": "Solare",
+    "FEATURE_2_TEXT": "Stima la potenza solare necessaria ogni giorno.",
+    "FEATURE_3_TITLE": "Inverter",
+    "FEATURE_3_TEXT": "Definisci la potenza minima per i tuoi dispositivi."
+  },
+  "CONFIG": {
+    "BADGE": "Configuratore",
+    "TITLE": "Crea la tua configurazione",
+    "SUBTITLE": "Aggiungi i tuoi dispositivi e calcola un impianto coerente per la vita nomade.",
+    "SYSTEM_KICKER": "Sistema",
+    "SYSTEM_TITLE": "Impostazioni di base",
+    "APPLIANCES_KICKER": "Consumo",
+    "APPLIANCES_TITLE": "Dispositivi",
+    "ADD_DEVICE": "+ Aggiungi",
+    "DEVICE": "DISPOSITIVO",
+    "NEW_DEVICE": "Nuovo dispositivo",
+    "ESTIMATED_CONSUMPTION": "Consumo stimato",
+    "CALCULATE": "Calcola la mia configurazione"
+  },
+  "FIELDS": {
+    "BATTERY_VOLTAGE": "Tensione batteria",
+    "AUTONOMY_DAYS": "Giorni di autonomia",
+    "DEPTH_OF_DISCHARGE": "Profondità di scarica",
+    "SOLAR_HOURS": "Ore solari / giorno",
+    "LOSS_FACTOR": "Fattore di perdita",
+    "NAME": "Nome",
+    "POWER": "Potenza (W)",
+    "HOURS_PER_DAY": "Ore / giorno",
+    "QUANTITY": "Quantità",
+    "STARTUP_FACTOR": "Fattore di avvio"
+  },
+  "RESULTS": {
+    "BADGE": "Risultati",
+    "TITLE": "La tua configurazione consigliata",
+    "SUBTITLE": "Una stima chiara per iniziare il tuo impianto di bordo.",
+    "TOTAL_CONSUMPTION": "Consumo totale",
+    "RECOMMENDED_BATTERY": "Batteria consigliata",
+    "RECOMMENDED_SOLAR": "Solare consigliato",
+    "MINIMUM_INVERTER": "Inverter minimo",
+    "INFO": "Prima stima affidabile per un impianto elettrico mobile. In seguito si potranno aggiungere regolazioni più precise in base a tipo di batteria, clima e produzione solare reale.",
+    "EDIT": "Modifica configurazione",
+    "HOME": "Torna alla home",
+    "EMPTY_TITLE": "Nessun risultato disponibile",
+    "EMPTY_TEXT": "Inizia creando una configurazione per vedere i consigli.",
+    "EMPTY_CTA": "Crea una configurazione"
+  }
+}

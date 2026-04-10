@@ -1,0 +1,252 @@
+:host {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.vp-content {
+  --background: linear-gradient(180deg, #f7f7f8 0%, #eef1f4 100%);
+}
+
+.vp-header ion-toolbar {
+  --background: rgba(255, 255, 255, 0.88);
+  --border-color: transparent;
+  backdrop-filter: blur(14px);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+}
+
+.logo {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+}
+
+.topbar-tag {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(238, 49, 47, 0.08);
+  color: #ee312f;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.config-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 16px 120px;
+}
+
+.hero-strip {
+  margin-bottom: 18px;
+  padding: 22px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top right, rgba(238, 49, 47, 0.14), transparent 28%),
+    linear-gradient(180deg, #111111 0%, #1b1b1d 100%);
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
+}
+
+.hero-strip-kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 10px;
+}
+
+.hero-strip h1 {
+  margin: 0 0 10px;
+  font-size: 1.7rem;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.hero-strip p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+}
+
+.config-form {
+  display: grid;
+  gap: 18px;
+}
+
+.panel-card {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 28px;
+  padding: 22px;
+  border: 1px solid rgba(17, 17, 17, 0.05);
+  box-shadow: 0 12px 32px rgba(17, 17, 17, 0.05);
+}
+
+.panel-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.panel-kicker {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.panel-head h2 {
+  margin: 0;
+  font-size: 1.22rem;
+  color: #111111;
+  font-weight: 800;
+}
+
+.panel-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: #111111;
+  color: #ffffff;
+}
+
+.appliances-head {
+  align-items: center;
+}
+
+.add-device-btn {
+  --background: #111111;
+  --background-hover: #111111;
+  --background-activated: #111111;
+  --border-radius: 14px;
+  font-weight: 700;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.field-card {
+  --background: #f8f9fb;
+  --border-radius: 18px;
+  --padding-start: 14px;
+  --inner-padding-end: 14px;
+  --min-height: 72px;
+  border: 1px solid #e6e8ec;
+  border-radius: 18px;
+}
+
+.field-card ion-label {
+  color: #6b7280 !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px;
+}
+
+.field-card ion-input {
+  --color: #111111;
+  font-weight: 700;
+}
+
+.device-list {
+  display: grid;
+  gap: 14px;
+}
+
+.device-card {
+  border-radius: 24px;
+  padding: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #fafbfc 100%);
+  border: 1px solid #eceef1;
+}
+
+.device-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.device-index {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.device-title {
+  font-size: 1.04rem;
+  font-weight: 800;
+  color: #111111;
+}
+
+.remove-btn {
+  border: 0;
+  background: transparent;
+  color: #ee312f;
+  font-weight: 700;
+  padding: 6px 0;
+}
+
+.consumption-pill {
+  margin-top: 14px;
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 11px 14px;
+  border-radius: 999px;
+  background: rgba(17, 17, 17, 0.05);
+  color: #111111;
+  font-size: 0.9rem;
+}
+
+.consumption-pill strong {
+  font-weight: 800;
+}
+
+.sticky-actions {
+  position: sticky;
+  bottom: 12px;
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 16px 30px rgba(17, 17, 17, 0.08);
+}
+
+.sticky-actions ion-button {
+  --border-radius: 18px;
+  min-height: 54px;
+  font-weight: 700;
+}
+
+@media (max-width: 640px) {
+  .hero-strip h1 {
+    font-size: 1.45rem;
+  }
+}
+
+@media (min-width: 760px) {
+  .field-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

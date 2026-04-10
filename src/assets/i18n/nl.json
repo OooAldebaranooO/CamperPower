@@ -1,0 +1,60 @@
+{
+  "COMMON": {
+    "REMOVE": "Verwijderen",
+    "RESET": "Resetten"
+  },
+  "HOME": {
+    "BADGE": "Energie-onafhankelijkheid",
+    "TITLE": "Ontwerp uw elektrische boordinstallatie",
+    "SUBTITLE": "Een eenvoudige, duidelijke en betrouwbare manier om batterij, zonnepaneel en omvormer te dimensioneren voor van, caravan en camper.",
+    "CTA_START": "Configuratie starten",
+    "CTA_RESULTS": "Resultaten bekijken",
+    "FEATURE_1_TITLE": "Batterij",
+    "FEATURE_1_TEXT": "Bepaal een batterij die past bij uw echte gebruik.",
+    "FEATURE_2_TITLE": "Zonne-energie",
+    "FEATURE_2_TEXT": "Schat het benodigde zonnevermogen per dag.",
+    "FEATURE_3_TITLE": "Omvormer",
+    "FEATURE_3_TEXT": "Bepaal het minimale vermogen voor uw apparaten."
+  },
+  "CONFIG": {
+    "BADGE": "Configurator",
+    "TITLE": "Bouw uw configuratie",
+    "SUBTITLE": "Voeg uw apparaten toe en bereken een consistente installatie voor het nomadische leven.",
+    "SYSTEM_KICKER": "Systeem",
+    "SYSTEM_TITLE": "Basisinstellingen",
+    "APPLIANCES_KICKER": "Verbruik",
+    "APPLIANCES_TITLE": "Apparaten",
+    "ADD_DEVICE": "+ Toevoegen",
+    "DEVICE": "APPARAAT",
+    "NEW_DEVICE": "Nieuw apparaat",
+    "ESTIMATED_CONSUMPTION": "Geschat verbruik",
+    "CALCULATE": "Mijn configuratie berekenen"
+  },
+  "FIELDS": {
+    "BATTERY_VOLTAGE": "Batterijspanning",
+    "AUTONOMY_DAYS": "Autonomiedagen",
+    "DEPTH_OF_DISCHARGE": "Ontladingsdiepte",
+    "SOLAR_HOURS": "Zonuren / dag",
+    "LOSS_FACTOR": "Verliesfactor",
+    "NAME": "Naam",
+    "POWER": "Vermogen (W)",
+    "HOURS_PER_DAY": "Uren / dag",
+    "QUANTITY": "Aantal",
+    "STARTUP_FACTOR": "Opstartfactor"
+  },
+  "RESULTS": {
+    "BADGE": "Resultaten",
+    "TITLE": "Uw aanbevolen configuratie",
+    "SUBTITLE": "Een duidelijke schatting om uw boordinstallatie te starten.",
+    "TOTAL_CONSUMPTION": "Totaal verbruik",
+    "RECOMMENDED_BATTERY": "Aanbevolen batterij",
+    "RECOMMENDED_SOLAR": "Aanbevolen zonne-energie",
+    "MINIMUM_INVERTER": "Minimale omvormer",
+    "INFO": "Betrouwbare eerste schatting voor een mobiele elektrische installatie. Nauwkeurigere afstemming kan later worden toegevoegd op basis van batterijtype, klimaat en echte zonneproductie.",
+    "EDIT": "Configuratie wijzigen",
+    "HOME": "Terug naar start",
+    "EMPTY_TITLE": "Geen resultaat beschikbaar",
+    "EMPTY_TEXT": "Maak eerst een configuratie om aanbevelingen te zien.",
+    "EMPTY_CTA": "Configuratie maken"
+  }
+}

@@ -1,0 +1,79 @@
+<ion-header class="vp-header" translucent="true">
+  <ion-toolbar>
+    <div class="topbar">
+      <img src="assets/branding/vechline-logo.png" alt="VECHLINE" class="logo" />
+
+      <ion-select
+        interface="popover"
+        [value]="currentLang"
+        (ionChange)="changeLanguage($event.detail.value)"
+        class="lang-select"
+      >
+        <ion-select-option value="fr">FR</ion-select-option>
+        <ion-select-option value="en">EN</ion-select-option>
+        <ion-select-option value="nl">NL</ion-select-option>
+        <ion-select-option value="es">ES</ion-select-option>
+        <ion-select-option value="it">IT</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="vp-content">
+  <div class="results-shell">
+    <section class="hero-card">
+      <div class="hero-badge">{{ 'RESULTS.BADGE' | translate }}</div>
+      <h1>{{ 'RESULTS.TITLE' | translate }}</h1>
+      <p>{{ 'RESULTS.SUBTITLE' | translate }}</p>
+    </section>
+
+    <section class="results-panel" *ngIf="result; else emptyState">
+      <div class="results-grid">
+        <article class="metric-card primary">
+          <span>{{ 'RESULTS.TOTAL_CONSUMPTION' | translate }}</span>
+          <strong>{{ result.totalWhPerDay }} Wh/jour</strong>
+        </article>
+
+        <article class="metric-card">
+          <span>{{ 'RESULTS.RECOMMENDED_BATTERY' | translate }}</span>
+          <strong>{{ result.recommendedBatteryAh }} Ah</strong>
+        </article>
+
+        <article class="metric-card">
+          <span>{{ 'RESULTS.RECOMMENDED_SOLAR' | translate }}</span>
+          <strong>{{ result.recommendedSolarW }} W</strong>
+        </article>
+
+        <article class="metric-card">
+          <span>{{ 'RESULTS.MINIMUM_INVERTER' | translate }}</span>
+          <strong>{{ result.recommendedInverterW }} W</strong>
+        </article>
+      </div>
+
+      <div class="info-banner">
+        {{ 'RESULTS.INFO' | translate }}
+      </div>
+
+      <div class="actions">
+        <ion-button expand="block" color="primary" (click)="backToConfig()">
+          {{ 'RESULTS.EDIT' | translate }}
+        </ion-button>
+
+        <ion-button expand="block" fill="outline" color="dark" (click)="goHome()">
+          {{ 'RESULTS.HOME' | translate }}
+        </ion-button>
+      </div>
+    </section>
+
+    <ng-template #emptyState>
+      <section class="empty-card">
+        <h2>{{ 'RESULTS.EMPTY_TITLE' | translate }}</h2>
+        <p>{{ 'RESULTS.EMPTY_TEXT' | translate }}</p>
+
+        <ion-button expand="block" color="primary" (click)="backToConfig()">
+          {{ 'RESULTS.EMPTY_CTA' | translate }}
+        </ion-button>
+      </section>
+    </ng-template>
+  </div>
+</ion-content>

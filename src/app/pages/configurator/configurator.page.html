@@ -1,0 +1,136 @@
+<ion-header class="vp-header" translucent="true">
+  <ion-toolbar>
+    <div class="topbar">
+      <img src="assets/branding/vechline-logo.png" alt="VECHLINE" class="logo" />
+      <div class="topbar-tag">CONFIGURATION</div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="vp-content">
+  <div class="config-shell">
+    <section class="hero-strip">
+      <div class="hero-strip-kicker">Installation embarquée</div>
+      <h1>Créez une configuration claire et fiable</h1>
+      <p>
+        Ajoutez vos appareils, estimez votre consommation et obtenez une première
+        recommandation cohérente pour votre batterie, votre solaire et votre convertisseur.
+      </p>
+    </section>
+
+    <form [formGroup]="form" class="config-form">
+      <section class="panel-card">
+        <div class="panel-head">
+          <div>
+            <div class="panel-kicker">Système</div>
+            <h2>Réglages de base</h2>
+          </div>
+          <div class="panel-icon">⚙️</div>
+        </div>
+
+        <div class="field-grid">
+          <ion-item lines="none" class="field-card">
+            <ion-label position="stacked">Tension batterie</ion-label>
+            <ion-input type="number" formControlName="batteryVoltage"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="field-card">
+            <ion-label position="stacked">Jours d'autonomie</ion-label>
+            <ion-input type="number" formControlName="batteryAutonomyDays"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="field-card">
+            <ion-label position="stacked">Profondeur de décharge</ion-label>
+            <ion-input type="number" formControlName="batteryDepthOfDischarge"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="field-card">
+            <ion-label position="stacked">Heures solaires / jour</ion-label>
+            <ion-input type="number" formControlName="solarProductionHours"></ion-input>
+          </ion-item>
+
+          <ion-item lines="none" class="field-card">
+            <ion-label position="stacked">Facteur de pertes</ion-label>
+            <ion-input type="number" formControlName="systemLossFactor"></ion-input>
+          </ion-item>
+        </div>
+      </section>
+
+      <section class="panel-card">
+        <div class="panel-head appliances-head">
+          <div>
+            <div class="panel-kicker">Consommation</div>
+            <h2>Vos appareils</h2>
+          </div>
+
+          <ion-button class="add-device-btn" type="button" (click)="addAppliance()">
+            + Ajouter
+          </ion-button>
+        </div>
+
+        <div formArrayName="appliances" class="device-list">
+          <article
+            class="device-card"
+            *ngFor="let appliance of appliances.controls; let i = index"
+            [formGroupName]="i"
+          >
+            <div class="device-head">
+              <div>
+                <div class="device-index">APPAREIL {{ i + 1 }}</div>
+                <div class="device-title">
+                  {{ appliances.at(i).get('name')?.value || 'Nouvel appareil' }}
+                </div>
+              </div>
+
+              <button type="button" class="remove-btn" (click)="removeAppliance(i)">
+                Supprimer
+              </button>
+            </div>
+
+            <div class="field-grid">
+              <ion-item lines="none" class="field-card">
+                <ion-label position="stacked">Nom</ion-label>
+                <ion-input type="text" formControlName="name"></ion-input>
+              </ion-item>
+
+              <ion-item lines="none" class="field-card">
+                <ion-label position="stacked">Puissance (W)</ion-label>
+                <ion-input type="number" formControlName="power"></ion-input>
+              </ion-item>
+
+              <ion-item lines="none" class="field-card">
+                <ion-label position="stacked">Heures / jour</ion-label>
+                <ion-input type="number" formControlName="hoursPerDay"></ion-input>
+              </ion-item>
+
+              <ion-item lines="none" class="field-card">
+                <ion-label position="stacked">Quantité</ion-label>
+                <ion-input type="number" formControlName="quantity"></ion-input>
+              </ion-item>
+
+              <ion-item lines="none" class="field-card">
+                <ion-label position="stacked">Facteur de démarrage</ion-label>
+                <ion-input type="number" formControlName="startupFactor"></ion-input>
+              </ion-item>
+            </div>
+
+            <div class="consumption-pill">
+              Consommation estimée
+              <strong>{{ totalItemWh(i) }} Wh/jour</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="sticky-actions">
+        <ion-button expand="block" color="primary" type="button" (click)="calculate()">
+          Calculer ma configuration
+        </ion-button>
+
+        <ion-button expand="block" fill="outline" color="dark" type="button" (click)="resetForm()">
+          Réinitialiser
+        </ion-button>
+      </section>
+    </form>
+  </div>
+</ion-content>

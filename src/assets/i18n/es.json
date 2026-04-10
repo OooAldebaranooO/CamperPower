@@ -1,0 +1,60 @@
+{
+  "COMMON": {
+    "REMOVE": "Eliminar",
+    "RESET": "Restablecer"
+  },
+  "HOME": {
+    "BADGE": "Independencia energética",
+    "TITLE": "Diseña tu instalación eléctrica a bordo",
+    "SUBTITLE": "Una forma simple, clara y fiable de dimensionar batería, solar e inversor para furgoneta, caravana y autocaravana.",
+    "CTA_START": "Empezar configuración",
+    "CTA_RESULTS": "Ver resultados",
+    "FEATURE_1_TITLE": "Batería",
+    "FEATURE_1_TEXT": "Dimensiona una batería adaptada a tu uso real.",
+    "FEATURE_2_TITLE": "Solar",
+    "FEATURE_2_TEXT": "Calcula la potencia solar necesaria cada día.",
+    "FEATURE_3_TITLE": "Inversor",
+    "FEATURE_3_TEXT": "Define la potencia mínima para tus equipos."
+  },
+  "CONFIG": {
+    "BADGE": "Configurador",
+    "TITLE": "Crea tu configuración",
+    "SUBTITLE": "Añade tus equipos y calcula una instalación coherente para la vida nómada.",
+    "SYSTEM_KICKER": "Sistema",
+    "SYSTEM_TITLE": "Ajustes base",
+    "APPLIANCES_KICKER": "Consumo",
+    "APPLIANCES_TITLE": "Equipos",
+    "ADD_DEVICE": "+ Añadir",
+    "DEVICE": "EQUIPO",
+    "NEW_DEVICE": "Nuevo equipo",
+    "ESTIMATED_CONSUMPTION": "Consumo estimado",
+    "CALCULATE": "Calcular mi configuración"
+  },
+  "FIELDS": {
+    "BATTERY_VOLTAGE": "Voltaje de batería",
+    "AUTONOMY_DAYS": "Días de autonomía",
+    "DEPTH_OF_DISCHARGE": "Profundidad de descarga",
+    "SOLAR_HOURS": "Horas solares / día",
+    "LOSS_FACTOR": "Factor de pérdidas",
+    "NAME": "Nombre",
+    "POWER": "Potencia (W)",
+    "HOURS_PER_DAY": "Horas / día",
+    "QUANTITY": "Cantidad",
+    "STARTUP_FACTOR": "Factor de arranque"
+  },
+  "RESULTS": {
+    "BADGE": "Resultados",
+    "TITLE": "Tu configuración recomendada",
+    "SUBTITLE": "Una estimación clara para empezar tu instalación a bordo.",
+    "TOTAL_CONSUMPTION": "Consumo total",
+    "RECOMMENDED_BATTERY": "Batería recomendada",
+    "RECOMMENDED_SOLAR": "Solar recomendado",
+    "MINIMUM_INVERTER": "Inversor mínimo",
+    "INFO": "Primera estimación fiable para una instalación eléctrica móvil. Más adelante se podrán añadir ajustes más precisos según tipo de batería, clima y producción solar real.",
+    "EDIT": "Modificar configuración",
+    "HOME": "Volver al inicio",
+    "EMPTY_TITLE": "No hay resultados disponibles",
+    "EMPTY_TEXT": "Empieza creando una configuración para ver las recomendaciones.",
+    "EMPTY_CTA": "Crear una configuración"
+  }
+}
