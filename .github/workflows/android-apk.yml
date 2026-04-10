@@ -44,8 +44,11 @@ jobs:
         working-directory: android
         run: ./gradlew assembleDebug
 
+      - name: List APK files
+        run: find android/app/build/outputs -type f
+
       - name: Upload APK artifact
         uses: actions/upload-artifact@v5
         with:
-          name: camperpower--apk
-          path: android/app/build/outputs/apk/debug/app-camperpower.apk
+          name: camperpower-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
