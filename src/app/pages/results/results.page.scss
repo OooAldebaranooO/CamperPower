@@ -7,7 +7,7 @@
 }
 
 .vp-header ion-toolbar {
-  --background: rgba(255, 255, 255, 0.9);
+  --background: #ee312f;
   --border-color: transparent;
   backdrop-filter: blur(14px);
 }
@@ -28,6 +28,11 @@
 .lang-select {
   min-width: 78px;
   font-weight: 700;
+  color:#ffffff;
+}
+
+ion-select::part(icon) {
+  color: #ffffff;
 }
 
 .results-shell {
@@ -138,6 +143,7 @@
   --border-radius: 18px;
   min-height: 54px;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .empty-card h2 {

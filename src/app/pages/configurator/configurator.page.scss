@@ -7,7 +7,7 @@
 }
 
 .vp-header ion-toolbar {
-  --background: rgba(255, 255, 255, 0.88);
+  --background: #ee312f;
   --border-color: transparent;
   backdrop-filter: blur(14px);
 }
@@ -20,9 +20,19 @@
 }
 
 .logo {
-  height: 28px;
+  height: 33px;
   width: auto;
   object-fit: contain;
+}
+
+.lang-select {
+  min-width: 78px;
+  font-weight: 700;
+  color:#ffffff;
+}
+
+ion-select::part(icon) {
+  color: #ffffff;
 }
 
 .topbar-tag {
@@ -231,12 +241,14 @@
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
   box-shadow: 0 16px 30px rgba(17, 17, 17, 0.08);
+  z-index: 1000;
 }
 
 .sticky-actions ion-button {
   --border-radius: 18px;
   min-height: 54px;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 @media (max-width: 640px) {

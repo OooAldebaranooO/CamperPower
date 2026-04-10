@@ -1,7 +1,8 @@
 {
   "COMMON": {
     "REMOVE": "Rimuovi",
-    "RESET": "Reimposta"
+    "RESET": "Reimposta",
+    "WH_PER_DAY": "Wh/giorno"
   },
   "HOME": {
     "BADGE": "Indipendenza energetica",
@@ -28,7 +29,10 @@
     "DEVICE": "DISPOSITIVO",
     "NEW_DEVICE": "Nuovo dispositivo",
     "ESTIMATED_CONSUMPTION": "Consumo stimato",
-    "CALCULATE": "Calcola la mia configurazione"
+    "CALCULATE": "Calcola la mia configurazione",
+    "HERO_KICKER": "Installazione a bordo",
+    "HERO_TITLE": "Crea una configurazione chiara e affidabile",
+    "HERO_SUBTITLE": "Aggiungi i tuoi dispositivi, stima il consumo e ottieni una prima raccomandazione coerente per batteria, solare e inverter."
   },
   "FIELDS": {
     "BATTERY_VOLTAGE": "Tensione batteria",

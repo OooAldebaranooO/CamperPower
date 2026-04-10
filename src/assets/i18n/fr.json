@@ -1,67 +1,67 @@
-<ion-header class="vp-header" translucent="true">
-  <ion-toolbar>
-    <div class="topbar">
-      <img src="assets/branding/vechline-logo.png" alt="VECHLINE" class="logo" />
-    </div>
-  </ion-toolbar>
-</ion-header>
+{
+  "COMMON": {
+    "REMOVE": "Supprimer",
+    "RESET": "Réinitialiser",
+    "WH_PER_DAY": "Wh/jour"
+  },
+  "HOME": {
+    "BADGE": "Autonomie énergétique",
+    "TITLE": "Concevez votre installation électrique embarquée",
+    "SUBTITLE": "Une méthode simple, claire et fiable pour dimensionner batterie, solaire et convertisseur pour van, caravane et camping-car.",
+    "CTA_START": "Commencer la configuration",
+    "CTA_RESULTS": "Voir les résultats",
+    "FEATURE_1_TITLE": "Batterie",
+    "FEATURE_1_TEXT": "Dimensionnez une batterie adaptée à votre usage réel.",
+    "FEATURE_2_TITLE": "Solaire",
+    "FEATURE_2_TEXT": "Estimez la puissance solaire nécessaire chaque jour.",
+    "FEATURE_3_TITLE": "Convertisseur",
+    "FEATURE_3_TEXT": "Définissez la puissance minimale pour vos appareils.",
+    "START_CONFIGURATION" : "COMMENCER MA CONFIGURATION",
+    "SEE_RESULTS" : "VOIR LE RESULTAT"
+  },
+  "CONFIG": {
+    "BADGE": "Configurateur",
+    "TITLE": "Construisez votre installation",
+    "SUBTITLE": "Ajoutez vos appareils et calculez une installation cohérente pour la vie en mobilité.",
+    "SYSTEM_KICKER": "Système",
+    "SYSTEM_TITLE": "Paramètres de base",
+    "APPLIANCES_KICKER": "Consommation",
+    "APPLIANCES_TITLE": "Appareils",
+    "ADD_DEVICE": "+ Ajouter",
+    "DEVICE": "APPAREIL",
+    "NEW_DEVICE": "Nouvel appareil",
+    "ESTIMATED_CONSUMPTION": "Consommation estimée",
+    "CALCULATE": "CALCULER MON INSTALLATION",
+    "HERO_KICKER": "Installation embarquée",
+    "HERO_TITLE": "Créez une configuration claire et fiable",
+    "HERO_SUBTITLE": "Ajoutez vos appareils, estimez votre consommation et obtenez une première recommandation cohérente pour votre batterie, votre solaire et votre convertisseur."
 
-<ion-content [fullscreen]="true" class="vp-content">
-  <div class="home-shell">
-    <section class="hero-card">
-      <div class="hero-badge">AUTONOMIE ÉNERGÉTIQUE</div>
-
-      <h1>Configurez votre installation électrique embarquée</h1>
-
-      <p>
-        Une expérience simple, claire et fiable pour dimensionner batterie,
-        solaire et convertisseur pour van, caravane et camping-car.
-      </p>
-
-      <div class="hero-actions">
-        <ion-button expand="block" color="primary" (click)="start()">
-          Commencer la configuration
-        </ion-button>
-
-        <ion-button expand="block" fill="outline" color="light" (click)="goToResults()">
-          Voir les résultats
-        </ion-button>
-      </div>
-    </section>
-
-    <section class="overview-grid">
-      <article class="overview-card">
-        <div class="overview-icon">🔋</div>
-        <div class="overview-title">Batterie</div>
-        <div class="overview-text">
-          Dimensionnez une batterie adaptée à votre usage réel.
-        </div>
-      </article>
-
-      <article class="overview-card">
-        <div class="overview-icon">☀️</div>
-        <div class="overview-title">Solaire</div>
-        <div class="overview-text">
-          Estimez la puissance solaire nécessaire au quotidien.
-        </div>
-      </article>
-
-      <article class="overview-card">
-        <div class="overview-icon">⚡</div>
-        <div class="overview-title">Convertisseur</div>
-        <div class="overview-text">
-          Déterminez la puissance minimale selon vos appareils.
-        </div>
-      </article>
-    </section>
-
-    <section class="highlight-card">
-      <div class="highlight-kicker">VECHLINE</div>
-      <h2>Un calculateur plus lisible, plus rapide, plus rassurant</h2>
-      <p>
-        Gagnez du temps avec une estimation immédiate et une interface conçue
-        pour une utilisation mobile, claire et confortable.
-      </p>
-    </section>
-  </div>
-</ion-content>
+  },
+  "FIELDS": {
+    "BATTERY_VOLTAGE": "Tension de la batterie",
+    "AUTONOMY_DAYS": "Jours d'autonomie",
+    "DEPTH_OF_DISCHARGE": "Profondeur de décharge",
+    "SOLAR_HOURS": "Heures d’ensoleillement / jour",
+    "LOSS_FACTOR": "Facteur de perte",
+    "NAME": "Nom",
+    "POWER": "Puissance (W)",
+    "HOURS_PER_DAY": "Heures / jour",
+    "QUANTITY": "Quantité",
+    "STARTUP_FACTOR": "Facteur de démarrage"
+  },
+  "RESULTS": {
+    "BADGE": "Résultats",
+    "TITLE": "Votre installation recommandée",
+    "SUBTITLE": "Une estimation claire pour démarrer votre installation embarquée.",
+    "TOTAL_CONSUMPTION": "Consommation totale",
+    "RECOMMENDED_BATTERY": "Batterie recommandée",
+    "RECOMMENDED_SOLAR": "Solaire recommandé",
+    "MINIMUM_INVERTER": "Convertisseur minimum",
+    "INFO": "Première estimation fiable pour une installation électrique mobile. Des ajustements plus précis peuvent être ajoutés ensuite selon le type de batterie, le climat et la production solaire réelle.",
+    "EDIT": "Modifier la configuration",
+    "HOME": "Retour à l’accueil",
+    "EMPTY_TITLE": "Aucun résultat disponible",
+    "EMPTY_TEXT": "Commencez par créer une configuration pour voir les recommandations.",
+    "EMPTY_CTA": "Créer une configuration"
+  }
+}

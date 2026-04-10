@@ -2,6 +2,20 @@
   <ion-toolbar>
     <div class="topbar">
       <img src="assets/branding/vechline-logo.png" alt="VECHLINE" class="logo" />
+
+      <ion-select
+        interface="popover"
+        [value]="currentLang"
+        (ionChange)="changeLanguage($event.detail.value)"
+        class="lang-select"
+        label-placement="end"
+      >
+        <ion-select-option value="fr">FR</ion-select-option>
+        <ion-select-option value="en">EN</ion-select-option>
+        <ion-select-option value="nl">NL</ion-select-option>
+        <ion-select-option value="es">ES</ion-select-option>
+        <ion-select-option value="it">IT</ion-select-option>
+      </ion-select>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -9,22 +23,16 @@
 <ion-content [fullscreen]="true" class="vp-content">
   <div class="home-shell">
     <section class="hero-card">
-      <div class="hero-badge">AUTONOMIE ÉNERGÉTIQUE</div>
-
-      <h1>Configurez votre installation électrique embarquée</h1>
-
-      <p>
-        Une expérience simple, claire et fiable pour dimensionner batterie,
-        solaire et convertisseur pour van, caravane et camping-car.
-      </p>
+      <h1>{{ 'HOME.TITLE' | translate }}</h1>
+      <p>{{ 'HOME.SUBTITLE' | translate }}</p>
 
       <div class="hero-actions">
         <ion-button expand="block" color="primary" (click)="start()">
-          Commencer la configuration
+          {{ 'HOME.START_CONFIGURATION' | translate }}
         </ion-button>
 
         <ion-button expand="block" fill="outline" color="light" (click)="goToResults()">
-          Voir les résultats
+          {{ 'HOME.SEE_RESULTS' | translate }}
         </ion-button>
       </div>
     </section>
@@ -32,36 +40,27 @@
     <section class="overview-grid">
       <article class="overview-card">
         <div class="overview-icon">🔋</div>
-        <div class="overview-title">Batterie</div>
+        <div class="overview-title">{{ 'HOME.FEATURE_1_TITLE' | translate }}</div>
         <div class="overview-text">
-          Dimensionnez une batterie adaptée à votre usage réel.
+          {{ 'HOME.FEATURE_1_TEXT' | translate }}
         </div>
       </article>
 
       <article class="overview-card">
         <div class="overview-icon">☀️</div>
-        <div class="overview-title">Solaire</div>
+        <div class="overview-title">{{ 'HOME.FEATURE_2_TITLE' | translate }}</div>
         <div class="overview-text">
-          Estimez la puissance solaire nécessaire au quotidien.
+          {{ 'HOME.FEATURE_2_TEXT' | translate }}
         </div>
       </article>
 
       <article class="overview-card">
         <div class="overview-icon">⚡</div>
-        <div class="overview-title">Convertisseur</div>
+        <div class="overview-title">{{ 'HOME.FEATURE_2_TITLE' | translate }}</div>
         <div class="overview-text">
-          Déterminez la puissance minimale selon vos appareils.
+          {{ 'HOME.FEATURE_3_TEXT' | translate }}
         </div>
       </article>
-    </section>
-
-    <section class="highlight-card">
-      <div class="highlight-kicker">VECHLINE</div>
-      <h2>Un calculateur plus lisible, plus rapide, plus rassurant</h2>
-      <p>
-        Gagnez du temps avec une estimation immédiate et une interface conçue
-        pour une utilisation mobile, claire et confortable.
-      </p>
     </section>
   </div>
 </ion-content>

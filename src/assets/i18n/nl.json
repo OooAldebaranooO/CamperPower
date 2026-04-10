@@ -1,7 +1,8 @@
 {
   "COMMON": {
     "REMOVE": "Verwijderen",
-    "RESET": "Resetten"
+    "RESET": "Resetten",
+    "WH_PER_DAY": "Wh/dag"
   },
   "HOME": {
     "BADGE": "Energie-onafhankelijkheid",
@@ -28,7 +29,10 @@
     "DEVICE": "APPARAAT",
     "NEW_DEVICE": "Nieuw apparaat",
     "ESTIMATED_CONSUMPTION": "Geschat verbruik",
-    "CALCULATE": "Mijn configuratie berekenen"
+    "CALCULATE": "Mijn configuratie berekenen",
+    "HERO_KICKER": "Boordinstallatie",
+    "HERO_TITLE": "Maak een duidelijke en betrouwbare configuratie",
+    "HERO_SUBTITLE": "Voeg je apparaten toe, schat je verbruik en krijg een eerste consistente aanbeveling voor je accu, zonnepaneel en omvormer."
   },
   "FIELDS": {
     "BATTERY_VOLTAGE": "Batterijspanning",

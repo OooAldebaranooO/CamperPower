@@ -2,7 +2,20 @@
   <ion-toolbar>
     <div class="topbar">
       <img src="assets/branding/vechline-logo.png" alt="VECHLINE" class="logo" />
-      <div class="topbar-tag">CONFIGURATION</div>
+
+      <ion-select
+        interface="popover"
+        [value]="currentLang"
+        (ionChange)="changeLanguage($event.detail.value)"
+        class="lang-select"
+        label-placement="end"
+      >
+        <ion-select-option value="fr">FR</ion-select-option>
+        <ion-select-option value="en">EN</ion-select-option>
+        <ion-select-option value="nl">NL</ion-select-option>
+        <ion-select-option value="es">ES</ion-select-option>
+        <ion-select-option value="it">IT</ion-select-option>
+      </ion-select>
     </div>
   </ion-toolbar>
 </ion-header>
@@ -10,47 +23,43 @@
 <ion-content [fullscreen]="true" class="vp-content">
   <div class="config-shell">
     <section class="hero-strip">
-      <div class="hero-strip-kicker">Installation embarquée</div>
-      <h1>Créez une configuration claire et fiable</h1>
-      <p>
-        Ajoutez vos appareils, estimez votre consommation et obtenez une première
-        recommandation cohérente pour votre batterie, votre solaire et votre convertisseur.
-      </p>
+      <h1>{{ 'CONFIG.HERO_TITLE' | translate }}</h1>
+      <p>{{ 'CONFIG.HERO_SUBTITLE' | translate }}</p>
     </section>
 
     <form [formGroup]="form" class="config-form">
       <section class="panel-card">
         <div class="panel-head">
           <div>
-            <div class="panel-kicker">Système</div>
-            <h2>Réglages de base</h2>
+            <div class="panel-kicker">{{ 'CONFIG.SYSTEM_KICKER' | translate }}</div>
+            <h2>{{ 'CONFIG.SYSTEM_TITLE' | translate }}</h2>
           </div>
           <div class="panel-icon">⚙️</div>
         </div>
 
         <div class="field-grid">
           <ion-item lines="none" class="field-card">
-            <ion-label position="stacked">Tension batterie</ion-label>
+            <ion-label position="stacked">{{ 'FIELDS.BATTERY_VOLTAGE' | translate }}</ion-label>
             <ion-input type="number" formControlName="batteryVoltage"></ion-input>
           </ion-item>
 
           <ion-item lines="none" class="field-card">
-            <ion-label position="stacked">Jours d'autonomie</ion-label>
+            <ion-label position="stacked">{{ 'FIELDS.AUTONOMY_DAYS' | translate }}</ion-label>
             <ion-input type="number" formControlName="batteryAutonomyDays"></ion-input>
           </ion-item>
 
           <ion-item lines="none" class="field-card">
-            <ion-label position="stacked">Profondeur de décharge</ion-label>
+            <ion-label position="stacked">{{ 'FIELDS.DEPTH_OF_DISCHARGE' | translate }}</ion-label>
             <ion-input type="number" formControlName="batteryDepthOfDischarge"></ion-input>
           </ion-item>
 
           <ion-item lines="none" class="field-card">
-            <ion-label position="stacked">Heures solaires / jour</ion-label>
+            <ion-label position="stacked">{{ 'FIELDS.SOLAR_HOURS' | translate }}</ion-label>
             <ion-input type="number" formControlName="solarProductionHours"></ion-input>
           </ion-item>
 
           <ion-item lines="none" class="field-card">
-            <ion-label position="stacked">Facteur de pertes</ion-label>
+            <ion-label position="stacked">{{ 'FIELDS.LOSS_FACTOR' | translate }}</ion-label>
             <ion-input type="number" formControlName="systemLossFactor"></ion-input>
           </ion-item>
         </div>
@@ -59,12 +68,12 @@
       <section class="panel-card">
         <div class="panel-head appliances-head">
           <div>
-            <div class="panel-kicker">Consommation</div>
-            <h2>Vos appareils</h2>
+            <div class="panel-kicker">{{ 'CONFIG.APPLIANCES_KICKER' | translate }}</div>
+            <h2>{{ 'CONFIG.APPLIANCES_TITLE' | translate }}</h2>
           </div>
 
           <ion-button class="add-device-btn" type="button" (click)="addAppliance()">
-            + Ajouter
+            {{ 'CONFIG.ADD_DEVICE' | translate }}
           </ion-button>
         </div>
 
@@ -76,47 +85,49 @@
           >
             <div class="device-head">
               <div>
-                <div class="device-index">APPAREIL {{ i + 1 }}</div>
+                <div class="device-index">
+                  {{ 'CONFIG.DEVICE' | translate }} {{ i + 1 }}
+                </div>
                 <div class="device-title">
-                  {{ appliances.at(i).get('name')?.value || 'Nouvel appareil' }}
+                  {{ appliances.at(i).get('name')?.value || ('CONFIG.NEW_DEVICE' | translate) }}
                 </div>
               </div>
 
               <button type="button" class="remove-btn" (click)="removeAppliance(i)">
-                Supprimer
+                {{ 'COMMON.REMOVE' | translate }}
               </button>
             </div>
 
             <div class="field-grid">
               <ion-item lines="none" class="field-card">
-                <ion-label position="stacked">Nom</ion-label>
+                <ion-label position="stacked">{{ 'FIELDS.NAME' | translate }}</ion-label>
                 <ion-input type="text" formControlName="name"></ion-input>
               </ion-item>
 
               <ion-item lines="none" class="field-card">
-                <ion-label position="stacked">Puissance (W)</ion-label>
+                <ion-label position="stacked">{{ 'FIELDS.POWER' | translate }}</ion-label>
                 <ion-input type="number" formControlName="power"></ion-input>
               </ion-item>
 
               <ion-item lines="none" class="field-card">
-                <ion-label position="stacked">Heures / jour</ion-label>
+                <ion-label position="stacked">{{ 'FIELDS.HOURS_PER_DAY' | translate }}</ion-label>
                 <ion-input type="number" formControlName="hoursPerDay"></ion-input>
               </ion-item>
 
               <ion-item lines="none" class="field-card">
-                <ion-label position="stacked">Quantité</ion-label>
+                <ion-label position="stacked">{{ 'FIELDS.QUANTITY' | translate }}</ion-label>
                 <ion-input type="number" formControlName="quantity"></ion-input>
               </ion-item>
 
               <ion-item lines="none" class="field-card">
-                <ion-label position="stacked">Facteur de démarrage</ion-label>
+                <ion-label position="stacked">{{ 'FIELDS.STARTUP_FACTOR' | translate }}</ion-label>
                 <ion-input type="number" formControlName="startupFactor"></ion-input>
               </ion-item>
             </div>
 
             <div class="consumption-pill">
-              Consommation estimée
-              <strong>{{ totalItemWh(i) }} Wh/jour</strong>
+              {{ 'CONFIG.ESTIMATED_CONSUMPTION' | translate }}
+              <strong>{{ totalItemWh(i) }} {{ 'COMMON.WH_PER_DAY' | translate }}</strong>
             </div>
           </article>
         </div>
@@ -124,11 +135,11 @@
 
       <section class="sticky-actions">
         <ion-button expand="block" color="primary" type="button" (click)="calculate()">
-          Calculer ma configuration
+          {{ 'CONFIG.CALCULATE' | translate }}
         </ion-button>
 
         <ion-button expand="block" fill="outline" color="dark" type="button" (click)="resetForm()">
-          Réinitialiser
+          {{ 'COMMON.RESET' | translate }}
         </ion-button>
       </section>
     </form>

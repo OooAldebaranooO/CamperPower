@@ -8,6 +8,7 @@
         [value]="currentLang"
         (ionChange)="changeLanguage($event.detail.value)"
         class="lang-select"
+        label-placement="end"
       >
         <ion-select-option value="fr">FR</ion-select-option>
         <ion-select-option value="en">EN</ion-select-option>
@@ -22,7 +23,6 @@
 <ion-content [fullscreen]="true" class="vp-content">
   <div class="results-shell">
     <section class="hero-card">
-      <div class="hero-badge">{{ 'RESULTS.BADGE' | translate }}</div>
       <h1>{{ 'RESULTS.TITLE' | translate }}</h1>
       <p>{{ 'RESULTS.SUBTITLE' | translate }}</p>
     </section>
