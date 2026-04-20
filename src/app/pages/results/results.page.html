@@ -27,26 +27,26 @@
       <p>{{ 'RESULTS.SUBTITLE' | translate }}</p>
     </section>
 
-    <section class="results-panel" *ngIf="result; else emptyState">
+    <section class="results-panel" *ngIf="result(); else emptyState">
       <div class="results-grid">
         <article class="metric-card primary">
           <span>{{ 'RESULTS.TOTAL_CONSUMPTION' | translate }}</span>
-          <strong>{{ result.totalWhPerDay }} Wh/jour</strong>
+          <strong>{{ result()?.totalWhPerDay }} Wh/jour</strong>
         </article>
 
         <article class="metric-card">
           <span>{{ 'RESULTS.RECOMMENDED_BATTERY' | translate }}</span>
-          <strong>{{ result.recommendedBatteryAh }} Ah</strong>
+          <strong>{{ result()?.recommendedBatteryAh }} Ah</strong>
         </article>
 
         <article class="metric-card">
           <span>{{ 'RESULTS.RECOMMENDED_SOLAR' | translate }}</span>
-          <strong>{{ result.recommendedSolarW }} W</strong>
+          <strong>{{ result()?.recommendedSolarW }} W</strong>
         </article>
 
         <article class="metric-card">
           <span>{{ 'RESULTS.MINIMUM_INVERTER' | translate }}</span>
-          <strong>{{ result.recommendedInverterW }} W</strong>
+          <strong>{{ result()?.recommendedInverterW }} W</strong>
         </article>
       </div>
 

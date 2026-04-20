@@ -49,7 +49,7 @@ export class ResultsPage {
   private state = inject(AppStateService);
 
   currentLang = this.state.loadLanguage();
-  result = this.state.loadResult();
+  result = this.state.result;
 
   constructor() {
     addIcons({ home, settingsOutline, barChartOutline });
