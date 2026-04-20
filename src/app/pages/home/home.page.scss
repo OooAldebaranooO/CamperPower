@@ -3,7 +3,8 @@
 }
 
 .vp-content {
-  --background: linear-gradient(180deg, #f7f7f8 0%, #eef1f4 100%);
+  /* --background: linear-gradient(180deg, #f7f7f8 0%, #eef1f4 100%); */
+  background: #000000;
 }
 
 .vp-header ion-toolbar {
@@ -48,7 +49,7 @@ ion-select::part(icon) {
   padding: 26px 22px;
   margin-bottom: 18px;
   background:
-    radial-gradient(circle at top right, rgba(238, 49, 47, 0.22), transparent 28%),
+    radial-gradient(circle at top right, rgba(238, 49, 47, 2), transparent 100%),
     radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.08), transparent 30%),
     linear-gradient(180deg, #0d0d0f 0%, #1c1c20 100%);
   color: #ffffff;
@@ -158,6 +159,11 @@ ion-select::part(icon) {
   margin: 0;
   color: #6b7280;
   line-height: 1.6;
+}
+
+ion-popover {
+  --background: #ffffff;
+  --color: #111111;
 }
 
 @media (max-width: 640px) {

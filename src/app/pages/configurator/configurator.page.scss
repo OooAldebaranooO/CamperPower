@@ -3,7 +3,8 @@
 }
 
 .vp-content {
-  --background: linear-gradient(180deg, #f7f7f8 0%, #eef1f4 100%);
+  /* --background: linear-gradient(180deg, #f7f7f8 0%, #eef1f4 100%); */
+  background: #000000;
 }
 
 .vp-header ion-toolbar {
@@ -28,31 +29,18 @@
 .lang-select {
   min-width: 78px;
   font-weight: 700;
-  color:#ffffff;
+  color: #ffffff;
 }
 
 ion-select::part(icon) {
   color: #ffffff;
 }
 
-ion-footer {
-  height: 140px;
-}
-
-.topbar-tag {
-  padding: 8px 12px;
-  border-radius: 999px;
-  background: rgba(238, 49, 47, 0.08);
-  color: #ee312f;
-  font-size: 0.74rem;
-  font-weight: 800;
-  letter-spacing: 0.06em;
-}
-
 .config-shell {
   max-width: 980px;
   margin: 0 auto;
-  padding: 18px 16px 120px;
+  padding: 18px 16px 0;
+  text-align: center;
 }
 
 .hero-strip {
@@ -64,15 +52,7 @@ ion-footer {
     linear-gradient(180deg, #111111 0%, #1b1b1d 100%);
   color: #ffffff;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
-}
-
-.hero-strip-kicker {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-weight: 800;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 10px;
+  text-align: left;
 }
 
 .hero-strip h1 {
@@ -126,16 +106,6 @@ ion-footer {
   font-weight: 800;
 }
 
-.panel-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: 14px;
-  display: grid;
-  place-items: center;
-  background: #111111;
-  color: #ffffff;
-}
-
 .appliances-head {
   align-items: center;
 }
@@ -154,12 +124,44 @@ ion-footer {
   gap: 12px;
 }
 
+/* Champs système custom (div) */
+.field-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  min-height: 56px;
+  background: #f8f9fb;
+  border: 1px solid #e6e8ec;
+  border-radius: 18px;
+}
+
+.field-label {
+  color: #6b7280;
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.field-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #111111;
+  font-weight: 700;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: right;
+  width: 60px;
+}
+
+/* Champs appareils (ion-item) */
 .field-card {
   --background: #f8f9fb;
   --border-radius: 18px;
   --padding-start: 14px;
   --inner-padding-end: 14px;
-  --min-height: 72px;
+  --min-height: 56px;
   border: 1px solid #e6e8ec;
   border-radius: 18px;
 }
@@ -168,12 +170,13 @@ ion-footer {
   color: #6b7280 !important;
   font-size: 0.82rem !important;
   font-weight: 600 !important;
-  margin-bottom: 8px;
+  flex-shrink: 0;
 }
 
 .field-card ion-input {
   --color: #111111;
   font-weight: 700;
+  text-align: right;
 }
 
 .device-list {
@@ -236,16 +239,12 @@ ion-footer {
 }
 
 .sticky-actions {
-  position: sticky;
-  bottom: -68px;
   display: grid;
   gap: 10px;
-  padding: 12px;
-  border-radius: 24px;
-  background: rgba(255, 255, 255, 0.9);
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
-  box-shadow: 0 16px 30px rgba(17, 17, 17, 0.08);
-  z-index: 1000;
+  box-shadow: 0 -4px 20px rgba(17, 17, 17, 0.08);
 }
 
 .pill-btn {
@@ -254,17 +253,24 @@ ion-footer {
   --padding-bottom: 18px;
   font-weight: 700;
   letter-spacing: 0.04em;
-}
-
-.sticky-actions ion-button {
-  --border-radius: 18px;
-  min-height: 54px;
-  font-weight: 700;
   text-transform: uppercase;
 }
 
-ion-content {
-  --padding-bottom: 70px;
+ion-footer {
+  height: 55px;
+}
+
+ion-tab-bar {
+  --background: #ffffff;
+  --border: 1px solid #e0e0e0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+ion-tab-button {
+  --color: #888888;
+  --color-selected: #ee312f;
 }
 
 @media (max-width: 640px) {

@@ -13,7 +13,6 @@
 html,
 body {
   font-family: 'Montserrat', sans-serif;
-  background: #f7f7f8;
 }
 
 ion-button {
@@ -22,4 +21,14 @@ ion-button {
 
 ion-content {
   --padding-bottom: 70px;
+}
+
+ion-popover ion-select-option {
+  --color: #111111;
+}
+
+ion-popover {
+  --ion-background-color: #ffffff;
+  --ion-text-color: #111111;
+  --width: 55px;
 }
