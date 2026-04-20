@@ -2,7 +2,6 @@
   <ion-toolbar>
     <div class="topbar">
       <img src="assets/branding/vechline-logo.png" alt="VECHLINE" class="logo" />
-
       <ion-select
         interface="popover"
         [value]="currentLang"
@@ -25,12 +24,10 @@
     <section class="hero-card">
       <h1>{{ 'HOME.TITLE' | translate }}</h1>
       <p>{{ 'HOME.SUBTITLE' | translate }}</p>
-
       <div class="hero-actions">
         <ion-button expand="block" color="primary" (click)="start()">
           {{ 'HOME.START_CONFIGURATION' | translate }}
         </ion-button>
-
         <ion-button expand="block" fill="outline" color="light" (click)="goToResults()">
           {{ 'HOME.SEE_RESULTS' | translate }}
         </ion-button>
@@ -39,26 +36,32 @@
 
     <section class="overview-grid">
       <article class="overview-card">
-        <div class="overview-icon">🔋</div>
-        <div class="overview-title">{{ 'HOME.FEATURE_1_TITLE' | translate }}</div>
-        <div class="overview-text">
-          {{ 'HOME.FEATURE_1_TEXT' | translate }}
+        <div class="overview-img-wrap">
+          <img src="assets/images/battery.png" alt="Batterie" class="overview-img" />
+        </div>
+        <div class="overview-content">
+          <div class="overview-title">{{ 'HOME.FEATURE_1_TITLE' | translate }}</div>
+          <div class="overview-text">{{ 'HOME.FEATURE_1_TEXT' | translate }}</div>
         </div>
       </article>
 
       <article class="overview-card">
-        <div class="overview-icon">☀️</div>
-        <div class="overview-title">{{ 'HOME.FEATURE_2_TITLE' | translate }}</div>
-        <div class="overview-text">
-          {{ 'HOME.FEATURE_2_TEXT' | translate }}
+        <div class="overview-img-wrap">
+          <img src="assets/images/battery.png" alt="Solaire" class="overview-img" />
+        </div>
+        <div class="overview-content">
+          <div class="overview-title">{{ 'HOME.FEATURE_2_TITLE' | translate }}</div>
+          <div class="overview-text">{{ 'HOME.FEATURE_2_TEXT' | translate }}</div>
         </div>
       </article>
 
       <article class="overview-card">
-        <div class="overview-icon">⚡</div>
-        <div class="overview-title">{{ 'HOME.FEATURE_2_TITLE' | translate }}</div>
-        <div class="overview-text">
-          {{ 'HOME.FEATURE_3_TEXT' | translate }}
+        <div class="overview-img-wrap">
+          <img src="assets/images/battery.png" alt="Convertisseur" class="overview-img" />
+        </div>
+        <div class="overview-content">
+          <div class="overview-title">{{ 'HOME.FEATURE_3_TITLE' | translate }}</div>
+          <div class="overview-text">{{ 'HOME.FEATURE_3_TEXT' | translate }}</div>
         </div>
       </article>
     </section>
