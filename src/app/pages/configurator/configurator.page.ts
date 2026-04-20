@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
 import {
   FormArray,
   FormBuilder,
@@ -10,19 +10,26 @@ import {
 import {
   IonButton,
   IonContent,
+  IonFooter,
   IonHeader,
+  IonIcon,
   IonInput,
   IonItem,
   IonLabel,
   IonSelect,
   IonSelectOption,
+  IonTabBar,
+  IonTabButton,
   IonToolbar,
 } from '@ionic/angular/standalone';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { AppStateService } from '../../core/app-state.service';
 import { ApplianceInput } from '../../models/energy.model';
 import { EnergyCalculatorService } from '../../services/energy-calculator.service';
+import { addIcons } from 'ionicons';
+import { home, settingsOutline, barChartOutline, flashOutline, refreshOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-configurator',
@@ -31,15 +38,21 @@ import { EnergyCalculatorService } from '../../services/energy-calculator.servic
     CommonModule,
     ReactiveFormsModule,
     TranslatePipe,
+    RouterLink,
+    RouterLinkActive,
     IonHeader,
     IonToolbar,
     IonContent,
+    IonFooter,
     IonItem,
     IonLabel,
     IonInput,
     IonButton,
     IonSelect,
     IonSelectOption,
+    IonTabBar,
+    IonTabButton,
+    IonIcon,
   ],
   templateUrl: './configurator.page.html',
   styleUrls: ['./configurator.page.scss'],
@@ -50,6 +63,9 @@ export class ConfiguratorPage {
   private router = inject(Router);
   private translate = inject(TranslateService);
   private state = inject(AppStateService);
+
+  @ViewChild(IonContent) content!: IonContent;
+  @ViewChild('deviceList') deviceListRef!: ElementRef;
 
   currentLang = this.state.loadLanguage();
 
@@ -67,6 +83,7 @@ export class ConfiguratorPage {
   });
 
   constructor() {
+    addIcons({ home, settingsOutline, barChartOutline, flashOutline, refreshOutline });
     this.translate.use(this.currentLang);
 
     const saved = this.state.loadConfig();
@@ -123,6 +140,14 @@ export class ConfiguratorPage {
   addAppliance(): void {
     this.appliances.push(this.createApplianceGroup());
     this.state.saveConfig(this.form.getRawValue());
+
+    setTimeout(() => {
+      const list = this.deviceListRef.nativeElement;
+      const lastCard = list.querySelector('.device-card:last-child');
+      if (lastCard) {
+        this.content.scrollToPoint(0, lastCard.offsetTop, 400);
+      }
+    }, 100);
   }
 
   removeAppliance(index: number): void {

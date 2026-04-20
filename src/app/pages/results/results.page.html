@@ -55,11 +55,13 @@
       </div>
 
       <div class="actions">
-        <ion-button expand="block" color="primary" (click)="backToConfig()">
+        <ion-button expand="block" color="primary" (click)="backToConfig()" class="pill-btn">
+          <ion-icon name="settings-outline" slot="start"></ion-icon>
           {{ 'RESULTS.EDIT' | translate }}
         </ion-button>
 
-        <ion-button expand="block" fill="outline" color="dark" (click)="goHome()">
+        <ion-button expand="block" fill="outline" color="dark" (click)="goHome()" class="pill-btn">
+          <ion-icon name="home" slot="start"></ion-icon>
           {{ 'RESULTS.HOME' | translate }}
         </ion-button>
       </div>
@@ -77,3 +79,20 @@
     </ng-template>
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-tab-bar>
+    <ion-tab-button routerLink="/home" routerLinkActive="tab-selected">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Accueil</ion-label>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/configurator" routerLinkActive="tab-selected">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>Configurer</ion-label>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/results" routerLinkActive="tab-selected">
+      <ion-icon name="bar-chart-outline"></ion-icon>
+      <ion-label>Résultats</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>

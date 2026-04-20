@@ -3,14 +3,22 @@ import { Component, inject } from '@angular/core';
 import {
   IonButton,
   IonContent,
+  IonFooter,
   IonHeader,
+  IonIcon,
+  IonLabel,
   IonSelect,
   IonSelectOption,
+  IonTabBar,
+  IonTabButton,
   IonToolbar,
 } from '@ionic/angular/standalone';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { AppStateService } from '../../core/app-state.service';
+import { addIcons } from 'ionicons';
+import { home, settingsOutline, barChartOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-results',
@@ -18,12 +26,19 @@ import { AppStateService } from '../../core/app-state.service';
   imports: [
     CommonModule,
     TranslatePipe,
+    RouterLink,
+    RouterLinkActive,
     IonHeader,
     IonToolbar,
     IonContent,
+    IonFooter,
     IonButton,
     IonSelect,
     IonSelectOption,
+    IonTabBar,
+    IonTabButton,
+    IonIcon,
+    IonLabel,
   ],
   templateUrl: './results.page.html',
   styleUrls: ['./results.page.scss'],
@@ -37,6 +52,7 @@ export class ResultsPage {
   result = this.state.loadResult();
 
   constructor() {
+    addIcons({ home, settingsOutline, barChartOutline });
     this.translate.use(this.currentLang);
   }
 

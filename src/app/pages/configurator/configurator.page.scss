@@ -35,6 +35,10 @@ ion-select::part(icon) {
   color: #ffffff;
 }
 
+ion-footer {
+  height: 140px;
+}
+
 .topbar-tag {
   padding: 8px 12px;
   border-radius: 999px;
@@ -233,7 +237,7 @@ ion-select::part(icon) {
 
 .sticky-actions {
   position: sticky;
-  bottom: 12px;
+  bottom: -68px;
   display: grid;
   gap: 10px;
   padding: 12px;
@@ -244,11 +248,23 @@ ion-select::part(icon) {
   z-index: 1000;
 }
 
+.pill-btn {
+  --border-radius: 999px;
+  --padding-top: 18px;
+  --padding-bottom: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
 .sticky-actions ion-button {
   --border-radius: 18px;
   min-height: 54px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+ion-content {
+  --padding-bottom: 70px;
 }
 
 @media (max-width: 640px) {

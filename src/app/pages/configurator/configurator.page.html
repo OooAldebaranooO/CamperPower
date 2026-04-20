@@ -77,7 +77,7 @@
           </ion-button>
         </div>
 
-        <div formArrayName="appliances" class="device-list">
+        <div formArrayName="appliances" class="device-list" #deviceList>
           <article
             class="device-card"
             *ngFor="let appliance of appliances.controls; let i = index"
@@ -134,14 +134,33 @@
       </section>
 
       <section class="sticky-actions">
-        <ion-button expand="block" color="primary" type="button" (click)="calculate()">
+        <ion-button expand="block" color="primary" type="button" (click)="calculate()" class="pill-btn">
+          <ion-icon name="flash-outline" slot="start"></ion-icon>
           {{ 'CONFIG.CALCULATE' | translate }}
         </ion-button>
 
-        <ion-button expand="block" fill="outline" color="dark" type="button" (click)="resetForm()">
+        <ion-button expand="block" fill="outline" color="dark" type="button" (click)="resetForm()" class="pill-btn">
+          <ion-icon name="refresh-outline" slot="start"></ion-icon>
           {{ 'COMMON.RESET' | translate }}
         </ion-button>
       </section>
     </form>
   </div>
 </ion-content>
+
+<ion-footer>
+  <ion-tab-bar>
+    <ion-tab-button routerLink="/home" routerLinkActive="tab-selected">
+      <ion-icon name="home"></ion-icon>
+      <ion-label>Accueil</ion-label>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/configurator" routerLinkActive="tab-selected">
+      <ion-icon name="settings-outline"></ion-icon>
+      <ion-label>Configurer</ion-label>
+    </ion-tab-button>
+    <ion-tab-button routerLink="/results" routerLinkActive="tab-selected">
+      <ion-icon name="bar-chart-outline"></ion-icon>
+      <ion-label>Résultats</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-footer>
