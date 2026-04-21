@@ -34,7 +34,7 @@
     "CALCULATE": "CALCULER MON INSTALLATION",
     "HERO_KICKER": "Installation embarquée",
     "HERO_TITLE": "Créez une configuration claire et fiable",
-    "HERO_SUBTITLE": "Ajoutez vos appareils, estimez votre consommation et obtenez une première recommandation cohérente pour votre batterie, votre solaire et votre convertisseur."
+    "HERO_SUBTITLE": "Ajoutez vos appareils, estimez votre consommation et obtenez une première recommandation cohérente pour votre batterie, votre puissance solaire et votre convertisseur."
 
   },
   "FIELDS": {
@@ -62,6 +62,11 @@
     "HOME": "Retour à l’accueil",
     "EMPTY_TITLE": "Aucun résultat disponible",
     "EMPTY_TEXT": "Commencez par créer une configuration pour voir les recommandations.",
-    "EMPTY_CTA": "Créer une configuration"
+    "EMPTY_CTA": "Créer une configuration",
+    "RECOMMENDED_PRODUCTS":"Produits Vechline adaptés à votre configuration",
+    "BATTERIES":"Batteries Vechline",
+    "SOLAR":"Panneaux solaires",
+    "INVERTERS":"Convertisseurs Vechline", 
+    "NO_PRODUCTS":"Aucun produit Vechline compatible avec votre configuration"
   }
 }
