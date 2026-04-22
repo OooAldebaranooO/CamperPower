@@ -141,12 +141,12 @@ ion-select::part(icon) {
   bottom: 0;
   display: grid;
   gap: 10px;
-  padding: 12px 12px 16px;
   border-radius: 24px 24px 0 0;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px);
   box-shadow: 0 -4px 20px rgba(17, 17, 17, 0.08);
   z-index: 1000;
+  padding: 12px 12px calc(16px + env(safe-area-inset-bottom));
 }
 
 .pill-btn {
