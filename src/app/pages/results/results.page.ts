@@ -38,7 +38,7 @@ export class ResultsPage {
   private productService = inject(ProductService);
 
   currentLang = this.state.loadLanguage();
-  result      = this.state.result;
+  result      = computed(() => this.state.result());
 
   productsLoading = this.productService.loading;
   productsError   = this.productService.error;
@@ -89,6 +89,8 @@ export class ResultsPage {
   );
 
   constructor() {
+    this.state.loadResult();
+
     addIcons({
       home, homeOutline, settingsOutline, barChartOutline,
       openOutline, batteryHalfOutline, sunnyOutline, flashOutline,
@@ -101,6 +103,7 @@ export class ResultsPage {
     this.currentLang = lang;
     this.translate.use(lang);
     this.state.saveLanguage(lang);
+    this.productService.invalidateCache(lang);
     this.productService.loadProducts(lang);
   }
 

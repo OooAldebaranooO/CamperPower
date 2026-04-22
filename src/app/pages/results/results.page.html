@@ -79,7 +79,7 @@
             <span class="category-icon">🔋</span>
             {{ 'RESULTS.BATTERIES' | translate }}
             <!--<span class="category-spec">≥ {{ result()?.recommendedBatteryAh }} Ah</span>-->
-            <span class="category-count">{{ recommendedBatteries().length }} produits</span>
+            <span class="category-count">{{ recommendedBatteries().length }} {{ 'RESULTS.PRODUCTS' | translate }}</span>
           </h3>
           <div class="product-scroll-wrapper" [class.no-fade]="!hasScroll(recommendedBatteries().length)">
             <div class="product-scroll">
@@ -111,7 +111,7 @@
                     {{ p.specs.capacityAh }} Ah
                   </p>-->
                   <p class="product-price" *ngIf="p.price">
-                    Tarif TTC : {{ formatPrice(p.price) }}
+                    {{ 'RESULTS.PRICE' | translate }} : {{ formatPrice(p.price) }}
                   </p>
                 </div>
                 <!--<ion-button
@@ -133,7 +133,7 @@
             <span class="category-icon">☀️</span>
             {{ 'RESULTS.SOLAR' | translate }}
             <!--<span class="category-spec">≥ {{ result()?.recommendedSolarW }} W</span>-->
-            <span class="category-count">{{ recommendedSolar().length }} produits</span>
+            <span class="category-count">{{ recommendedSolar().length }} {{ 'RESULTS.PRODUCTS' | translate }}</span>
           </h3>
           <div class="product-scroll-wrapper" [class.no-fade]="!hasScroll(recommendedSolar().length)">
             <div class="product-scroll">
@@ -173,7 +173,7 @@
                     <span class="spec-total">→ {{ opt.totalW }} W total</span>
                   </p>
                   <p class="product-price" *ngIf="opt.product.price">
-                    Tarif TTC : {{ formatPrice(opt.quantity === 1 ? opt.product.price : opt.product.price * opt.quantity) }}
+                    {{ 'RESULTS.PRICE' | translate }} : {{ formatPrice(opt.quantity === 1 ? opt.product.price : opt.product.price * opt.quantity) }}
                     <span class="price-unit" *ngIf="opt.quantity > 1">
                       ({{ formatPrice(opt.product.price) }} / panneau)
                     </span>
@@ -190,7 +190,7 @@
             <span class="category-icon">⚡</span>
             {{ 'RESULTS.INVERTERS' | translate }}
             <!--<span class="category-spec">≥ {{ result()?.recommendedInverterW }} W</span>-->
-            <span class="category-count">{{ recommendedInverters().length }} produits</span>
+            <span class="category-count">{{ recommendedInverters().length }} {{ 'RESULTS.PRODUCTS' | translate }}</span>
           </h3>
           <div class="product-scroll-wrapper" [class.no-fade]="!hasScroll(recommendedInverters().length)">
             <div class="product-scroll">
@@ -222,7 +222,7 @@
                     {{ p.specs.powerW }} W
                   </p>-->
                   <p class="product-price" *ngIf="p.price">
-                    Tarif TTC : {{ formatPrice(p.price) }}
+                    {{ 'RESULTS.PRICE' | translate }} : {{ formatPrice(p.price) }}
                   </p>
                 </div>
                 <!--<ion-button

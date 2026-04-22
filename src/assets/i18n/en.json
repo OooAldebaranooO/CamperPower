@@ -15,7 +15,9 @@
     "FEATURE_2_TITLE": "Solar",
     "FEATURE_2_TEXT": "Estimate the solar power you need every day.",
     "FEATURE_3_TITLE": "Inverter",
-    "FEATURE_3_TEXT": "Define the minimum power for your appliances."
+    "FEATURE_3_TEXT": "Define the minimum power for your appliances.",
+    "START_CONFIGURATION": "START MY CONFIGURATION",
+    "SEE_RESULTS": "VIEW RESULTS"
   },
   "CONFIG": {
     "BADGE": "Configurator",
@@ -29,7 +31,7 @@
     "DEVICE": "DEVICE",
     "NEW_DEVICE": "New device",
     "ESTIMATED_CONSUMPTION": "Estimated consumption",
-    "CALCULATE": "Calculate my setup",
+    "CALCULATE": "CALCULATE MY SETUP",
     "HERO_KICKER": "Onboard installation",
     "HERO_TITLE": "Create a clear and reliable setup",
     "HERO_SUBTITLE": "Add your appliances, estimate your consumption and get a first consistent recommendation for your battery, solar and inverter."
@@ -59,6 +61,14 @@
     "HOME": "Back home",
     "EMPTY_TITLE": "No result available",
     "EMPTY_TEXT": "Start by creating a configuration to view recommendations.",
-    "EMPTY_CTA": "Create a configuration"
+    "EMPTY_CTA": "Create a configuration",
+    "RECOMMENDED_PRODUCTS": "Vechline products adapted to your setup",
+    "BATTERIES": "Vechline batteries",
+    "SOLAR": "Solar panels",
+    "INVERTERS": "Vechline inverters",
+    "NO_PRODUCTS": "No Vechline product compatible with your configuration",
+    "NEW": "New",
+    "PRICE": "Price incl. VAT",
+    "PRODUCTS": "Products"
   }
 }

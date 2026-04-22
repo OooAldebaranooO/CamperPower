@@ -15,7 +15,9 @@
     "FEATURE_2_TITLE": "Solar",
     "FEATURE_2_TEXT": "Calcula la potencia solar necesaria cada día.",
     "FEATURE_3_TITLE": "Inversor",
-    "FEATURE_3_TEXT": "Define la potencia mínima para tus equipos."
+    "FEATURE_3_TEXT": "Define la potencia mínima para tus equipos.",
+    "START_CONFIGURATION": "INICIAR MI CONFIGURACIÓN",
+    "SEE_RESULTS": "VER RESULTADOS"
   },
   "CONFIG": {
     "BADGE": "Configurador",
@@ -29,7 +31,7 @@
     "DEVICE": "EQUIPO",
     "NEW_DEVICE": "Nuevo equipo",
     "ESTIMATED_CONSUMPTION": "Consumo estimado",
-    "CALCULATE": "Calcular mi configuración",
+    "CALCULATE": "CALCULAR MI CONFIGURACIÓN",
     "HERO_KICKER": "Instalación a bordo",
     "HERO_TITLE": "Crea una configuración clara y fiable",
     "HERO_SUBTITLE": "Añade tus dispositivos, estima tu consumo y obtén una primera recomendación coherente para tu batería, solar e inversor."
@@ -59,6 +61,14 @@
     "HOME": "Volver al inicio",
     "EMPTY_TITLE": "No hay resultados disponibles",
     "EMPTY_TEXT": "Empieza creando una configuración para ver las recomendaciones.",
-    "EMPTY_CTA": "Crear una configuración"
+    "EMPTY_CTA": "Crear una configuración",
+    "RECOMMENDED_PRODUCTS": "Productos Vechline adaptados a tu configuración",
+    "BATTERIES": "Baterías Vechline",
+    "SOLAR": "Paneles solares",
+    "INVERTERS": "Inversores Vechline",
+    "NO_PRODUCTS": "Ningún producto Vechline compatible con tu configuración",
+    "NEW": "Nuevo",
+    "PRICE": "Precio IVA incl.",
+    "PRODUCTS": "Productos"
   }
 }

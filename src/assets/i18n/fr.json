@@ -16,8 +16,8 @@
     "FEATURE_2_TEXT": "Estimez la puissance solaire nécessaire chaque jour.",
     "FEATURE_3_TITLE": "Convertisseur",
     "FEATURE_3_TEXT": "Définissez la puissance minimale pour vos appareils.",
-    "START_CONFIGURATION" : "COMMENCER MA CONFIGURATION",
-    "SEE_RESULTS" : "VOIR LE RESULTAT"
+    "START_CONFIGURATION": "COMMENCER MA CONFIGURATION",
+    "SEE_RESULTS": "VOIR LE RESULTAT"
   },
   "CONFIG": {
     "BADGE": "Configurateur",
@@ -35,13 +35,12 @@
     "HERO_KICKER": "Installation embarquée",
     "HERO_TITLE": "Créez une configuration claire et fiable",
     "HERO_SUBTITLE": "Ajoutez vos appareils, estimez votre consommation et obtenez une première recommandation cohérente pour votre batterie, votre puissance solaire et votre convertisseur."
-
   },
   "FIELDS": {
     "BATTERY_VOLTAGE": "Tension de la batterie",
     "AUTONOMY_DAYS": "Jours d'autonomie",
     "DEPTH_OF_DISCHARGE": "Profondeur de décharge",
-    "SOLAR_HOURS": "Heures d’ensoleillement / jour",
+    "SOLAR_HOURS": "Heures d'ensoleillement / jour",
     "LOSS_FACTOR": "Facteur de perte",
     "NAME": "Nom",
     "POWER": "Puissance (W)",
@@ -59,15 +58,17 @@
     "MINIMUM_INVERTER": "Convertisseur minimum",
     "INFO": "Première estimation fiable pour une installation électrique mobile. Des ajustements plus précis peuvent être ajoutés ensuite selon le type de batterie, le climat et la production solaire réelle.",
     "EDIT": "Modifier la configuration",
-    "HOME": "Retour à l’accueil",
+    "HOME": "Retour à l'accueil",
     "EMPTY_TITLE": "Aucun résultat disponible",
     "EMPTY_TEXT": "Commencez par créer une configuration pour voir les recommandations.",
     "EMPTY_CTA": "Créer une configuration",
-    "RECOMMENDED_PRODUCTS":"Produits Vechline adaptés à votre configuration",
-    "BATTERIES":"Batteries Vechline",
-    "SOLAR":"Panneaux solaires",
-    "INVERTERS":"Convertisseurs Vechline", 
-    "NO_PRODUCTS":"Aucun produit Vechline compatible avec votre configuration",
-    "NEW": "Nouveau"
+    "RECOMMENDED_PRODUCTS": "Produits Vechline adaptés à votre configuration",
+    "BATTERIES": "Batteries Vechline",
+    "SOLAR": "Panneaux solaires",
+    "INVERTERS": "Convertisseurs Vechline",
+    "NO_PRODUCTS": "Aucun produit Vechline compatible avec votre configuration",
+    "NEW": "Nouveau",
+    "PRICE": "Tarif TTC",
+    "PRODUCTS": "Produits"
   }
 }

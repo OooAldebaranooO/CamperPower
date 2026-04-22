@@ -15,7 +15,9 @@
     "FEATURE_2_TITLE": "Zonne-energie",
     "FEATURE_2_TEXT": "Schat het benodigde zonnevermogen per dag.",
     "FEATURE_3_TITLE": "Omvormer",
-    "FEATURE_3_TEXT": "Bepaal het minimale vermogen voor uw apparaten."
+    "FEATURE_3_TEXT": "Bepaal het minimale vermogen voor uw apparaten.",
+    "START_CONFIGURATION": "MIJN CONFIGURATIE STARTEN",
+    "SEE_RESULTS": "RESULTATEN BEKIJKEN"
   },
   "CONFIG": {
     "BADGE": "Configurator",
@@ -29,7 +31,7 @@
     "DEVICE": "APPARAAT",
     "NEW_DEVICE": "Nieuw apparaat",
     "ESTIMATED_CONSUMPTION": "Geschat verbruik",
-    "CALCULATE": "Mijn configuratie berekenen",
+    "CALCULATE": "MIJN CONFIGURATIE BEREKENEN",
     "HERO_KICKER": "Boordinstallatie",
     "HERO_TITLE": "Maak een duidelijke en betrouwbare configuratie",
     "HERO_SUBTITLE": "Voeg je apparaten toe, schat je verbruik en krijg een eerste consistente aanbeveling voor je accu, zonnepaneel en omvormer."
@@ -59,6 +61,14 @@
     "HOME": "Terug naar start",
     "EMPTY_TITLE": "Geen resultaat beschikbaar",
     "EMPTY_TEXT": "Maak eerst een configuratie om aanbevelingen te zien.",
-    "EMPTY_CTA": "Configuratie maken"
+    "EMPTY_CTA": "Configuratie maken",
+    "RECOMMENDED_PRODUCTS": "Vechline-producten aangepast aan uw configuratie",
+    "BATTERIES": "Vechline-batterijen",
+    "SOLAR": "Zonnepanelen",
+    "INVERTERS": "Vechline-omvormers",
+    "NO_PRODUCTS": "Geen Vechline-product compatibel met uw configuratie",
+    "NEW": "Nieuw",
+    "PRICE": "Prijs incl. BTW",
+    "PRODUCTS": "Producten"
   }
 }

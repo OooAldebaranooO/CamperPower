@@ -61,7 +61,7 @@ export class ProductService {
   loading  = signal(false);
   error    = signal<string | null>(null);
 
-  loadProducts(lang = 'fr'): void {
+    loadProducts(lang = 'fr'): void {
     const cached = this.readCache(lang);
     if (cached) {
       this.products.set(cached);
@@ -141,4 +141,8 @@ export class ProductService {
       );
     } catch { }
   }
+
+  invalidateCache(lang: string): void {
+  localStorage.removeItem(`${CACHE_KEY}_${lang}`);
+}
 }
