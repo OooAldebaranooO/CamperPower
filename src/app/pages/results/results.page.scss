@@ -150,7 +150,7 @@ ion-select::part(icon) {
   display: flex;
   gap: 10px;
   padding: 12px 12px calc(16px + env(safe-area-inset-bottom));
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid rgba(0, 0, 0, 0.06);
