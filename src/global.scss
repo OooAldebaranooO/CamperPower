@@ -44,12 +44,13 @@ ion-popover {
 .category-title .category-spec { margin-left: auto; font-size: 12px; font-weight: 400; color: var(--ion-color-medium); }
 .product-scroll { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
 .product-scroll::-webkit-scrollbar { display: none; }
-.product-card { flex: 0 0 160px; background: var(--ion-card-background, var(--ion-background-color)); border: 1px solid var(--ion-border-color, rgba(0,0,0,0.08)); border-radius: 12px; overflow: hidden; cursor: pointer; position: relative; transition: box-shadow 0.2s; }
+.product-card { flex: 0 0 140px; background: var(--ion-card-background, var(--ion-background-color)); border: 1px solid var(--ion-border-color, rgba(0,0,0,0.08)); border-radius: 12px; overflow: hidden; cursor: pointer; position: relative; transition: box-shadow 0.2s; }
 .product-card:active { opacity: 0.85; }
 .product-img-wrap { height: 110px; background: #f5f5f5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .product-img { width: 100%; height: 100%; object-fit: contain; }
 .product-img-placeholder ion-icon { font-size: 36px; color: #ccc; }
 .product-body { padding: 10px 10px 12px; display: flex; flex-direction: column; height: 160px;}
+.product-body-solar { padding: 10px 10px 12px; display: flex; flex-direction: column; height: 220px;}
 .product-sku { font-size: 12px; color: var(--ion-color-light); margin: 0 0 5px; letter-spacing: 0.5px; }
 .product-name { font-size: 14px; color: var(--ion-color-light); font-weight: normal; height:100%; }
 .product-spec { font-size: 12px; color: var(--ion-color-light); margin: 2px 0; }
@@ -57,8 +58,16 @@ ion-popover {
 
 .product-scroll-wrapper { position: relative;
   &::after { content: ''; position: absolute; top: 0; right: 0; width: 30px; height: 100%; background: linear-gradient(to right, transparent, var(--ion-color-primary)); pointer-events: none; }
+  &.no-fade::after {
+    display: none;
+  }
 }
 
 .category-count { font-size: 11px; color: var(--ion-color-medium); background: var(--ion-color-light); padding: 2px 8px; border-radius: 20px; margin-left: 4px; }
 
 .badge-new { position: absolute; top: 8px; left: 8px; background: var(--ion-color-primary); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; z-index: 1; }
+.badge-quantity { position: absolute; top: 8px; left: 8px; background: var(--ion-color-warning); color: var(--ion-color-warning-contrast); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; z-index: 1; }
+
+.spec-total { font-weight: 600; color: var(--ion-color-primary); }
+
+.price-unit { display: block; font-size: 11px; font-weight: 400; color: var(--ion-color-light); margin-top: 2px; }

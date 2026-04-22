@@ -136,19 +136,18 @@
   </div>
 </ion-content>
 
-<section class="sticky-actions">
-        <ion-button expand="block" color="primary" type="button" (click)="calculate()" class="pill-btn">
-          <ion-icon name="flash-outline" slot="start"></ion-icon>
-          {{ 'CONFIG.CALCULATE' | translate }}
-        </ion-button>
+<div class="sticky-actions">
+  <ion-button expand="block" color="primary" class="calc-btn" (click)="calculate()">
+    <ion-icon name="flash-outline" slot="start"></ion-icon>
+    {{ 'CONFIG.CALCULATE' | translate }}
+  </ion-button>
 
-        <ion-button expand="block" fill="outline" color="dark" type="button" (click)="resetForm()" class="pill-btn">
-          <ion-icon name="refresh-outline" slot="start"></ion-icon>
-          {{ 'COMMON.RESET' | translate }}
-        </ion-button>
-      </section>
+  <ion-button fill="outline" class="reset-btn" (click)="resetForm()">
+    <ion-icon name="refresh-outline" slot="icon-only"></ion-icon>
+  </ion-button>
+</div>
 
-<ion-footer>
+<!--<ion-footer>
   <ion-tab-bar>
     <ion-tab-button routerLink="/home" routerLinkActive="tab-selected">
       <ion-icon name="home"></ion-icon>
@@ -163,4 +162,4 @@
       <ion-label>Résultats</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-</ion-footer>
+</ion-footer>-->

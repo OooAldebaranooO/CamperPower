@@ -25,12 +25,13 @@
       <h1>{{ 'HOME.TITLE' | translate }}</h1>
       <p>{{ 'HOME.SUBTITLE' | translate }}</p>
       <div class="hero-actions">
-        <ion-button expand="block" color="primary" (click)="start()">
+        <ion-button expand="block" color="primary" (click)="start()" class="calc-btn">
+          <ion-icon name="settings-outline" slot="start"></ion-icon>
           {{ 'HOME.START_CONFIGURATION' | translate }}
         </ion-button>
-        <ion-button expand="block" fill="outline" color="light" (click)="goToResults()">
+        <!--<ion-button expand="block" fill="outline" color="light" (click)="goToResults()">
           {{ 'HOME.SEE_RESULTS' | translate }}
-        </ion-button>
+        </ion-button>-->
       </div>
     </section>
 

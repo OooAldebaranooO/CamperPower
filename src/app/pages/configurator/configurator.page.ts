@@ -10,7 +10,6 @@ import {
 import {
   IonButton,
   IonContent,
-  IonFooter,
   IonHeader,
   IonIcon,
   IonInput,
@@ -18,11 +17,8 @@ import {
   IonLabel,
   IonSelect,
   IonSelectOption,
-  IonTabBar,
-  IonTabButton,
   IonToolbar,
 } from '@ionic/angular/standalone';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { AppStateService } from '../../core/app-state.service';
@@ -38,31 +34,26 @@ import { home, settingsOutline, barChartOutline, flashOutline, refreshOutline } 
     CommonModule,
     ReactiveFormsModule,
     TranslatePipe,
-    RouterLink,
-    RouterLinkActive,
     IonHeader,
     IonToolbar,
     IonContent,
-    IonFooter,
     IonItem,
     IonLabel,
     IonInput,
     IonButton,
     IonSelect,
     IonSelectOption,
-    IonTabBar,
-    IonTabButton,
     IonIcon,
   ],
   templateUrl: './configurator.page.html',
   styleUrls: ['./configurator.page.scss'],
 })
 export class ConfiguratorPage {
-  private fb = inject(FormBuilder);
+  private fb         = inject(FormBuilder);
   private calculator = inject(EnergyCalculatorService);
-  private router = inject(Router);
-  private translate = inject(TranslateService);
-  private state = inject(AppStateService);
+  private router     = inject(Router);
+  private translate  = inject(TranslateService);
+  private state      = inject(AppStateService);
 
   @ViewChild(IonContent) content!: IonContent;
   @ViewChild('deviceList') deviceListRef!: ElementRef;
@@ -70,11 +61,11 @@ export class ConfiguratorPage {
   currentLang = this.state.loadLanguage();
 
   form = this.fb.group({
-    batteryVoltage: [12, [Validators.required, Validators.min(12)]],
-    batteryAutonomyDays: [1, [Validators.required, Validators.min(1)]],
+    batteryVoltage:          [12,  [Validators.required, Validators.min(12)]],
+    batteryAutonomyDays:     [1,   [Validators.required, Validators.min(1)]],
     batteryDepthOfDischarge: [0.8, [Validators.required, Validators.min(0.1), Validators.max(1)]],
-    solarProductionHours: [4, [Validators.required, Validators.min(1)]],
-    systemLossFactor: [1.2, [Validators.required, Validators.min(1)]],
+    solarProductionHours:    [4,   [Validators.required, Validators.min(1)]],
+    systemLossFactor:        [1.2, [Validators.required, Validators.min(1)]],
     appliances: this.fb.array([
       this.createApplianceGroup('Frigo', 45, 24, 1, 2),
       this.createApplianceGroup('Lumières LED', 20, 5, 1, 1),
@@ -89,11 +80,11 @@ export class ConfiguratorPage {
     const saved = this.state.loadConfig();
     if (saved) {
       this.form.patchValue({
-        batteryVoltage: saved['batteryVoltage'] ?? 12,
-        batteryAutonomyDays: saved['batteryAutonomyDays'] ?? 1,
+        batteryVoltage:          saved['batteryVoltage']          ?? 12,
+        batteryAutonomyDays:     saved['batteryAutonomyDays']     ?? 1,
         batteryDepthOfDischarge: saved['batteryDepthOfDischarge'] ?? 0.8,
-        solarProductionHours: saved['solarProductionHours'] ?? 4,
-        systemLossFactor: saved['systemLossFactor'] ?? 1.2,
+        solarProductionHours:    saved['solarProductionHours']    ?? 4,
+        systemLossFactor:        saved['systemLossFactor']        ?? 1.2,
       });
 
       if (Array.isArray(saved['appliances']) && saved['appliances'].length) {
@@ -101,10 +92,10 @@ export class ConfiguratorPage {
         saved['appliances'].forEach((item: any) => {
           this.appliances.push(
             this.createApplianceGroup(
-              item['name'] ?? '',
-              Number(item['power'] ?? 0),
-              Number(item['hoursPerDay'] ?? 1),
-              Number(item['quantity'] ?? 1),
+              item['name']          ?? '',
+              Number(item['power']         ?? 0),
+              Number(item['hoursPerDay']   ?? 1),
+              Number(item['quantity']      ?? 1),
               Number(item['startupFactor'] ?? 1)
             )
           );
@@ -122,17 +113,17 @@ export class ConfiguratorPage {
   }
 
   createApplianceGroup(
-    name = '',
-    power = 0,
-    hoursPerDay = 1,
-    quantity = 1,
+    name         = '',
+    power        = 0,
+    hoursPerDay  = 1,
+    quantity     = 1,
     startupFactor = 1
   ): FormGroup {
     return this.fb.group({
-      name: [name, [Validators.required]],
-      power: [power, [Validators.required, Validators.min(1)]],
-      hoursPerDay: [hoursPerDay, [Validators.required, Validators.min(0.1)]],
-      quantity: [quantity, [Validators.required, Validators.min(1)]],
+      name:          [name,          [Validators.required]],
+      power:         [power,         [Validators.required, Validators.min(1)]],
+      hoursPerDay:   [hoursPerDay,   [Validators.required, Validators.min(0.1)]],
+      quantity:      [quantity,      [Validators.required, Validators.min(1)]],
       startupFactor: [startupFactor, [Validators.required, Validators.min(1)]],
     });
   }
@@ -142,7 +133,7 @@ export class ConfiguratorPage {
     this.state.saveConfig(this.form.getRawValue());
 
     setTimeout(() => {
-      const list = this.deviceListRef.nativeElement;
+      const list    = this.deviceListRef.nativeElement;
       const lastCard = list.querySelector('.device-card:last-child');
       if (lastCard) {
         this.content.scrollToPoint(0, lastCard.offsetTop, 400);
@@ -160,9 +151,9 @@ export class ConfiguratorPage {
   totalItemWh(index: number): number {
     const group = this.appliances.at(index);
     return Math.round(
-      Number(group.get('power')?.value ?? 0) *
-        Number(group.get('hoursPerDay')?.value ?? 0) *
-        Number(group.get('quantity')?.value ?? 0)
+      Number(group.get('power')?.value      ?? 0) *
+      Number(group.get('hoursPerDay')?.value ?? 0) *
+      Number(group.get('quantity')?.value    ?? 0)
     );
   }
 
@@ -175,10 +166,10 @@ export class ConfiguratorPage {
     const raw = this.form.getRawValue();
 
     const appliances: ApplianceInput[] = (raw.appliances ?? []).map((item) => ({
-      name: item['name'] ?? '',
-      power: Number(item['power'] ?? 0),
-      hoursPerDay: Number(item['hoursPerDay'] ?? 0),
-      quantity: Number(item['quantity'] ?? 1),
+      name:          item['name']          ?? '',
+      power:         Number(item['power']         ?? 0),
+      hoursPerDay:   Number(item['hoursPerDay']   ?? 0),
+      quantity:      Number(item['quantity']      ?? 1),
       startupFactor: Number(item['startupFactor'] ?? 1),
     }));
 
@@ -199,17 +190,17 @@ export class ConfiguratorPage {
   resetForm(): void {
     this.state.clearAll();
     this.form.reset({
-      batteryVoltage: 12,
-      batteryAutonomyDays: 1,
+      batteryVoltage:          12,
+      batteryAutonomyDays:     1,
       batteryDepthOfDischarge: 0.8,
-      solarProductionHours: 4,
-      systemLossFactor: 1.2,
+      solarProductionHours:    4,
+      systemLossFactor:        1.2,
     });
 
     this.appliances.clear();
-    this.appliances.push(this.createApplianceGroup('Frigo', 45, 24, 1, 2));
-    this.appliances.push(this.createApplianceGroup('Lumières LED', 20, 5, 1, 1));
-    this.appliances.push(this.createApplianceGroup('Laptop', 60, 4, 1, 1));
+    this.appliances.push(this.createApplianceGroup('Frigo',        45, 24, 1, 2));
+    this.appliances.push(this.createApplianceGroup('Lumières LED', 20,  5, 1, 1));
+    this.appliances.push(this.createApplianceGroup('Laptop',       60,  4, 1, 1));
   }
 
   changeLanguage(lang: string): void {

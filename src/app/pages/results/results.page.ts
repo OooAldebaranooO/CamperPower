@@ -1,26 +1,32 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, computed } from '@angular/core';
 import {
-  IonButton, IonContent, IonFooter, IonHeader, IonIcon,
-  IonLabel, IonSelect, IonSelectOption, IonTabBar,
-  IonTabButton, IonToolbar, IonSpinner
+  IonButton, IonContent, IonHeader, IonIcon,
+  IonSelect, IonSelectOption, IonToolbar, IonSpinner,
 } from '@ionic/angular/standalone';
-import { RouterLink, RouterLinkActive } from '@angular/router';
 import { Router } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { AppStateService } from '../../core/app-state.service';
-import { ProductService } from '../../core/product.service';
+import { ProductService, Product } from '../../core/product.service';
 import { addIcons } from 'ionicons';
-import { home, settingsOutline, barChartOutline, openOutline } from 'ionicons/icons';
+import {
+  home, homeOutline, settingsOutline, barChartOutline,
+  openOutline, batteryHalfOutline, sunnyOutline, flashOutline,
+} from 'ionicons/icons';
+
+export interface SolarOption {
+  product: Product;
+  quantity: number;       // nombre de panneaux nécessaires
+  totalW: number;         // puissance totale couverte
+}
 
 @Component({
   selector: 'app-results',
   standalone: true,
   imports: [
-    CommonModule, TranslatePipe, RouterLink, RouterLinkActive,
-    IonHeader, IonToolbar, IonContent, IonFooter, IonButton,
-    IonSelect, IonSelectOption, IonTabBar, IonTabButton,
-    IonIcon, IonLabel, IonSpinner,
+    CommonModule, TranslatePipe,
+    IonButton, IonContent, IonHeader, IonIcon,
+    IonSelect, IonSelectOption, IonToolbar, IonSpinner,
   ],
   templateUrl: './results.page.html',
   styleUrls: ['./results.page.scss'],
@@ -34,22 +40,40 @@ export class ResultsPage {
   currentLang = this.state.loadLanguage();
   result      = this.state.result;
 
-  // État du chargement
   productsLoading = this.productService.loading;
   productsError   = this.productService.error;
 
-  // Produits filtrés selon les résultats du configurateur
   recommendedBatteries = computed(() =>
     this.productService
       .getRecommendedProducts('battery', this.result()?.recommendedBatteryAh)
       .slice(0, 10)
   );
 
-  recommendedSolar = computed(() =>
-    this.productService
-      .getRecommendedProducts('solar', this.result()?.recommendedSolarW)
-      .slice(0, 10)
-  );
+  // Panneaux solaires avec cumul
+  recommendedSolar = computed((): SolarOption[] => {
+    const minW = this.result()?.recommendedSolarW ?? 0;
+
+    // Tous les panneaux avec une puissance définie, triés du plus puissant au moins puissant
+    const allSolar = this.productService.products()
+      .filter(p => p.category === 'solar' && (p.specs.powerW ?? 0) > 0)
+      .sort((a, b) => (b.specs.powerW ?? 0) - (a.specs.powerW ?? 0));
+
+    return allSolar
+      .map((product): SolarOption => {
+        const pw = product.specs.powerW ?? 1;
+        const quantity = Math.ceil(minW / pw); // nombre de panneaux nécessaires
+        return {
+          product,
+          quantity,
+          totalW: quantity * pw,
+        };
+      })
+      // On garde uniquement les options raisonnables (max 10 panneaux)
+      .filter(opt => opt.quantity <= 10)
+      // Trie par nombre de panneaux croissant, puis par puissance unitaire décroissante
+      .sort((a, b) => a.quantity - b.quantity || (b.product.specs.powerW ?? 0) - (a.product.specs.powerW ?? 0))
+      .slice(0, 10);
+  });
 
   recommendedInverters = computed(() =>
     this.productService
@@ -65,7 +89,10 @@ export class ResultsPage {
   );
 
   constructor() {
-    addIcons({ home, settingsOutline, barChartOutline, openOutline });
+    addIcons({
+      home, homeOutline, settingsOutline, barChartOutline,
+      openOutline, batteryHalfOutline, sunnyOutline, flashOutline,
+    });
     this.translate.use(this.currentLang);
     this.productService.loadProducts(this.currentLang);
   }
@@ -93,5 +120,9 @@ export class ResultsPage {
     return new Intl.NumberFormat(this.currentLang, {
       style: 'currency', currency: 'EUR', maximumFractionDigits: 0,
     }).format(price);
+  }
+
+  hasScroll(count: number): boolean {
+    return count > 2;
   }
 }

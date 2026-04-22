@@ -81,7 +81,7 @@
             <!--<span class="category-spec">≥ {{ result()?.recommendedBatteryAh }} Ah</span>-->
             <span class="category-count">{{ recommendedBatteries().length }} produits</span>
           </h3>
-          <div class="product-scroll-wrapper">
+          <div class="product-scroll-wrapper" [class.no-fade]="!hasScroll(recommendedBatteries().length)">
             <div class="product-scroll">
               <article
                 class="product-card"
@@ -135,47 +135,50 @@
             <!--<span class="category-spec">≥ {{ result()?.recommendedSolarW }} W</span>-->
             <span class="category-count">{{ recommendedSolar().length }} produits</span>
           </h3>
-          <div class="product-scroll-wrapper">
+          <div class="product-scroll-wrapper" [class.no-fade]="!hasScroll(recommendedSolar().length)">
             <div class="product-scroll">
               <article
                 class="product-card"
-                *ngFor="let p of recommendedSolar()"
+                *ngFor="let opt of recommendedSolar()"
               >
-              <span class="badge-new" *ngIf="p.isNew">
-                {{ 'RESULTS.NEW' | translate }}
-              </span>
+                <!-- Badge quantité si plusieurs panneaux nécessaires -->
+                <span class="badge-quantity" *ngIf="opt.quantity > 1">
+                  x{{ opt.quantity }}
+                </span>
+                <!-- Badge nouveau si 1 seul panneau suffit -->
+                <span class="badge-new" *ngIf="opt.product.isNew && opt.quantity === 1">
+                  {{ 'RESULTS.NEW' | translate }}
+                </span>
+
                 <div class="product-img-wrap">
                   <img
-                    *ngIf="p.imageUrl"
-                    [src]="p.imageUrl"
-                    [alt]="getLocalizedName(p.name)"
+                    *ngIf="opt.product.imageUrl"
+                    [src]="opt.product.imageUrl"
+                    [alt]="getLocalizedName(opt.product.name)"
                     class="product-img"
                     width="158"
                     height="110"
                     loading="lazy"
                   />
-                  <div class="product-img-placeholder" *ngIf="!p.imageUrl">
+                  <div class="product-img-placeholder" *ngIf="!opt.product.imageUrl">
                     <ion-icon name="sunny-outline"></ion-icon>
                   </div>
                 </div>
-                <div class="product-body">
-                  <p class="product-name">{{ getLocalizedName(p.name) }}</p>
-                  <p class="product-sku">Réf. : {{ p.sku }}</p>
-                  <!--<p class="product-spec" *ngIf="p.specs.powerW">
-                    {{ p.specs.powerW }} W
-                  </p>-->
-                  <p class="product-price" *ngIf="p.price">
-                    Tarif TTC : {{ formatPrice(p.price) }}
+
+                <div class="product-body-solar">
+                  <p class="product-name">{{ getLocalizedName(opt.product.name) }}</p>
+                  <p class="product-sku">Réf. : {{ opt.product.sku }}</p>
+                  <p class="product-spec" *ngIf="opt.quantity > 1">
+                    {{ opt.product.specs.powerW }} W
+                    <span class="spec-total">→ {{ opt.totalW }} W total</span>
+                  </p>
+                  <p class="product-price" *ngIf="opt.product.price">
+                    Tarif TTC : {{ formatPrice(opt.quantity === 1 ? opt.product.price : opt.product.price * opt.quantity) }}
+                    <span class="price-unit" *ngIf="opt.quantity > 1">
+                      ({{ formatPrice(opt.product.price) }} / panneau)
+                    </span>
                   </p>
                 </div>
-                <!--<ion-button
-                  fill="clear"
-                  size="small"
-                  class="product-link-btn"
-                  (click)="$event.stopPropagation(); openProduct(p.productUrl)"
-                >
-                  <ion-icon name="open-outline" slot="icon-only"></ion-icon>
-                </ion-button>-->
               </article>
             </div>
           </div>
@@ -189,7 +192,7 @@
             <!--<span class="category-spec">≥ {{ result()?.recommendedInverterW }} W</span>-->
             <span class="category-count">{{ recommendedInverters().length }} produits</span>
           </h3>
-          <div class="product-scroll-wrapper">
+          <div class="product-scroll-wrapper" [class.no-fade]="!hasScroll(recommendedInverters().length)">
             <div class="product-scroll">
               <article
                 class="product-card"
@@ -253,13 +256,17 @@
 </ion-content>
 
 <div class="sticky-actions">
-  <ion-button expand="block" color="primary" (click)="backToConfig()" class="pill-btn">
+  <ion-button expand="block" color="primary" (click)="backToConfig()" class="calc-btn">
     <ion-icon name="settings-outline" slot="start"></ion-icon>
     {{ 'RESULTS.EDIT' | translate }}
   </ion-button>
+
+  <ion-button fill="outline" class="reset-btn" (click)="goHome()">
+    <ion-icon name="home-outline" slot="icon-only"></ion-icon>
+  </ion-button>
 </div>
 
-<ion-footer>
+<!--<ion-footer>
   <ion-tab-bar>
     <ion-tab-button routerLink="/home" routerLinkActive="tab-selected">
       <ion-icon name="home"></ion-icon>
@@ -274,4 +281,4 @@
       <ion-label>Résultats</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-</ion-footer>
+</ion-footer>-->
