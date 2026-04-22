@@ -20,7 +20,7 @@ export interface Product {
 }
 
 const API_ENDPOINT = 'https://www.tools-cmc-ea.fr/app_vechline/produits.php';
-const CACHE_KEY    = 'vp_products_v2';
+const CACHE_KEY    = 'vp_products_v3';
 const CACHE_TTL    = 3_600_000; // 1h
 
 const FALLBACK_PRODUCTS: Product[] = [
