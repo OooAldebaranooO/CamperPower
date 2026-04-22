@@ -67,6 +67,7 @@
     "BATTERIES":"Batteries Vechline",
     "SOLAR":"Panneaux solaires",
     "INVERTERS":"Convertisseurs Vechline", 
-    "NO_PRODUCTS":"Aucun produit Vechline compatible avec votre configuration"
+    "NO_PRODUCTS":"Aucun produit Vechline compatible avec votre configuration",
+    "NEW": "Nouveau"
   }
 }

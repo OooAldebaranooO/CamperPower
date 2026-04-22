@@ -78,45 +78,52 @@
           <h3 class="category-title">
             <span class="category-icon">🔋</span>
             {{ 'RESULTS.BATTERIES' | translate }}
-            <span class="category-spec">≥ {{ result()?.recommendedBatteryAh }} Ah</span>
+            <!--<span class="category-spec">≥ {{ result()?.recommendedBatteryAh }} Ah</span>-->
+            <span class="category-count">{{ recommendedBatteries().length }} produits</span>
           </h3>
-          <div class="product-scroll">
-            <article
-              class="product-card"
-              *ngFor="let p of recommendedBatteries()"
-              (click)="openProduct(p.productUrl)"
-            >
-              <div class="product-img-wrap">
-                <img
-                  *ngIf="p.imageUrl"
-                  [src]="p.imageUrl"
-                  [alt]="getLocalizedName(p.name)"
-                  class="product-img"
-                  loading="lazy"
-                />
-                <div class="product-img-placeholder" *ngIf="!p.imageUrl">
-                  <ion-icon name="battery-half-outline"></ion-icon>
-                </div>
-              </div>
-              <div class="product-body">
-                <p class="product-sku">{{ p.sku }}</p>
-                <strong class="product-name">{{ getLocalizedName(p.name) }}</strong>
-                <p class="product-spec" *ngIf="p.specs.capacityAh">
-                  {{ p.specs.capacityAh }} Ah
-                </p>
-                <p class="product-price" *ngIf="p.price">
-                  {{ formatPrice(p.price) }}
-                </p>
-              </div>
-              <!--<ion-button
-                fill="clear"
-                size="small"
-                class="product-link-btn"
-                (click)="$event.stopPropagation(); openProduct(p.productUrl)"
+          <div class="product-scroll-wrapper">
+            <div class="product-scroll">
+              <article
+                class="product-card"
+                *ngFor="let p of recommendedBatteries()"
               >
-                <ion-icon name="open-outline" slot="icon-only"></ion-icon>
-              </ion-button>-->
-            </article>
+              <span class="badge-new" *ngIf="p.isNew">
+                {{ 'RESULTS.NEW' | translate }}
+              </span>
+                <div class="product-img-wrap">
+                  <img
+                    *ngIf="p.imageUrl"
+                    [src]="p.imageUrl"
+                    [alt]="getLocalizedName(p.name)"
+                    class="product-img"
+                    width="158"
+                    height="110"
+                    loading="lazy"
+                  />
+                  <div class="product-img-placeholder" *ngIf="!p.imageUrl">
+                    <ion-icon name="battery-half-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="product-body">
+                  <p class="product-name">{{ getLocalizedName(p.name) }}</p>
+                  <p class="product-sku">Réf. : {{ p.sku }}</p>
+                  <!--<p class="product-spec" *ngIf="p.specs.capacityAh">
+                    {{ p.specs.capacityAh }} Ah
+                  </p>-->
+                  <p class="product-price" *ngIf="p.price">
+                    Tarif TTC : {{ formatPrice(p.price) }}
+                  </p>
+                </div>
+                <!--<ion-button
+                  fill="clear"
+                  size="small"
+                  class="product-link-btn"
+                  (click)="$event.stopPropagation(); openProduct(p.productUrl)"
+                >
+                  <ion-icon name="open-outline" slot="icon-only"></ion-icon>
+                </ion-button>-->
+              </article>
+            </div>
           </div>
         </div>
 
@@ -125,45 +132,52 @@
           <h3 class="category-title">
             <span class="category-icon">☀️</span>
             {{ 'RESULTS.SOLAR' | translate }}
-            <span class="category-spec">≥ {{ result()?.recommendedSolarW }} W</span>
+            <!--<span class="category-spec">≥ {{ result()?.recommendedSolarW }} W</span>-->
+            <span class="category-count">{{ recommendedSolar().length }} produits</span>
           </h3>
-          <div class="product-scroll">
-            <article
-              class="product-card"
-              *ngFor="let p of recommendedSolar()"
-              (click)="openProduct(p.productUrl)"
-            >
-              <div class="product-img-wrap">
-                <img
-                  *ngIf="p.imageUrl"
-                  [src]="p.imageUrl"
-                  [alt]="getLocalizedName(p.name)"
-                  class="product-img"
-                  loading="lazy"
-                />
-                <div class="product-img-placeholder" *ngIf="!p.imageUrl">
-                  <ion-icon name="sunny-outline"></ion-icon>
-                </div>
-              </div>
-              <div class="product-body">
-                <p class="product-sku">{{ p.sku }}</p>
-                <strong class="product-name">{{ getLocalizedName(p.name) }}</strong>
-                <p class="product-spec" *ngIf="p.specs.powerW">
-                  {{ p.specs.powerW }} W
-                </p>
-                <p class="product-price" *ngIf="p.price">
-                  {{ formatPrice(p.price) }}
-                </p>
-              </div>
-              <!--<ion-button
-                fill="clear"
-                size="small"
-                class="product-link-btn"
-                (click)="$event.stopPropagation(); openProduct(p.productUrl)"
+          <div class="product-scroll-wrapper">
+            <div class="product-scroll">
+              <article
+                class="product-card"
+                *ngFor="let p of recommendedSolar()"
               >
-                <ion-icon name="open-outline" slot="icon-only"></ion-icon>
-              </ion-button>-->
-            </article>
+              <span class="badge-new" *ngIf="p.isNew">
+                {{ 'RESULTS.NEW' | translate }}
+              </span>
+                <div class="product-img-wrap">
+                  <img
+                    *ngIf="p.imageUrl"
+                    [src]="p.imageUrl"
+                    [alt]="getLocalizedName(p.name)"
+                    class="product-img"
+                    width="158"
+                    height="110"
+                    loading="lazy"
+                  />
+                  <div class="product-img-placeholder" *ngIf="!p.imageUrl">
+                    <ion-icon name="sunny-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="product-body">
+                  <p class="product-name">{{ getLocalizedName(p.name) }}</p>
+                  <p class="product-sku">Réf. : {{ p.sku }}</p>
+                  <!--<p class="product-spec" *ngIf="p.specs.powerW">
+                    {{ p.specs.powerW }} W
+                  </p>-->
+                  <p class="product-price" *ngIf="p.price">
+                    Tarif TTC : {{ formatPrice(p.price) }}
+                  </p>
+                </div>
+                <!--<ion-button
+                  fill="clear"
+                  size="small"
+                  class="product-link-btn"
+                  (click)="$event.stopPropagation(); openProduct(p.productUrl)"
+                >
+                  <ion-icon name="open-outline" slot="icon-only"></ion-icon>
+                </ion-button>-->
+              </article>
+            </div>
           </div>
         </div>
 
@@ -172,45 +186,52 @@
           <h3 class="category-title">
             <span class="category-icon">⚡</span>
             {{ 'RESULTS.INVERTERS' | translate }}
-            <span class="category-spec">≥ {{ result()?.recommendedInverterW }} W</span>
+            <!--<span class="category-spec">≥ {{ result()?.recommendedInverterW }} W</span>-->
+            <span class="category-count">{{ recommendedInverters().length }} produits</span>
           </h3>
-          <div class="product-scroll">
-            <article
-              class="product-card"
-              *ngFor="let p of recommendedInverters()"
-              (click)="openProduct(p.productUrl)"
-            >
-              <div class="product-img-wrap">
-                <img
-                  *ngIf="p.imageUrl"
-                  [src]="p.imageUrl"
-                  [alt]="getLocalizedName(p.name)"
-                  class="product-img"
-                  loading="lazy"
-                />
-                <div class="product-img-placeholder" *ngIf="!p.imageUrl">
-                  <ion-icon name="flash-outline"></ion-icon>
-                </div>
-              </div>
-              <div class="product-body">
-                <p class="product-sku">{{ p.sku }}</p>
-                <strong class="product-name">{{ getLocalizedName(p.name) }}</strong>
-                <p class="product-spec" *ngIf="p.specs.powerW">
-                  {{ p.specs.powerW }} W
-                </p>
-                <p class="product-price" *ngIf="p.price">
-                  {{ formatPrice(p.price) }}
-                </p>
-              </div>
-              <!--<ion-button
-                fill="clear"
-                size="small"
-                class="product-link-btn"
-                (click)="$event.stopPropagation(); openProduct(p.productUrl)"
+          <div class="product-scroll-wrapper">
+            <div class="product-scroll">
+              <article
+                class="product-card"
+                *ngFor="let p of recommendedInverters()"
               >
-                <ion-icon name="open-outline" slot="icon-only"></ion-icon>
-              </ion-button>-->
-            </article>
+              <span class="badge-new" *ngIf="p.isNew">
+                {{ 'RESULTS.NEW' | translate }}
+              </span>
+                <div class="product-img-wrap">
+                  <img
+                    *ngIf="p.imageUrl"
+                    [src]="p.imageUrl"
+                    [alt]="getLocalizedName(p.name)"
+                    class="product-img"
+                    width="158"
+                    height="110"
+                    loading="lazy"
+                  />
+                  <div class="product-img-placeholder" *ngIf="!p.imageUrl">
+                    <ion-icon name="flash-outline"></ion-icon>
+                  </div>
+                </div>
+                <div class="product-body">
+                  <p class="product-name">{{ getLocalizedName(p.name) }}</p>
+                  <p class="product-sku">Réf. : {{ p.sku }}</p>
+                  <!--<p class="product-spec" *ngIf="p.specs.powerW">
+                    {{ p.specs.powerW }} W
+                  </p>-->
+                  <p class="product-price" *ngIf="p.price">
+                    Tarif TTC : {{ formatPrice(p.price) }}
+                  </p>
+                </div>
+                <!--<ion-button
+                  fill="clear"
+                  size="small"
+                  class="product-link-btn"
+                  (click)="$event.stopPropagation(); openProduct(p.productUrl)"
+                >
+                  <ion-icon name="open-outline" slot="icon-only"></ion-icon>
+                </ion-button>-->
+              </article>
+            </div>
           </div>
         </div>
 

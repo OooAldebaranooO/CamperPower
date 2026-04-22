@@ -42,19 +42,19 @@ export class ResultsPage {
   recommendedBatteries = computed(() =>
     this.productService
       .getRecommendedProducts('battery', this.result()?.recommendedBatteryAh)
-      .slice(0, 3)
+      .slice(0, 10)
   );
 
   recommendedSolar = computed(() =>
     this.productService
       .getRecommendedProducts('solar', this.result()?.recommendedSolarW)
-      .slice(0, 3)
+      .slice(0, 10)
   );
 
   recommendedInverters = computed(() =>
     this.productService
       .getRecommendedProducts('inverter', this.result()?.recommendedInverterW)
-      .slice(0, 2)
+      .slice(0, 10)
   );
 
   hasProducts = computed(

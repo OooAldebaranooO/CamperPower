@@ -16,10 +16,11 @@ export interface Product {
     powerW?: number;
   };
   productUrl: string;
+  isNew: boolean;
 }
 
 const API_ENDPOINT = 'https://www.tools-cmc-ea.fr/app_vechline/produits.php';
-const CACHE_KEY    = 'vp_products_v1';
+const CACHE_KEY    = 'vp_products_v2';
 const CACHE_TTL    = 3_600_000; // 1h
 
 const FALLBACK_PRODUCTS: Product[] = [
@@ -30,6 +31,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     imageUrl: null, price: 189, currency: 'EUR',
     category: 'battery', specs: { capacityAh: 100 },
     productUrl: '#',
+    isNew: false,
   },
   {
     id: 'sol-150', sku: 'VEC-SOL-150',
@@ -38,6 +40,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     imageUrl: null, price: 249, currency: 'EUR',
     category: 'solar', specs: { powerW: 150 },
     productUrl: '#',
+    isNew: false,
   },
   {
     id: 'inv-1000', sku: 'VEC-INV-1000',
@@ -46,6 +49,7 @@ const FALLBACK_PRODUCTS: Product[] = [
     imageUrl: null, price: 299, currency: 'EUR',
     category: 'inverter', specs: { powerW: 1000 },
     productUrl: '#',
+    isNew: false,
   },
 ];
 
@@ -77,14 +81,19 @@ export class ProductService {
             name:        { [lang]: r.name ?? r.sku },
             description: { [lang]: r.description ?? '' },
             imageUrl:    r.image_url ?? null,
-            price:       r.price       ? parseFloat(r.price)       : null,
+            price:       r.price ? parseFloat(r.price) : null,
             currency:    'EUR',
             category:    r.category,
             specs: {
-              capacityAh: r.capacity_ah ? parseFloat(r.capacity_ah) : undefined,
-              powerW:     r.power_w     ? parseFloat(r.power_w)     : undefined,
+              capacityAh: r.capacity_ah !== null && r.capacity_ah !== undefined && r.capacity_ah !== ''
+                ? parseFloat(r.capacity_ah)
+                : undefined,
+              powerW: r.power_w !== null && r.power_w !== undefined && r.power_w !== ''
+                ? parseFloat(r.power_w)
+                : undefined,
             },
             productUrl: '#',
+            isNew: r.nouveaute_print === '1' || r.nouveaute_print === 1,
           }));
           this.products.set(mapped);
           this.writeCache(lang, mapped);
