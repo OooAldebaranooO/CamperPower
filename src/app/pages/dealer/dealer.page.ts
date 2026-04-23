@@ -8,6 +8,8 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { addIcons } from 'ionicons';
 import { arrowBackOutline, navigateOutline, locationOutline, homeOutline, searchOutline } from 'ionicons/icons';
 import { FormsModule } from '@angular/forms';
+import { Geolocation } from '@capacitor/geolocation';
+import { Capacitor } from '@capacitor/core';
 
 const MY_MAPS_BASE = 'https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F';
 
@@ -39,25 +41,37 @@ export class DealerPage {
     this.translate.use(this.currentLang);
   }
 
-  useMyLocation(): void {
-    if (!navigator.geolocation) return;
-
+  async useMyLocation(): Promise<void> {
     this.locating.set(true);
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        const lat = pos.coords.latitude;
-        const lng = pos.coords.longitude;
-        // Centre la carte sur la position + garde les marqueurs
-        const url = `${MY_MAPS_BASE}&ll=${lat},${lng}&z=10`;
-        this.mapUrl.set(
-          this.sanitizer.bypassSecurityTrustResourceUrl(url)
-        );
-        this.locating.set(false);
-      },
-      () => {
-        this.locating.set(false);
+
+    try {
+      // Demande la permission sur mobile
+      if (Capacitor.isNativePlatform()) {
+        const permission = await Geolocation.requestPermissions();
+        if (permission.location !== 'granted') {
+          this.locating.set(false);
+          return;
+        }
       }
-    );
+
+      const position = await Geolocation.getCurrentPosition({
+        enableHighAccuracy: true,
+        timeout: 10000,
+      });
+
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+
+      const url = `https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F&ll=${lat},${lng}&z=10`;
+      this.mapUrl.set(
+        this.sanitizer.bypassSecurityTrustResourceUrl(url)
+      );
+
+    } catch (err) {
+      console.error('[Geolocation]', err);
+    } finally {
+      this.locating.set(false);
+    }
   }
 
   changeLanguage(lang: string): void {
