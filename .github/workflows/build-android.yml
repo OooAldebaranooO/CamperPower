@@ -4,6 +4,9 @@ on:
   push:
     branches: [ main ]
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -42,7 +45,7 @@ jobs:
             -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
             -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
             -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
-            
+
       - name: Rename AAB
         run: mv android/app/build/outputs/bundle/debug/app-debug.aab android/app/build/outputs/bundle/debug/vechline_configurator.aab
 
@@ -50,4 +53,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: VechlineConfigurator
-          path: android/app/build/outputs/bundle/release/vechline_configurator.aab
+          path: android/app/build/outputs/bundle/debug/vechline_configurator.aab
