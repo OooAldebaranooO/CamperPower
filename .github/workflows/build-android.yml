@@ -54,3 +54,9 @@ jobs:
             -storepass EACMC2026 \
             -keypass EACMC2026 \
             -dname "CN=CamperPower, OU=Dev, O=Dev, L=Paris, S=IDF, C=FR"
+      
+      - name: Upload Keystore
+        uses: actions/upload-artifact@v4
+        with:
+          name: keystore
+          path: android/app/vechlineconfigurator.jks
