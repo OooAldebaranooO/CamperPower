@@ -34,8 +34,15 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 
-      - name: Build AAB
-        run: cd android && ./gradlew bundleRelease
+
+      - name: Build AAB signé
+        run: |
+          echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > android/app/vechlineconfigurator.jks
+          cd android && ./gradlew bundleRelease \
+            -Pandroid.injected.signing.store.file=$PWD/app/vechlineconfigurator.jks \
+            -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
+            -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
+            -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
 
       - name: Rename AAB
         run: mv android/app/build/outputs/bundle/release/app-release.aab android/app/build/outputs/bundle/release/VechlineConfigurator.aab
@@ -45,12 +52,3 @@ jobs:
         with:
           name: VechlineConfigurator
           path: android/app/build/outputs/bundle/release/VechlineConfigurator.aab
-
-      - name: Sign AAB
-        run: |
-          echo "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" | base64 -d > android/app/vechlineconfigurator.jks
-          cd android && ./gradlew bundleRelease \
-            -Pandroid.injected.signing.store.file=$PWD/app/vechlineconfigurator.jks \
-            -Pandroid.injected.signing.store.password=EACMC2026 \
-            -Pandroid.injected.signing.key.alias=vechlineconfigurator \
-            -Pandroid.injected.signing.key.password=EACMC2026
