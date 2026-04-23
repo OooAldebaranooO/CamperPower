@@ -34,7 +34,6 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 
-
       - name: Build AAB signé
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > android/app/vechlineconfigurator.jks
