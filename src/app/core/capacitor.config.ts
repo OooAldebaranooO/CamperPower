@@ -4,6 +4,9 @@ const config: CapacitorConfig = {
   appId: 'com.vechline_configurator',
   appName: 'Vechline',
   webDir: 'www',
+  android: {
+    loggingBehavior: 'debug'
+  },
   server: {
     allowNavigation: [
       'www.google.com',
