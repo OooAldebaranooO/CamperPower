@@ -25,6 +25,9 @@ jobs:
       - name: List www folder
         run: ls -la www/
 
+      - name: Show index.html
+        run: cat www/index.html
+
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
