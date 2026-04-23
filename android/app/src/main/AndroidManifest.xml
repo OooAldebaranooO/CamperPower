@@ -28,7 +28,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.vechline.configurator.fileprovider"
+            android:authorities="com.vechline_configurator.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
