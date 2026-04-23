@@ -34,18 +34,17 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 
-
       - name: Build AAB signé
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > android/app/vechlineconfigurator.jks
-          cd android && ./gradlew bundleRelease \
+          cd android && ./gradlew bundleDebug \
             -Pandroid.injected.signing.store.file=$PWD/app/vechlineconfigurator.jks \
             -Pandroid.injected.signing.store.password=${{ secrets.KEYSTORE_PASSWORD }} \
             -Pandroid.injected.signing.key.alias=${{ secrets.KEY_ALIAS }} \
             -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
-
+            
       - name: Rename AAB
-        run: mv android/app/build/outputs/bundle/release/app-release.aab android/app/build/outputs/bundle/release/vechline_configurator.aab
+        run: mv android/app/build/outputs/bundle/debug/app-debug.aab android/app/build/outputs/bundle/debug/vechline_configurator.aab
 
       - name: Upload AAB
         uses: actions/upload-artifact@v4
