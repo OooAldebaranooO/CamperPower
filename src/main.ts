@@ -3,5 +3,5 @@ import { AppComponent } from './app/app.component';
 import { appConfig } from './app/app.config';
 
 bootstrapApplication(AppComponent, appConfig).catch((err) => {
-  alert('Erreur: ' + JSON.stringify(err.message));
+  alert('Erreur : ' + JSON.stringify(err.message));
 });
