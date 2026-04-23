@@ -34,14 +34,23 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 
-      - name: Build APK
-        run: cd android && ./gradlew assembleDebug
+      - name: Build AAB
+        run: cd android && ./gradlew bundleRelease
 
-      - name: Rename APK
-        run: mv android/app/build/outputs/apk/debug/app-debug.apk android/app/build/outputs/apk/debug/VechlineConfigurator.apk
+      - name: Rename AAB
+        run: mv android/app/build/outputs/bundle/release/app-release.aab android/app/build/outputs/bundle/release/VechlineConfigurator.aab
 
-      - name: Upload APK
+      - name: Upload AAB
         uses: actions/upload-artifact@v4
         with:
           name: VechlineConfigurator
-          path: android/app/build/outputs/apk/debug/VechlineConfigurator.apk
+          path: android/app/build/outputs/bundle/release/VechlineConfigurator.aab
+
+      - name: Generate Keystore
+        run: |
+          keytool -genkey -v -keystore android/app/vechlineconfigurator.jks \
+            -alias vechlineconfigurator \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass EACMC2026 \
+            -keypass EACMC2026 \
+            -dname "CN=CamperPower, OU=Dev, O=Dev, L=Paris, S=IDF, C=FR"

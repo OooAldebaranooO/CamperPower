@@ -34,14 +34,14 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 
-      - name: Build AAB
-        run: cd android && ./gradlew bundleRelease
+      - name: Build APK
+        run: cd android && ./gradlew assembleDebug
 
-      - name: Rename AAB
-        run: mv android/app/build/outputs/bundle/release/app-release.aab android/app/build/outputs/bundle/release/VechlineConfigurator.aab
+      - name: Rename APK
+        run: mv android/app/build/outputs/apk/debug/app-debug.apk android/app/build/outputs/apk/debug/VechlineConfigurator.apk
 
-      - name: Upload AAB
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: VechlineConfigurator
-          path: android/app/build/outputs/bundle/release/VechlineConfigurator.aab
+          path: android/app/build/outputs/apk/debug/VechlineConfigurator.apk
