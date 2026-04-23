@@ -1,18 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, computed } from '@angular/core';
-import {
-  IonButton, IonContent, IonHeader, IonIcon,
-  IonSelect, IonSelectOption, IonToolbar, IonSpinner,
-} from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonHeader, IonIcon, IonSelect, IonSelectOption, IonToolbar, IonSpinner, } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { AppStateService } from '../../core/app-state.service';
 import { ProductService, Product } from '../../core/product.service';
 import { addIcons } from 'ionicons';
-import {
-  home, homeOutline, settingsOutline, barChartOutline,
-  openOutline, batteryHalfOutline, sunnyOutline, flashOutline,
-} from 'ionicons/icons';
+import { home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, locationOutline } from 'ionicons/icons';
 
 export interface SolarOption {
   product: Product;
@@ -91,10 +85,7 @@ export class ResultsPage {
   constructor() {
     this.state.loadResult();
 
-    addIcons({
-      home, homeOutline, settingsOutline, barChartOutline,
-      openOutline, batteryHalfOutline, sunnyOutline, flashOutline,
-    });
+    addIcons({ home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, locationOutline, });
     this.translate.use(this.currentLang);
     this.productService.loadProducts(this.currentLang);
   }
@@ -127,5 +118,9 @@ export class ResultsPage {
 
   hasScroll(count: number): boolean {
     return count > 2;
+  }
+
+  goToDealer(): void {
+    this.router.navigateByUrl('/dealer');
   }
 }

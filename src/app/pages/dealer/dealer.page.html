@@ -1,0 +1,88 @@
+<ion-header class="vp-header" translucent="true">
+  <ion-toolbar>
+    <div class="topbar">
+      <img src="assets/branding/vechline-logo.png" alt="VECHLINE" class="logo" />
+      <ion-select
+        interface="popover"
+        [value]="currentLang"
+        (ionChange)="changeLanguage($event.detail.value)"
+        class="lang-select"
+        label-placement="end"
+      >
+        <ion-select-option value="fr">FR</ion-select-option>
+        <ion-select-option value="en">EN</ion-select-option>
+        <ion-select-option value="nl">NL</ion-select-option>
+        <ion-select-option value="es">ES</ion-select-option>
+        <ion-select-option value="it">IT</ion-select-option>
+      </ion-select>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="vp-content">
+  <div class="dealer-shell">
+
+    <section class="hero-card">
+      <h1>{{ 'DEALER.TITLE' | translate }}</h1>
+      <p>{{ 'DEALER.SUBTITLE' | translate }}</p>
+    </section>
+
+    <div class="dealer-panel">
+      <!-- Recherche par ville / CP -->
+      <div class="search-section">
+        <div class="search-bar">
+          <input
+            type="text"
+            [(ngModel)]="searchQuery"
+            [placeholder]="'DEALER.SEARCH_PLACEHOLDER' | translate"
+            class="search-input"
+            (keyup.enter)="searchByQuery()"
+          />
+          <button class="search-btn" (click)="searchByQuery()">
+            <ion-icon name="search-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+      <!-- Bouton géolocalisation -->
+      <div class="locate-section">
+        <button
+          class="locate-btn"
+          (click)="useMyLocation()"
+          [disabled]="locating()"
+        >
+          <ion-icon name="navigate-outline"></ion-icon>
+          {{ locating() ? ('DEALER.LOCATING' | translate) : ('DEALER.USE_LOCATION' | translate) }}
+        </button>
+      </div>
+
+      <!-- Carte Google My Maps -->
+      <div class="map-wrapper">
+        <iframe
+          [src]="mapUrl()"
+          class="map-iframe"
+          frameborder="0"
+          allowfullscreen
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </div>
+
+    <p class="map-hint">
+      <ion-icon name="location-outline"></ion-icon>
+      {{ 'DEALER.MAP_HINT' | translate }}
+    </p>
+
+  </div>
+</ion-content>
+
+<div class="sticky-actions">
+  <ion-button expand="block" color="primary" (click)="goBack()" class="calc-btn">
+    <ion-icon name="arrow-back-outline" slot="start"></ion-icon>
+    {{ 'DEALER.BACK' | translate }}
+  </ion-button>
+
+  <ion-button fill="outline" class="reset-btn" (click)="goHome()">
+    <ion-icon name="home-outline" slot="icon-only"></ion-icon>
+  </ion-button>
+</div>

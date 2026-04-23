@@ -1,0 +1,95 @@
+import { CommonModule } from '@angular/common';
+import { Component, inject, signal } from '@angular/core';
+import { IonButton, IonContent, IonHeader, IonIcon, IonToolbar, IonSelect, IonSelectOption, } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { AppStateService } from '../../core/app-state.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { addIcons } from 'ionicons';
+import { arrowBackOutline, navigateOutline, locationOutline, homeOutline, searchOutline } from 'ionicons/icons';
+import { FormsModule } from '@angular/forms';
+
+const MY_MAPS_BASE = 'https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F';
+
+@Component({
+  selector: 'app-dealer',
+  standalone: true,
+  imports: [
+    CommonModule, TranslatePipe, FormsModule,
+    IonHeader, IonToolbar, IonContent, IonButton,
+    IonIcon, IonSelect, IonSelectOption,
+  ],
+  templateUrl: './dealer.page.html',
+  styleUrls: ['./dealer.page.scss'],
+})
+export class DealerPage {
+  private router    = inject(Router);
+  private translate = inject(TranslateService);
+  private state     = inject(AppStateService);
+  private sanitizer = inject(DomSanitizer);
+
+  currentLang = this.state.loadLanguage();
+  locating    = signal(false);
+  mapUrl      = signal<SafeResourceUrl>(
+    this.sanitizer.bypassSecurityTrustResourceUrl(MY_MAPS_BASE)
+  );
+
+  constructor() {
+    addIcons({ arrowBackOutline, navigateOutline, locationOutline, homeOutline, searchOutline });
+    this.translate.use(this.currentLang);
+  }
+
+  useMyLocation(): void {
+    if (!navigator.geolocation) return;
+
+    this.locating.set(true);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        // Centre la carte sur la position + garde les marqueurs
+        const url = `${MY_MAPS_BASE}&ll=${lat},${lng}&z=10`;
+        this.mapUrl.set(
+          this.sanitizer.bypassSecurityTrustResourceUrl(url)
+        );
+        this.locating.set(false);
+      },
+      () => {
+        this.locating.set(false);
+      }
+    );
+  }
+
+  changeLanguage(lang: string): void {
+    this.currentLang = lang;
+    this.translate.use(lang);
+    this.state.saveLanguage(lang);
+  }
+
+  goBack(): void {
+    this.router.navigateByUrl('/results');
+  }
+
+  goHome(): void {
+    this.router.navigateByUrl('/home');
+  }
+
+  // Propriété
+  searchQuery = '';
+
+  // Méthode — centre la carte sur la ville saisie via l'API Nominatim
+  searchByQuery(): void {
+    if (!this.searchQuery.trim()) return;
+
+    const query = encodeURIComponent(this.searchQuery);
+    fetch(`https://nominatim.openstreetmap.org/search?q=${query}&format=json&limit=1&countrycodes=fr,be,nl,es,it,de`)
+      .then(r => r.json())
+      .then((results: any[]) => {
+        if (!results?.length) return;
+        const lat = parseFloat(results[0].lat);
+        const lng = parseFloat(results[0].lon);
+        const url = `https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F&ll=${lat},${lng}&z=10`;
+        this.mapUrl.set(this.sanitizer.bypassSecurityTrustResourceUrl(url));
+      });
+  }
+}

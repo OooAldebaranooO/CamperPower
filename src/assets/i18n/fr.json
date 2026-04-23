@@ -10,11 +10,11 @@
     "SUBTITLE": "Une méthode simple, claire et fiable pour dimensionner batterie, panneaux solaires et convertisseur pour van, caravane et camping-car.",
     "CTA_START": "Commencer la configuration",
     "CTA_RESULTS": "Voir les résultats",
-    "FEATURE_1_TITLE": "Batterie",
+    "FEATURE_1_TITLE": "Batteries",
     "FEATURE_1_TEXT": "Dimensionnez une batterie adaptée à votre usage réel.",
     "FEATURE_2_TITLE": "Panneaux solaires",
     "FEATURE_2_TEXT": "Estimez la puissance solaire nécessaire chaque jour.",
-    "FEATURE_3_TITLE": "Convertisseur",
+    "FEATURE_3_TITLE": "Convertisseurs",
     "FEATURE_3_TEXT": "Définissez la puissance minimale pour vos appareils.",
     "START_CONFIGURATION": "COMMENCER MA CONFIGURATION",
     "SEE_RESULTS": "VOIR LE RESULTAT"
@@ -31,7 +31,7 @@
     "DEVICE": "APPAREIL",
     "NEW_DEVICE": "Nouvel appareil",
     "ESTIMATED_CONSUMPTION": "Consommation estimée",
-    "CALCULATE": "CALCULER MON INSTALLATION",
+    "CALCULATE": "CALCULER MON BESOIN",
     "HERO_KICKER": "Installation embarquée",
     "HERO_TITLE": "Créez une configuration claire et fiable",
     "HERO_SUBTITLE": "Ajoutez vos appareils, estimez votre consommation et obtenez une première recommandation cohérente pour votre batterie, votre puissance solaire et votre convertisseur."
@@ -57,7 +57,7 @@
     "RECOMMENDED_SOLAR": "Panneaux solaires recommandés",
     "MINIMUM_INVERTER": "Convertisseur minimum",
     "INFO": "Première estimation fiable pour une installation électrique mobile. Des ajustements plus précis peuvent être ajoutés ensuite selon le type de batterie, le climat et la production solaire réelle.",
-    "EDIT": "Modifier la configuration",
+    "EDIT": "Modifier ma configuration",
     "HOME": "Retour à l'accueil",
     "EMPTY_TITLE": "Aucun résultat disponible",
     "EMPTY_TEXT": "Commencez par créer une configuration pour voir les recommandations.",
@@ -70,5 +70,14 @@
     "NEW": "Nouveau",
     "PRICE": "Tarif TTC",
     "PRODUCTS": "Produits"
+  },
+    "DEALER": {
+    "TITLE": "Trouver un revendeur",
+    "SUBTITLE": "Localisez le revendeur Vechline le plus proche de chez vous.",
+    "USE_LOCATION": "Me géolocaliser",
+    "LOCATING": "Localisation...",
+    "MAP_HINT": "Cliquez sur un marqueur pour voir les détails du magasin",
+    "BACK": "Retour aux résultats",
+    "SEARCH_PLACEHOLDER": "Ville ou code postal..."
   }
 }
