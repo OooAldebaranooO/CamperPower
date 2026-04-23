@@ -31,18 +31,6 @@ jobs:
       - name: Sync Capacitor
         run: npx cap sync android
 
-      - name: Build APK
-        run: cd android && ./gradlew assembleDebug
-
-      - name: Rename APK
-        run: mv android/app/build/outputs/apk/debug/app-debug.apk android/app/build/outputs/apk/debug/VechlineConfigurator.apk
-
-      - name: Upload APK
-        uses: actions/upload-artifact@v3
-        with:
-          name: VechlineConfigurator
-          path: android/app/build/outputs/apk/debug/VechlineConfigurator.apk
-
       - name: Build AAB
         run: cd android && ./gradlew bundleRelease
 
