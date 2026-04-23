@@ -54,4 +54,3 @@ jobs:
             -Pandroid.injected.signing.store.password=EACMC2026 \
             -Pandroid.injected.signing.key.alias=vechlineconfigurator \
             -Pandroid.injected.signing.key.password=EACMC2026
-      # Fin Signature de l'App pour Google Play Store
