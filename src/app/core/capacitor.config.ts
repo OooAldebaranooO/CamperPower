@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.vechline.app',
+  appId: 'com.vechline_configurator',
   appName: 'Vechline',
   webDir: 'www',
   server: {

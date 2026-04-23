@@ -45,10 +45,10 @@ jobs:
             -Pandroid.injected.signing.key.password=${{ secrets.KEY_PASSWORD }}
 
       - name: Rename AAB
-        run: mv android/app/build/outputs/bundle/release/app-release.aab android/app/build/outputs/bundle/release/VechlineConfigurator.aab
+        run: mv android/app/build/outputs/bundle/release/app-release.aab android/app/build/outputs/bundle/release/vechline_configurator.aab
 
       - name: Upload AAB
         uses: actions/upload-artifact@v4
         with:
           name: VechlineConfigurator
-          path: android/app/build/outputs/bundle/release/VechlineConfigurator.aab
+          path: android/app/build/outputs/bundle/release/vechline_configurator.aab
