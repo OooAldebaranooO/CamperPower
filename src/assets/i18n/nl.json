@@ -70,5 +70,17 @@
     "NEW": "Nieuw",
     "PRICE": "Prijs incl. BTW",
     "PRODUCTS": "Producten"
+  },
+  "DEALER": {
+    "TITLE": "Een dealer vinden",
+    "SUBTITLE": "Vind de dichtstbijzijnde Vechline-dealer bij u in de buurt.",
+    "USE_LOCATION": "Mijn locatie gebruiken",
+    "LOCATING": "Localiseren...",
+    "MAP_HINT": "Klik op een markering om de winkelgegevens te zien",
+    "BACK": "Terug naar resultaten",
+    "SEARCH_PLACEHOLDER": "Stad of postcode...",
+    "MAP_PREVIEW": "Bekijk alle Vechline-dealers op de kaart",
+    "LOCATION_FOUND": "Locatie gevonden — de kaart wordt gecentreerd op uw positie",
+    "OPEN_MAP": "Open dealerkaart"
   }
 }

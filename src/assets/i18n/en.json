@@ -70,5 +70,17 @@
     "NEW": "New",
     "PRICE": "Price incl. VAT",
     "PRODUCTS": "Products"
+  },
+  "DEALER": {
+    "TITLE": "Find a dealer",
+    "SUBTITLE": "Locate the nearest Vechline dealer to you.",
+    "USE_LOCATION": "Use my location",
+    "LOCATING": "Locating...",
+    "MAP_HINT": "Click on a marker to see the store details",
+    "BACK": "Back to results",
+    "SEARCH_PLACEHOLDER": "City or postcode...",
+    "MAP_PREVIEW": "View all Vechline dealers on the map",
+    "LOCATION_FOUND": "Location detected — the map will open centred on you",
+    "OPEN_MAP": "Open dealer map"
   }
 }

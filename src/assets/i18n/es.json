@@ -70,5 +70,17 @@
     "NEW": "Nuevo",
     "PRICE": "Precio IVA incl.",
     "PRODUCTS": "Productos"
+  },
+  "DEALER": {
+    "TITLE": "Encontrar un distribuidor",
+    "SUBTITLE": "Localiza el distribuidor Vechline más cercano a ti.",
+    "USE_LOCATION": "Usar mi ubicación",
+    "LOCATING": "Localizando...",
+    "MAP_HINT": "Haz clic en un marcador para ver los detalles de la tienda",
+    "BACK": "Volver a los resultados",
+    "SEARCH_PLACEHOLDER": "Ciudad o código postal...",
+    "MAP_PREVIEW": "Ver todos los distribuidores Vechline en el mapa",
+    "LOCATION_FOUND": "Ubicación detectada — el mapa se abrirá centrado en ti",
+    "OPEN_MAP": "Abrir mapa de distribuidores"
   }
 }
