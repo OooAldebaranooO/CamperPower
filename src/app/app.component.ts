@@ -10,6 +10,9 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
       <ion-router-outlet></ion-router-outlet>
     </ion-app>
   `,
+})
+export class AppComponent {
+  constructor() {
+    alert('App component chargé !');
+  }
 }
-)
-export class AppComponent {}
