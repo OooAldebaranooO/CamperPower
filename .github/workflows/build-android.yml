@@ -2,7 +2,7 @@ name: Build Android AAB
 
 on:
   push:
-    branches: [ main, test-working ]
+    branches: [ main ]
 
 jobs:
   build:
