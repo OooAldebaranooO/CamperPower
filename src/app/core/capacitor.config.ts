@@ -11,6 +11,7 @@ const config: CapacitorConfig = {
       'maps.googleapis.com',
       'maps.gstatic.com',
       'www.tools-cmc-ea.fr',
+      'nominatim.openstreetmap.org',
     ]
   }
 };
