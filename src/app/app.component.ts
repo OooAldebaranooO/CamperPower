@@ -12,7 +12,5 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   `,
 })
 export class AppComponent {
-  constructor() {
-    alert('App component chargé !');
-  }
+  constructor() {}
 }
