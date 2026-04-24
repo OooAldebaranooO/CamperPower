@@ -37,6 +37,9 @@ jobs:
       - name: Sync Capacitor
         run: npx cap sync android
 
+      - name: Check assets in Android
+        run: ls -la android/app/src/main/assets/public/
+
       - name: Make gradlew executable
         run: chmod +x android/gradlew
 
