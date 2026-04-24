@@ -59,7 +59,9 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "none"
+              "outputHashing": "none",
+              "prerender": false,
+              "ssr": false
             },
             "development": {
               "optimization": false,
