@@ -33,14 +33,14 @@ export const routes: Routes = [
   },
   {
     path: 'battery',
-    loadComponent: () => import('./pages/battery/battery.page').then( m => m.BatteryPage)
+    loadComponent: () => import('./pages/battery/battery.page').then(m => m.BatteryPage)
   },
   {
     path: 'solar',
-    loadComponent: () => import('./pages/solar/solar.page').then( m => m.SolarPage)
+    loadComponent: () => import('./pages/solar/solar.page').then(m => m.SolarPage)
   },
   {
     path: 'converter',
-    loadComponent: () => import('./pages/converter/converter.page').then( m => m.ConverterPage)
+    loadComponent: () => import('./pages/converter/converter.page').then(m => m.ConverterPage)
   },
 ];
