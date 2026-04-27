@@ -26,6 +26,8 @@ import { ApplianceInput } from '../../models/energy.model';
 import { EnergyCalculatorService } from '../../services/energy-calculator.service';
 import { addIcons } from 'ionicons';
 import { home, settingsOutline, barChartOutline, flashOutline, refreshOutline } from 'ionicons/icons';
+import { HeaderComponent } from '../../shared/header/header.component';
+import { homeOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-configurator',
@@ -34,16 +36,13 @@ import { home, settingsOutline, barChartOutline, flashOutline, refreshOutline } 
     CommonModule,
     ReactiveFormsModule,
     TranslatePipe,
-    IonHeader,
-    IonToolbar,
     IonContent,
     IonItem,
     IonLabel,
     IonInput,
     IonButton,
-    IonSelect,
-    IonSelectOption,
     IonIcon,
+    HeaderComponent
   ],
   templateUrl: './configurator.page.html',
   styleUrls: ['./configurator.page.scss'],
@@ -74,7 +73,7 @@ export class ConfiguratorPage {
   });
 
   constructor() {
-    addIcons({ home, settingsOutline, barChartOutline, flashOutline, refreshOutline });
+    addIcons({ home, settingsOutline, barChartOutline, flashOutline, refreshOutline, homeOutline });
     this.translate.use(this.currentLang);
 
     const saved = this.state.loadConfig();
@@ -207,5 +206,9 @@ export class ConfiguratorPage {
     this.currentLang = lang;
     this.translate.use(lang);
     this.state.saveLanguage(lang);
+  }
+
+  goHome(): void {
+    this.router.navigateByUrl('/home');
   }
 }

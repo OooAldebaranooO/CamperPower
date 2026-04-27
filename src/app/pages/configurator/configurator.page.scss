@@ -7,35 +7,6 @@
   background: #000000;
 }
 
-.vp-header ion-toolbar {
-  --background: #ee312f;
-  --border-color: transparent;
-  backdrop-filter: blur(14px);
-}
-
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
-}
-
-.logo {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-}
-
-.lang-select {
-  min-width: 78px;
-  font-weight: 700;
-  color: #ffffff;
-}
-
-ion-select::part(icon) {
-  color: #ffffff;
-}
-
 .config-shell {
   max-width: 980px;
   margin: 0 auto;
@@ -43,43 +14,9 @@ ion-select::part(icon) {
   text-align: center;
 }
 
-.hero-strip {
-  margin-bottom: 18px;
-  padding: 22px;
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at top right, rgba(238, 49, 47, 0.14), transparent 28%),
-    linear-gradient(180deg, #111111 0%, #1b1b1d 100%);
-  color: #ffffff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.16);
-  text-align: left;
-}
-
-.hero-strip h1 {
-  margin: 0 0 10px;
-  font-size: 1.7rem;
-  line-height: 1.05;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.hero-strip p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.6;
-}
-
 .config-form {
   display: grid;
   gap: 18px;
-}
-
-.panel-card {
-  background: rgba(255, 255, 255, 0.97);
-  border-radius: 28px;
-  padding: 22px;
-  border: 1px solid rgba(17, 17, 17, 0.05);
-  box-shadow: 0 12px 32px rgba(17, 17, 17, 0.05);
 }
 
 .panel-head {

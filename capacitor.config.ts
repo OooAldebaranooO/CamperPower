@@ -12,6 +12,7 @@ const config: CapacitorConfig = {
       'maps.gstatic.com',
       'www.tools-cmc-ea.fr',
       'nominatim.openstreetmap.org',
+      'geo.api.gouv.fr',
     ]
   },
   plugins: {

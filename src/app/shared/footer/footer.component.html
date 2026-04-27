@@ -1,0 +1,9 @@
+<div class="sticky-actions">
+  <ion-button expand="block" color="primary" (click)="start()" class="calc-btn">
+    <ion-icon name="settings-outline" slot="start"></ion-icon>
+    {{ 'HOME.START_CONFIGURATION' | translate }}
+  </ion-button>
+  <ion-button fill="outline" class="reset-btn" (click)="goHome()">
+    <ion-icon name="home-outline" slot="icon-only"></ion-icon>
+  </ion-button>
+</div>

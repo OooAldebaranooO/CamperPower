@@ -95,15 +95,32 @@ export class DealerPage {
   searchByQuery(): void {
     if (!this.searchQuery.trim()) return;
 
-    const query = encodeURIComponent(this.searchQuery);
-    fetch(`https://nominatim.openstreetmap.org/search?q=${query}&format=json&limit=1&countrycodes=fr,be,nl,es,it,de`)
-      .then(r => r.json())
-      .then((results: any[]) => {
-        if (!results?.length) return;
-        const lat = parseFloat(results[0].lat);
-        const lng = parseFloat(results[0].lon);
-        const url = `https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F&ll=${lat},${lng}&z=10`;
-        this.mapUrl.set(this.sanitizer.bypassSecurityTrustResourceUrl(url));
-      });
+    const query = this.searchQuery.trim();
+    const isPostalCode = /^\d{5}$/.test(query);
+
+    if (isPostalCode) {
+      // API officielle française pour les codes postaux
+      fetch(`https://geo.api.gouv.fr/communes?codePostal=${query}&fields=centre&format=json&geometry=centre`)
+        .then(r => r.json())
+        .then((results: any[]) => {
+          if (!results?.length) return;
+          const lat = results[0].centre.coordinates[1];
+          const lng = results[0].centre.coordinates[0];
+          const url = `https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F&ll=${lat},${lng}&z=10`;
+          this.mapUrl.set(this.sanitizer.bypassSecurityTrustResourceUrl(url));
+        });
+    } else {
+      // Recherche par ville via Nominatim
+      const encoded = encodeURIComponent(query);
+      fetch(`https://nominatim.openstreetmap.org/search?q=${encoded}&format=json&limit=1&countrycodes=fr,be,nl,es,it,de`)
+        .then(r => r.json())
+        .then((results: any[]) => {
+          if (!results?.length) return;
+          const lat = parseFloat(results[0].lat);
+          const lng = parseFloat(results[0].lon);
+          const url = `https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F&ll=${lat},${lng}&z=10`;
+          this.mapUrl.set(this.sanitizer.bypassSecurityTrustResourceUrl(url));
+        });
+    }
   }
 }

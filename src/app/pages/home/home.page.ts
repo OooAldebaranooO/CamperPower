@@ -59,4 +59,8 @@ export class HomePage {
   goToResults(): void {
     this.router.navigate(['/results']);
   }
+
+  goTo(page: string): void {
+    this.router.navigateByUrl('/' + page);
+  }
 }

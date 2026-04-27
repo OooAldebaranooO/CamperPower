@@ -1,29 +1,8 @@
-<ion-header class="vp-header" translucent="true">
-  <ion-toolbar>
-    <div class="topbar">
-      <img src="assets/branding/vechline-logo.png" alt="VECHLINE" class="logo" />
-
-      <ion-select
-        interface="popover"
-        [value]="currentLang"
-        (ionChange)="changeLanguage($event.detail.value)"
-        class="lang-select"
-        label-placement="end"
-      >
-        <ion-select-option value="fr">FR</ion-select-option>
-        <ion-select-option value="en">EN</ion-select-option>
-        <ion-select-option value="nl">NL</ion-select-option>
-        <ion-select-option value="es">ES</ion-select-option>
-        <ion-select-option value="it">IT</ion-select-option>
-        <ion-select-option value="de">DE</ion-select-option>
-      </ion-select>
-    </div>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
 
 <ion-content [fullscreen]="true" class="vp-content">
-  <div class="config-shell">
-    <section class="hero-strip">
+  <div class="home-shell">
+    <section class="hero-card">
       <h1>{{ 'CONFIG.HERO_TITLE' | translate }}</h1>
       <p>{{ 'CONFIG.HERO_SUBTITLE' | translate }}</p>
     </section>
@@ -145,6 +124,10 @@
 
   <ion-button fill="outline" class="reset-btn" (click)="resetForm()">
     <ion-icon name="refresh-outline" slot="icon-only"></ion-icon>
+  </ion-button>
+
+  <ion-button fill="outline" class="reset-btn" (click)="goHome()">
+    <ion-icon name="home-outline" slot="icon-only"></ion-icon>
   </ion-button>
 </div>
 

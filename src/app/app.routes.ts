@@ -31,4 +31,16 @@ export const routes: Routes = [
     path: 'dealer',
     loadComponent: () => import('./pages/dealer/dealer.page').then(m => m.DealerPage)
   },
+  {
+    path: 'battery',
+    loadComponent: () => import('./pages/battery/battery.page').then( m => m.BatteryPage)
+  },
+  {
+    path: 'solar',
+    loadComponent: () => import('./pages/solar/solar.page').then( m => m.SolarPage)
+  },
+  {
+    path: 'converter',
+    loadComponent: () => import('./pages/converter/converter.page').then( m => m.ConverterPage)
+  },
 ];

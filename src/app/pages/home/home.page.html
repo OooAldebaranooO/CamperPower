@@ -37,7 +37,7 @@
     </section>
 
     <section class="overview-grid">
-      <article class="overview-card">
+      <article class="overview-card" (click)="goTo('battery')" style="cursor:pointer">
         <div class="overview-img-wrap">
           <img src="assets/images/battery.png" alt="Batterie" class="overview-img" />
         </div>
@@ -47,7 +47,7 @@
         </div>
       </article>
 
-      <article class="overview-card">
+      <article class="overview-card" (click)="goTo('solar')" style="cursor:pointer">
         <div class="overview-img-wrap">
           <img src="assets/images/solar_panel.png" alt="Solaire" class="overview-img" />
         </div>
@@ -57,7 +57,7 @@
         </div>
       </article>
 
-      <article class="overview-card">
+      <article class="overview-card" (click)="goTo('converter')" style="cursor:pointer">
         <div class="overview-img-wrap">
           <img src="assets/images/converter.png" alt="Convertisseur" class="overview-img" />
         </div>
