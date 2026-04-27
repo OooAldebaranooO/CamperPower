@@ -82,5 +82,17 @@
     "MAP_PREVIEW": "Vedi tutti i rivenditori Vechline sulla mappa",
     "LOCATION_FOUND": "Posizione rilevata — la mappa si aprirà centrata su di te",
     "OPEN_MAP": "Apri la mappa dei rivenditori"
+  },
+  "BATTERY": {
+    "TITLE": "Scopri le nostre batterie",
+    "SUBTITLE": "Un'ampia gamma di batterie per le vostre esigenze quotidiane, disponibili presso i nostri rivenditori."
+  },
+  "SOLAR": {
+    "TITLE": "Scopri i nostri pannelli solari",
+    "SUBTITLE": "Un'ampia gamma di pannelli solari per le vostre esigenze quotidiane, disponibili presso i nostri rivenditori."
+  },
+  "CONVERTER": {
+    "TITLE": "Scopri i nostri convertitori",
+    "SUBTITLE": "Un'ampia gamma di convertitori per le vostre esigenze quotidiane, disponibili presso i nostri rivenditori."
   }
 }

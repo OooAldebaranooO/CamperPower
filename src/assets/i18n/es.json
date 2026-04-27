@@ -82,5 +82,17 @@
     "MAP_PREVIEW": "Ver todos los distribuidores Vechline en el mapa",
     "LOCATION_FOUND": "Ubicación detectada — el mapa se abrirá centrado en ti",
     "OPEN_MAP": "Abrir mapa de distribuidores"
+  },
+  "BATTERY": {
+    "TITLE": "Descubre nuestras baterías",
+    "SUBTITLE": "Una amplia gama de baterías para sus necesidades diarias, disponibles en nuestros distribuidores."
+  },
+  "SOLAR": {
+    "TITLE": "Descubre nuestros paneles solares",
+    "SUBTITLE": "Una amplia gama de paneles solares para sus necesidades diarias, disponibles en nuestros distribuidores."
+  },
+  "CONVERTER": {
+    "TITLE": "Descubre nuestros convertidores",
+    "SUBTITLE": "Una amplia gama de convertidores para sus necesidades diarias, disponibles en nuestros distribuidores."
   }
 }

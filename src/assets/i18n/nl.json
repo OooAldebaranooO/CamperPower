@@ -82,5 +82,17 @@
     "MAP_PREVIEW": "Bekijk alle Vechline-dealers op de kaart",
     "LOCATION_FOUND": "Locatie gevonden — de kaart wordt gecentreerd op uw positie",
     "OPEN_MAP": "Open dealerkaart"
+  },
+  "BATTERY": {
+    "TITLE": "Ontdek onze batterijen",
+    "SUBTITLE": "Een ruim assortiment batterijen voor uw dagelijkse behoeften, verkrijgbaar bij onze dealers."
+  },
+  "SOLAR": {
+    "TITLE": "Ontdek onze zonnepanelen",
+    "SUBTITLE": "Een ruim assortiment zonnepanelen voor uw dagelijkse behoeften, verkrijgbaar bij onze dealers."
+  },
+  "CONVERTER": {
+    "TITLE": "Ontdek onze omvormers",
+    "SUBTITLE": "Een ruim assortiment omvormers voor uw dagelijkse behoeften, verkrijgbaar bij onze dealers."
   }
 }

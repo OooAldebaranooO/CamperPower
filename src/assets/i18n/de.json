@@ -82,5 +82,17 @@
     "MAP_PREVIEW": "Alle Vechline-Händler auf der Karte anzeigen",
     "LOCATION_FOUND": "Standort erkannt — die Karte wird auf Ihren Standort zentriert",
     "OPEN_MAP": "Händlerkarte öffnen"
+  },
+  "BATTERY": {
+    "TITLE": "Entdecken Sie unsere Batterien",
+    "SUBTITLE": "Eine große Auswahl an Batterien für Ihren täglichen Bedarf, erhältlich bei unseren Händlern."
+  },
+  "SOLAR": {
+    "TITLE": "Entdecken Sie unsere Solarmodule",
+    "SUBTITLE": "Eine große Auswahl an Solarmodulen für Ihren täglichen Bedarf, erhältlich bei unseren Händlern."
+  },
+  "CONVERTER": {
+    "TITLE": "Entdecken Sie unsere Wechselrichter",
+    "SUBTITLE": "Eine große Auswahl an Wechselrichtern für Ihren täglichen Bedarf, erhältlich bei unseren Händlern."
   }
 }

@@ -85,14 +85,17 @@
   },
   "BATTERY": {
     "TITLE": "Découvrez nos batteries",
-    "SUBTITLE": "Une large gamme de batteries pour vos besoins quotidiens, disponibles chez nos revendeurs."
+    "SUBTITLE": "Une large gamme de batteries pour vos besoins quotidiens, disponibles chez nos revendeurs.",
+    "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum."
   },
   "SOLAR": {
     "TITLE": "Découvrez nos panneaux solaires",
-    "SUBTITLE": "Une large gamme de panneaux solaires pour vos besoins quotidiens, disponibles chez nos revendeurs."
+    "SUBTITLE": "Une large gamme de panneaux solaires pour vos besoins quotidiens, disponibles chez nos revendeurs.",
+    "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum."
   },
   "CONVERTER": {
     "TITLE": "Découvrez nos convertisseurs",
-    "SUBTITLE": "Une large gamme de convertisseurs pour vos besoins quotidiens, disponibles chez nos revendeurs."
+    "SUBTITLE": "Une large gamme de convertisseurs pour vos besoins quotidiens, disponibles chez nos revendeurs.",
+    "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum."
   }
 }

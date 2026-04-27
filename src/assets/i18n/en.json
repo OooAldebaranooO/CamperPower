@@ -82,5 +82,17 @@
     "MAP_PREVIEW": "View all Vechline dealers on the map",
     "LOCATION_FOUND": "Location detected — the map will open centred on you",
     "OPEN_MAP": "Open dealer map"
+  },
+  "BATTERY": {
+    "TITLE": "Discover our batteries",
+    "SUBTITLE": "A wide range of batteries for your daily needs, available from our dealers."
+  },
+  "SOLAR": {
+    "TITLE": "Discover our solar panels",
+    "SUBTITLE": "A wide range of solar panels for your daily needs, available from our dealers."
+  },
+  "CONVERTER": {
+    "TITLE": "Discover our converters",
+    "SUBTITLE": "A wide range of converters for your daily needs, available from our dealers."
   }
 }
