@@ -7,7 +7,7 @@ android {
         applicationId "com.vechline_configurator"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 35 // V34 le 30/04/2026
+        versionCode 36 // V36 le 30/04/2026
         versionName "1.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
