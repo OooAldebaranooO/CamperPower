@@ -28,10 +28,6 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/dealer/dealer.page').then( m => m.DealerPage)
   },
   {
-    path: 'dealer',
-    loadComponent: () => import('./pages/dealer/dealer.page').then(m => m.DealerPage)
-  },
-  {
     path: 'battery',
     loadComponent: () => import('./pages/battery/battery.page').then(m => m.BatteryPage)
   },

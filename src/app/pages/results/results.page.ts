@@ -6,7 +6,7 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { AppStateService } from '../../core/app-state.service';
 import { ProductService, Product } from '../../core/product.service';
 import { addIcons } from 'ionicons';
-import { home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, locationOutline } from 'ionicons/icons';
+import { home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, locationOutline, createOutline } from 'ionicons/icons';
 
 export interface SolarOption {
   product: Product;
@@ -85,7 +85,7 @@ export class ResultsPage {
   constructor() {
     this.state.loadResult();
 
-    addIcons({ home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, locationOutline, });
+    addIcons({ home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, locationOutline, createOutline, });
     this.translate.use(this.currentLang);
     this.productService.loadProducts(this.currentLang);
   }
