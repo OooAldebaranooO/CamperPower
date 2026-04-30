@@ -5,6 +5,9 @@
   },
   "build": {
     "production": {
+      "ios": {
+        "scheme": "App"
+      },
       "android": {
         "buildType": "apk"
       }
