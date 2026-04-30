@@ -5,6 +5,10 @@
   },
   "build": {
     "production": {
+      "ios": {
+        "scheme": "App",
+        "buildConfiguration": "Release"
+      },
       "android": {
         "buildType": "apk"
       }
