@@ -6,8 +6,7 @@
   "build": {
     "production": {
       "ios": {
-        "scheme": "App",
-        "projectRoot": "ios/App"
+        "scheme": "App"
       },
       "android": {
         "buildType": "apk"
