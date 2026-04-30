@@ -8,8 +8,9 @@ module.exports = function (config) {
     async (config) => {
       const podfilePath = path.join(config.modRequest.platformProjectRoot, 'Podfile');
       let contents = fs.readFileSync(podfilePath, 'utf-8');
-      if (!contents.includes('use_modular_headers!')) {
-        contents = contents.replace('platform :ios', 'use_modular_headers!\nplatform :ios');
+      contents = contents.replace('use_modular_headers!', '');
+      if (!contents.includes('use_frameworks!')) {
+        contents = contents.replace('platform :ios', 'use_frameworks! :linkage => :static\nplatform :ios');
         fs.writeFileSync(podfilePath, contents);
       }
       return config;
