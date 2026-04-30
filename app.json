@@ -9,6 +9,9 @@
         "ITSAppUsesNonExemptEncryption": false
       }
     },
+    "plugins": [
+      "./capacitor.podfile.js"
+    ]
     "extra": {
       "eas": {
         "projectId": "31fa5f19-689f-4f3c-9501-50ed7723935a"

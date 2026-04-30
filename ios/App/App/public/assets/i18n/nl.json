@@ -1,0 +1,98 @@
+{
+  "COMMON": {
+    "REMOVE": "Verwijderen",
+    "RESET": "Resetten",
+    "WH_PER_DAY": "Wh/dag"
+  },
+  "HOME": {
+    "BADGE": "Energie-onafhankelijkheid",
+    "TITLE": "Ontwerp uw elektrische boordinstallatie",
+    "SUBTITLE": "Een eenvoudige, duidelijke en betrouwbare manier om batterij, zonnepaneel en omvormer te dimensioneren voor van, caravan en camper.",
+    "CTA_START": "Configuratie starten",
+    "CTA_RESULTS": "Resultaten bekijken",
+    "FEATURE_1_TITLE": "Batterij",
+    "FEATURE_1_TEXT": "Bepaal een batterij die past bij uw echte gebruik.",
+    "FEATURE_2_TITLE": "Zonne-energie",
+    "FEATURE_2_TEXT": "Schat het benodigde zonnevermogen per dag.",
+    "FEATURE_3_TITLE": "Omvormer",
+    "FEATURE_3_TEXT": "Bepaal het minimale vermogen voor uw apparaten.",
+    "START_CONFIGURATION": "MIJN CONFIGURATIE STARTEN",
+    "SEE_RESULTS": "RESULTATEN BEKIJKEN"
+  },
+  "CONFIG": {
+    "BADGE": "Configurator",
+    "TITLE": "Bouw uw configuratie",
+    "SUBTITLE": "Voeg uw apparaten toe en bereken een consistente installatie voor het nomadische leven.",
+    "SYSTEM_KICKER": "Systeem",
+    "SYSTEM_TITLE": "Basisinstellingen",
+    "APPLIANCES_KICKER": "Verbruik",
+    "APPLIANCES_TITLE": "Apparaten",
+    "ADD_DEVICE": "+ Toevoegen",
+    "DEVICE": "APPARAAT",
+    "NEW_DEVICE": "Nieuw apparaat",
+    "ESTIMATED_CONSUMPTION": "Geschat verbruik",
+    "CALCULATE": "MIJN CONFIGURATIE BEREKENEN",
+    "HERO_KICKER": "Boordinstallatie",
+    "HERO_TITLE": "Maak een duidelijke en betrouwbare configuratie",
+    "HERO_SUBTITLE": "Voeg je apparaten toe, schat je verbruik en krijg een eerste consistente aanbeveling voor je accu, zonnepaneel en omvormer."
+  },
+  "FIELDS": {
+    "BATTERY_VOLTAGE": "Batterijspanning",
+    "AUTONOMY_DAYS": "Autonomiedagen",
+    "DEPTH_OF_DISCHARGE": "Ontladingsdiepte",
+    "SOLAR_HOURS": "Zonuren / dag",
+    "LOSS_FACTOR": "Verliesfactor",
+    "NAME": "Naam",
+    "POWER": "Vermogen (W)",
+    "HOURS_PER_DAY": "Uren / dag",
+    "QUANTITY": "Aantal",
+    "STARTUP_FACTOR": "Opstartfactor"
+  },
+  "RESULTS": {
+    "BADGE": "Resultaten",
+    "TITLE": "Uw aanbevolen configuratie",
+    "SUBTITLE": "Een duidelijke schatting om uw boordinstallatie te starten.",
+    "TOTAL_CONSUMPTION": "Totaal verbruik",
+    "RECOMMENDED_BATTERY": "Aanbevolen batterij",
+    "RECOMMENDED_SOLAR": "Aanbevolen zonne-energie",
+    "MINIMUM_INVERTER": "Minimale omvormer",
+    "INFO": "Betrouwbare eerste schatting voor een mobiele elektrische installatie. Nauwkeurigere afstemming kan later worden toegevoegd op basis van batterijtype, klimaat en echte zonneproductie.",
+    "EDIT": "Configuratie wijzigen",
+    "HOME": "Terug naar start",
+    "EMPTY_TITLE": "Geen resultaat beschikbaar",
+    "EMPTY_TEXT": "Maak eerst een configuratie om aanbevelingen te zien.",
+    "EMPTY_CTA": "Configuratie maken",
+    "RECOMMENDED_PRODUCTS": "Vechline-producten aangepast aan uw configuratie",
+    "BATTERIES": "Vechline-batterijen",
+    "SOLAR": "Zonnepanelen",
+    "INVERTERS": "Vechline-omvormers",
+    "NO_PRODUCTS": "Geen Vechline-product compatibel met uw configuratie",
+    "NEW": "Nieuw",
+    "PRICE": "Prijs incl. BTW",
+    "PRODUCTS": "Producten"
+  },
+  "DEALER": {
+    "TITLE": "Een dealer vinden",
+    "SUBTITLE": "Vind de dichtstbijzijnde Vechline-dealer bij u in de buurt.",
+    "USE_LOCATION": "Mijn locatie gebruiken",
+    "LOCATING": "Localiseren...",
+    "MAP_HINT": "Klik op een markering om de winkelgegevens te zien",
+    "BACK": "Terug naar resultaten",
+    "SEARCH_PLACEHOLDER": "Stad of postcode...",
+    "MAP_PREVIEW": "Bekijk alle Vechline-dealers op de kaart",
+    "LOCATION_FOUND": "Locatie gevonden — de kaart wordt gecentreerd op uw positie",
+    "OPEN_MAP": "Open dealerkaart"
+  },
+  "BATTERY": {
+    "TITLE": "Ontdek onze batterijen",
+    "SUBTITLE": "Een ruim assortiment batterijen voor uw dagelijkse behoeften, verkrijgbaar bij onze dealers."
+  },
+  "SOLAR": {
+    "TITLE": "Ontdek onze zonnepanelen",
+    "SUBTITLE": "Een ruim assortiment zonnepanelen voor uw dagelijkse behoeften, verkrijgbaar bij onze dealers."
+  },
+  "CONVERTER": {
+    "TITLE": "Ontdek onze omvormers",
+    "SUBTITLE": "Een ruim assortiment omvormers voor uw dagelijkse behoeften, verkrijgbaar bij onze dealers."
+  }
+}
