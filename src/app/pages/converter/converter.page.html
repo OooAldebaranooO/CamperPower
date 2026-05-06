@@ -1,14 +1,44 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true" class="vp-content">
-  <div class="home-shell">
+  <div class="page-shell">
     <section class="hero-card">
-      <h1>{{ 'CONVERTER.TITLE' | translate }}</h1>
-      <p>{{ 'CONVERTER.SUBTITLE' | translate }}</p>
+      <h1 [innerHTML]="getHtml('CONVERTER.TITLE')"></h1>
+      <p [innerHTML]="getHtml('CONVERTER.SUBTITLE')"></p>
     </section>
-    <div class="panel-card">
-      {{ 'CONVERTER.CONTENT' | translate }}
-    </div>
+
+    <section class="overview-grid">
+      <article class="overview-card" style="cursor:pointer">
+        <div class="overview-img-wrap">
+          <img src="assets/images/converter.png" alt="Batterie Lithium" class="overview-img" />
+        </div>
+        <div class="overview-content">
+          <div class="overview-title" [innerHTML]="getHtml('CONVERTER.FEATURE_1_TITLE')"></div>
+          <!--<div class="overview-text" [innerHTML]="getHtml('CONVERTER.FEATURE_1_TEXT')"></div>-->
+        </div>
+      </article>
+      <!--<div class="cta">
+        <ion-button fill="outline" class="cta-btn">
+          Découvrir les avantages
+        </ion-button>
+      </div>-->
+    </section>
+    <section class="overview-grid">
+      <article class="overview-card" style="cursor:pointer">
+        <div class="overview-img-wrap">
+          <img src="assets/images/converter.png" alt="Batterie AGM" class="overview-img" />
+        </div>
+        <div class="overview-content">
+          <div class="overview-title" [innerHTML]="getHtml('CONVERTER.FEATURE_2_TITLE')"></div>
+          <!--<div class="overview-text" [innerHTML]="getHtml('CONVERTER.FEATURE_2_TEXT')"></div>-->
+        </div>
+      </article>
+      <!--<div class="cta">
+        <ion-button fill="outline" class="cta-btn">
+          Découvrir les avantages
+        </ion-button>
+      </div>-->
+    </section>
   </div>
 </ion-content>
 

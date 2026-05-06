@@ -5,6 +5,21 @@
     <section class="hero-card">
       <h1>{{ 'CONFIG.HERO_TITLE' | translate }}</h1>
       <p>{{ 'CONFIG.HERO_SUBTITLE' | translate }}</p>
+
+      <ion-segment [(ngModel)]="vehicleType" (ionChange)="onVehicleTypeChange($event)" class="vehicle-segment">
+        <ion-segment-button value="camping-car">
+          <ion-icon name="bus-outline"></ion-icon>
+          <ion-label>Camping-car</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="caravane">
+          <ion-icon name="trail-sign-outline"></ion-icon>
+          <ion-label>Caravane</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="van">
+          <ion-icon name="car-outline"></ion-icon>
+          <ion-label>Van</ion-label>
+        </ion-segment-button>
+      </ion-segment>
     </section>
 
     <form [formGroup]="form" class="config-form">

@@ -1,14 +1,44 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true" class="vp-content">
-  <div class="home-shell">
+  <div class="page-shell">
     <section class="hero-card">
-      <h1>{{ 'SOLAR.TITLE' | translate }}</h1>
-      <p>{{ 'SOLAR.SUBTITLE' | translate }}</p>
+      <h1 [innerHTML]="getHtml('SOLAR.TITLE')"></h1>
+      <p [innerHTML]="getHtml('SOLAR.SUBTITLE')"></p>
     </section>
-    <div class="panel-card">
-      {{ 'SOLAR.CONTENT' | translate }}
-    </div>
+
+    <section class="overview-grid">
+      <article class="overview-card" style="cursor:pointer">
+        <div class="overview-img-wrap">
+          <img src="assets/images/solar_panel.png" alt="Batterie Lithium" class="overview-img" />
+        </div>
+        <div class="overview-content">
+          <div class="overview-title" [innerHTML]="getHtml('SOLAR.FEATURE_1_TITLE')"></div>
+          <!--<div class="overview-text" [innerHTML]="getHtml('SOLAR.FEATURE_1_TEXT')"></div>-->
+        </div>
+      </article>
+      <!--<div class="cta">
+        <ion-button fill="outline" class="cta-btn">
+          Découvrir les avantages
+        </ion-button>
+      </div>-->
+    </section>
+    <section class="overview-grid">
+      <article class="overview-card" style="cursor:pointer">
+        <div class="overview-img-wrap">
+          <img src="assets/images/solar_panel.png" alt="Batterie AGM" class="overview-img" />
+        </div>
+        <div class="overview-content">
+          <div class="overview-title" [innerHTML]="getHtml('SOLAR.FEATURE_2_TITLE')"></div>
+          <!--<div class="overview-text" [innerHTML]="getHtml('SOLAR.FEATURE_2_TEXT')"></div>-->
+        </div>
+      </article>
+      <!--<div class="cta">
+        <ion-button fill="outline" class="cta-btn">
+          Découvrir les avantages
+        </ion-button>
+      </div>-->
+    </section>
   </div>
 </ion-content>
 

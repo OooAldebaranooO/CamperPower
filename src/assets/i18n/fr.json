@@ -6,16 +6,16 @@
   },
   "HOME": {
     "BADGE": "Autonomie énergétique",
-    "TITLE": "Concevez votre installation électrique embarquée",
-    "SUBTITLE": "Une méthode simple, claire et fiable pour dimensionner batterie, panneaux solaires et convertisseur pour van, caravane et camping-car.",
+    "TITLE": "Configurez votre système électrique embarqué",
+    "SUBTITLE": "Configurez simplement une installation électrique adaptée à votre usage réel, en van, caravane ou camping-car.",
     "CTA_START": "Commencer la configuration",
     "CTA_RESULTS": "Voir les résultats",
     "FEATURE_1_TITLE": "Batteries",
-    "FEATURE_1_TEXT": "Dimensionnez une batterie adaptée à votre usage réel.",
+    "FEATURE_1_TEXT": "Déterminez la capacité adaptée à votre autonomie réelle.",
     "FEATURE_2_TITLE": "Panneaux solaires",
-    "FEATURE_2_TEXT": "Estimez la puissance solaire nécessaire chaque jour.",
+    "FEATURE_2_TEXT": "Estimez la production solaire nécessaire selon votre consommation quotidienne.",
     "FEATURE_3_TITLE": "Convertisseurs",
-    "FEATURE_3_TEXT": "Définissez la puissance minimale pour vos appareils.",
+    "FEATURE_3_TEXT": "Choisissez la puissance adaptée à vos appareils électriques.",
     "START_CONFIGURATION": "COMMENCER MA CONFIGURATION",
     "SEE_RESULTS": "VOIR LE RESULTAT"
   },
@@ -56,16 +56,16 @@
     "RECOMMENDED_BATTERY": "Batterie recommandée",
     "RECOMMENDED_SOLAR": "Panneaux solaires recommandés",
     "MINIMUM_INVERTER": "Convertisseur minimum",
-    "INFO": "Première estimation fiable pour une installation électrique mobile. Des ajustements plus précis peuvent être ajoutés ensuite selon le type de batterie, le climat et la production solaire réelle.",
+    "INFO": "Première estimation de votre installation électrique embarquée. Elle peut être affinée en fonction de votre batterie, de votre usage réel et de vos conditions d'utilisation afin de gagner en précision. N'hésitez pas à vous rapprocher de l'un de nos revendeurs partenaires pour finaliser votre choix.",
     "EDIT": "Modifier ma configuration",
     "HOME": "Retour à l'accueil",
     "EMPTY_TITLE": "Aucun résultat disponible",
     "EMPTY_TEXT": "Commencez par créer une configuration pour voir les recommandations.",
     "EMPTY_CTA": "Créer une configuration",
     "RECOMMENDED_PRODUCTS": "Produits Vechline adaptés à votre configuration",
-    "BATTERIES": "Batteries Vechline",
+    "BATTERIES": "Batteries",
     "SOLAR": "Panneaux solaires",
-    "INVERTERS": "Convertisseurs Vechline",
+    "INVERTERS": "Convertisseurs",
     "NO_PRODUCTS": "Aucun produit Vechline compatible avec votre configuration",
     "NEW": "Nouveau",
     "PRICE": "Tarif TTC",
@@ -85,17 +85,29 @@
   },
   "BATTERY": {
     "TITLE": "Découvrez nos batteries",
-    "SUBTITLE": "Une large gamme de batteries pour vos besoins quotidiens, disponibles chez nos revendeurs.",
-    "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum."
+    "SUBTITLE": "Le choix de la batterie dépend de votre consommation, de l’autonomie souhaitée et de vos conditions d’utilisation. Vechline propose plusieurs technologies conçues pour les installations électriques embarquées.",
+    "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
+    "FEATURE_1_TITLE": "Batteries Lithium",
+    "FEATURE_1_TEXT": "<ul><li>+4500 cycles / durée de vie jusqu'à 10 ans</li><li>Jusqu'à 200 % plus de densité énergétique</li><li>Gestion intelligente (BMS, équilibrage, sécurité)</li><li>Fonctionnement de -20°C à +65°C</li></ul>",
+    "FEATURE_2_TITLE": "Batteries AGM",
+    "FEATURE_2_TEXT": "<ul><li>Puissance fiable et durable</li><li>Décharge jusqu’à 80 %</li><li>Sans entretien & étanches</li><li>Faible autodécharge</li></ul>"
   },
   "SOLAR": {
     "TITLE": "Découvrez nos panneaux solaires",
-    "SUBTITLE": "Une large gamme de panneaux solaires pour vos besoins quotidiens, disponibles chez nos revendeurs.",
-    "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum."
+    "SUBTITLE": "L’ajout de panneaux solaires permet de contribuer à la recharge de la batterie en fonction de votre consommation et de vos conditions d’utilisation.<br><br>Renseignez votre usage quotidien pour estimer la puissance solaire nécessaire à votre installation électrique embarquée.",
+    "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
+    "FEATURE_1_TITLE": "Panneaux solaires monocristallins PERC",
+    "FEATURE_1_TEXT": "<ul><li>+4500 cycles / durée de vie jusqu'à 10 ans</li><li>Jusqu'à 200 % plus de densité énergétique</li><li>Gestion intelligente (BMS, équilibrage, sécurité)</li><li>Fonctionnement de -20°C à +65°C</li></ul>",
+    "FEATURE_2_TITLE": "Panneaux solaires flexibles",
+    "FEATURE_2_TEXT": "<ul><li>Puissance fiable et durable</li><li>Décharge jusqu’à 80 %</li><li>Sans entretien & étanches</li><li>Faible autodécharge</li></ul>"
   },
   "CONVERTER": {
     "TITLE": "Découvrez nos convertisseurs",
-    "SUBTITLE": "Une large gamme de convertisseurs pour vos besoins quotidiens, disponibles chez nos revendeurs.",
-    "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum."
+    "SUBTITLE": "Le convertisseur permet de transformer le courant continu de la batterie en courant alternatif pour alimenter vos appareils électriques. Le choix du convertisseur dépend de la puissance des équipements utilisés et de leur sensibilité électrique.",
+    "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
+    "FEATURE_1_TITLE": "PUR SINUS",
+    "FEATURE_1_TEXT": "<ul><li>+4500 cycles / durée de vie jusqu'à 10 ans</li><li>Jusqu'à 200 % plus de densité énergétique</li><li>Gestion intelligente (BMS, équilibrage, sécurité)</li><li>Fonctionnement de -20°C à +65°C</li></ul>",
+    "FEATURE_2_TITLE": "Quasi‑Sinusoïdaux",
+    "FEATURE_2_TEXT": "<ul><li>Puissance fiable et durable</li><li>Décharge jusqu’à 80 %</li><li>Sans entretien & étanches</li><li>Faible autodécharge</li></ul>"
   }
 }

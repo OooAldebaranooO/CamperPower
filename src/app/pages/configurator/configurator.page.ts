@@ -10,14 +10,12 @@ import {
 import {
   IonButton,
   IonContent,
-  IonHeader,
   IonIcon,
   IonInput,
   IonItem,
   IonLabel,
-  IonSelect,
-  IonSelectOption,
-  IonToolbar,
+  IonSegment,
+  IonSegmentButton,
 } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
@@ -25,9 +23,19 @@ import { AppStateService } from '../../core/app-state.service';
 import { ApplianceInput } from '../../models/energy.model';
 import { EnergyCalculatorService } from '../../services/energy-calculator.service';
 import { addIcons } from 'ionicons';
-import { home, settingsOutline, barChartOutline, flashOutline, refreshOutline } from 'ionicons/icons';
+import {
+  home,
+  homeOutline,
+  settingsOutline,
+  barChartOutline,
+  flashOutline,
+  refreshOutline,
+  busOutline,
+  trailSignOutline,
+  carOutline,
+} from 'ionicons/icons';
 import { HeaderComponent } from '../../shared/header/header.component';
-import { homeOutline } from 'ionicons/icons';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-configurator',
@@ -35,6 +43,7 @@ import { homeOutline } from 'ionicons/icons';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    FormsModule,
     TranslatePipe,
     IonContent,
     IonItem,
@@ -42,7 +51,9 @@ import { homeOutline } from 'ionicons/icons';
     IonInput,
     IonButton,
     IonIcon,
-    HeaderComponent
+    IonSegment,
+    IonSegmentButton,
+    HeaderComponent,
   ],
   templateUrl: './configurator.page.html',
   styleUrls: ['./configurator.page.scss'],
@@ -57,7 +68,26 @@ export class ConfiguratorPage {
   @ViewChild(IonContent) content!: IonContent;
   @ViewChild('deviceList') deviceListRef!: ElementRef;
 
-  currentLang = this.state.loadLanguage();
+  currentLang  = this.state.loadLanguage();
+  vehicleType  = 'camping-car';
+
+  // ── Presets ────────────────────────────────────────────────────────────────
+  // Remplis chaque tableau avec tes appareils (name, power, hoursPerDay, quantity, startupFactor)
+  private vehiclePresets: Record<string, { name: string; power: number; hoursPerDay: number; quantity: number; startupFactor: number }[]> = {
+    'camping-car': [
+      { name: 'Frigo',        power: 45, hoursPerDay: 24, quantity: 1, startupFactor: 2 },
+      { name: 'Lumières LED', power: 20, hoursPerDay:  5, quantity: 1, startupFactor: 1 },
+      { name: 'Laptop',       power: 60, hoursPerDay:  4, quantity: 1, startupFactor: 1 },
+    ],
+    'caravane': [
+      { name: 'Frigo',        power: 45, hoursPerDay: 24, quantity: 1, startupFactor: 2 },
+      { name: 'Lumières LED', power: 15, hoursPerDay:  4, quantity: 2, startupFactor: 1 },
+    ],
+    'van': [
+      { name: 'Lumières LED', power: 10, hoursPerDay:  4, quantity: 2, startupFactor: 1 },
+      { name: 'Laptop',       power: 60, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+    ],
+  };
 
   form = this.fb.group({
     batteryVoltage:          [12,  [Validators.required, Validators.min(12)]],
@@ -65,15 +95,15 @@ export class ConfiguratorPage {
     batteryDepthOfDischarge: [0.8, [Validators.required, Validators.min(0.1), Validators.max(1)]],
     solarProductionHours:    [4,   [Validators.required, Validators.min(1)]],
     systemLossFactor:        [1.2, [Validators.required, Validators.min(1)]],
-    appliances: this.fb.array([
-      this.createApplianceGroup('Frigo', 45, 24, 1, 2),
-      this.createApplianceGroup('Lumières LED', 20, 5, 1, 1),
-      this.createApplianceGroup('Laptop', 60, 4, 1, 1),
-    ]),
+    appliances: this.fb.array(
+      this.vehiclePresets['camping-car'].map(a =>
+        this.createApplianceGroup(a.name, a.power, a.hoursPerDay, a.quantity, a.startupFactor)
+      )
+    ),
   });
 
   constructor() {
-    addIcons({ home, settingsOutline, barChartOutline, flashOutline, refreshOutline, homeOutline });
+    addIcons({ home, homeOutline, settingsOutline, barChartOutline, flashOutline, refreshOutline, busOutline, trailSignOutline, carOutline });
     this.translate.use(this.currentLang);
 
     const saved = this.state.loadConfig();
@@ -95,7 +125,7 @@ export class ConfiguratorPage {
               Number(item['power']         ?? 0),
               Number(item['hoursPerDay']   ?? 1),
               Number(item['quantity']      ?? 1),
-              Number(item['startupFactor'] ?? 1)
+              Number(item['startupFactor'] ?? 1),
             )
           );
         });
@@ -107,16 +137,20 @@ export class ConfiguratorPage {
     });
   }
 
+  // ── Getters ────────────────────────────────────────────────────────────────
+
   get appliances(): FormArray<FormGroup> {
     return this.form.get('appliances') as FormArray<FormGroup>;
   }
 
+  // ── Helpers ────────────────────────────────────────────────────────────────
+
   createApplianceGroup(
-    name         = '',
-    power        = 0,
-    hoursPerDay  = 1,
-    quantity     = 1,
-    startupFactor = 1
+    name          = '',
+    power         = 0,
+    hoursPerDay   = 1,
+    quantity      = 1,
+    startupFactor = 1,
   ): FormGroup {
     return this.fb.group({
       name:          [name,          [Validators.required]],
@@ -127,12 +161,41 @@ export class ConfiguratorPage {
     });
   }
 
+  totalItemWh(index: number): number {
+    const group = this.appliances.at(index);
+    return Math.round(
+      Number(group.get('power')?.value       ?? 0) *
+      Number(group.get('hoursPerDay')?.value  ?? 0) *
+      Number(group.get('quantity')?.value     ?? 0)
+    );
+  }
+
+  // ── Vehicle segment ────────────────────────────────────────────────────────
+
+  onVehicleTypeChange(event: any): void {
+    this.vehicleType = event.detail.value;
+    this.loadPreset(this.vehicleType);
+  }
+
+  loadPreset(type: string): void {
+    const preset = this.vehiclePresets[type] ?? [];
+    this.appliances.clear();
+    preset.forEach(a =>
+      this.appliances.push(
+        this.createApplianceGroup(a.name, a.power, a.hoursPerDay, a.quantity, a.startupFactor)
+      )
+    );
+    this.state.saveConfig(this.form.getRawValue());
+  }
+
+  // ── Actions ────────────────────────────────────────────────────────────────
+
   addAppliance(): void {
     this.appliances.push(this.createApplianceGroup());
     this.state.saveConfig(this.form.getRawValue());
 
     setTimeout(() => {
-      const list    = this.deviceListRef.nativeElement;
+      const list     = this.deviceListRef.nativeElement;
       const lastCard = list.querySelector('.device-card:last-child');
       if (lastCard) {
         this.content.scrollToPoint(0, lastCard.offsetTop, 400);
@@ -145,15 +208,6 @@ export class ConfiguratorPage {
       this.appliances.removeAt(index);
       this.state.saveConfig(this.form.getRawValue());
     }
-  }
-
-  totalItemWh(index: number): number {
-    const group = this.appliances.at(index);
-    return Math.round(
-      Number(group.get('power')?.value      ?? 0) *
-      Number(group.get('hoursPerDay')?.value ?? 0) *
-      Number(group.get('quantity')?.value    ?? 0)
-    );
   }
 
   calculate(): void {
@@ -178,7 +232,7 @@ export class ConfiguratorPage {
       Number(raw.batteryAutonomyDays),
       Number(raw.batteryDepthOfDischarge),
       Number(raw.solarProductionHours),
-      Number(raw.systemLossFactor)
+      Number(raw.systemLossFactor),
     );
 
     this.state.saveConfig(this.form.getRawValue());
@@ -188,6 +242,7 @@ export class ConfiguratorPage {
 
   resetForm(): void {
     this.state.clearAll();
+    this.vehicleType = 'camping-car';
     this.form.reset({
       batteryVoltage:          12,
       batteryAutonomyDays:     1,
@@ -195,11 +250,7 @@ export class ConfiguratorPage {
       solarProductionHours:    4,
       systemLossFactor:        1.2,
     });
-
-    this.appliances.clear();
-    this.appliances.push(this.createApplianceGroup('Frigo',        45, 24, 1, 2));
-    this.appliances.push(this.createApplianceGroup('Lumières LED', 20,  5, 1, 1));
-    this.appliances.push(this.createApplianceGroup('Laptop',       60,  4, 1, 1));
+    this.loadPreset('camping-car');
   }
 
   changeLanguage(lang: string): void {
