@@ -97,17 +97,17 @@
     "SUBTITLE": "Adding solar panels helps recharge the battery based on your consumption and operating conditions.<br><br>Enter your daily usage to estimate the solar power needed for your onboard electrical installation.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
     "FEATURE_1_TITLE": "PERC monocrystalline solar panels",
-    "FEATURE_1_TEXT": "<ul><li>+4500 cycles / lifespan up to 10 years</li><li>Up to 200% more energy density</li><li>Intelligent management (BMS, balancing, safety)</li><li>Operating range -20°C to +65°C</li></ul>",
+    "FEATURE_1_TEXT": "<ul><li>Excellent performance even in low light</li><li>Very good value for money</li></ul>",
     "FEATURE_2_TITLE": "Flexible solar panels",
-    "FEATURE_2_TEXT": "<ul><li>Reliable and long-lasting power</li><li>Discharge up to 80%</li><li>Maintenance-free & sealed</li><li>Low self-discharge</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ultra lightweight</li><li>Perfectly adapt to curved surfaces</li><li>Easy installation</li></ul>"
   },
   "CONVERTER": {
     "TITLE": "Discover our inverters",
     "SUBTITLE": "The inverter converts the DC current from the battery into AC current to power your electrical appliances. The choice of inverter depends on the power of the equipment used and its electrical sensitivity.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
-    "FEATURE_1_TITLE": "PURE SINE WAVE",
-    "FEATURE_1_TEXT": "<ul><li>+4500 cycles / lifespan up to 10 years</li><li>Up to 200% more energy density</li><li>Intelligent management (BMS, balancing, safety)</li><li>Operating range -20°C to +65°C</li></ul>",
+    "FEATURE_1_TITLE": "Pure Sine Wave",
+    "FEATURE_1_TEXT": "<ul><li>Ideal for sensitive devices</li></ul>",
     "FEATURE_2_TITLE": "Modified Sine Wave",
-    "FEATURE_2_TEXT": "<ul><li>Reliable and long-lasting power</li><li>Discharge up to 80%</li><li>Maintenance-free & sealed</li><li>Low self-discharge</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ideal for basic equipment</li></ul>"
   }
 }

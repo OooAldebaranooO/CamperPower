@@ -97,17 +97,17 @@
     "SUBTITLE": "L'aggiunta di pannelli solari contribuisce alla ricarica della batteria in base al tuo consumo e alle condizioni di utilizzo.<br><br>Inserisci il tuo utilizzo quotidiano per stimare la potenza solare necessaria al tuo impianto elettrico di bordo.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
     "FEATURE_1_TITLE": "Pannelli solari monocristallini PERC",
-    "FEATURE_1_TEXT": "<ul><li>+4500 cicli / durata fino a 10 anni</li><li>Fino al 200% in più di densità energetica</li><li>Gestione intelligente (BMS, bilanciamento, sicurezza)</li><li>Funzionamento da -20°C a +65°C</li></ul>",
+    "FEATURE_1_TEXT": "<ul><li>Ottime prestazioni anche con scarsa luminosità</li><li>Ottimo rapporto qualità-prezzo</li></ul>",
     "FEATURE_2_TITLE": "Pannelli solari flessibili",
-    "FEATURE_2_TEXT": "<ul><li>Potenza affidabile e duratura</li><li>Scarica fino all'80%</li><li>Senza manutenzione e sigillate</li><li>Bassa autoscarica</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ultra leggeri</li><li>Si adattano perfettamente alle superfici curve</li><li>Installazione facile</li></ul>"
   },
   "CONVERTER": {
     "TITLE": "Scopri i nostri inverter",
     "SUBTITLE": "L'inverter trasforma la corrente continua della batteria in corrente alternata per alimentare i tuoi apparecchi elettrici. La scelta dell'inverter dipende dalla potenza delle apparecchiature utilizzate e dalla loro sensibilità elettrica.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
-    "FEATURE_1_TITLE": "SINUSOIDE PURA",
-    "FEATURE_1_TEXT": "<ul><li>+4500 cicli / durata fino a 10 anni</li><li>Fino al 200% in più di densità energetica</li><li>Gestione intelligente (BMS, bilanciamento, sicurezza)</li><li>Funzionamento da -20°C a +65°C</li></ul>",
+    "FEATURE_1_TITLE": "Sinusoide pura",
+    "FEATURE_1_TEXT": "<ul><li>Ideale per dispositivi sensibili</li></ul>",
     "FEATURE_2_TITLE": "Quasi sinusoidale",
-    "FEATURE_2_TEXT": "<ul><li>Potenza affidabile e duratura</li><li>Scarica fino all'80%</li><li>Senza manutenzione e sigillate</li><li>Bassa autoscarica</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ideale per apparecchiature semplici</li></ul>"
   }
 }

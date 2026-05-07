@@ -97,17 +97,17 @@
     "SUBTITLE": "La adición de paneles solares contribuye a la recarga de la batería según tu consumo y condiciones de uso.<br><br>Indica tu uso diario para estimar la potencia solar necesaria para tu instalación eléctrica a bordo.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
     "FEATURE_1_TITLE": "Paneles solares monocristalinos PERC",
-    "FEATURE_1_TEXT": "<ul><li>+4500 ciclos / vida útil de hasta 10 años</li><li>Hasta un 200 % más de densidad energética</li><li>Gestión inteligente (BMS, equilibrado, seguridad)</li><li>Funcionamiento de -20 °C a +65 °C</li></ul>",
+    "FEATURE_1_TEXT": "<ul><li>Excelente rendimiento incluso con poca luz</li><li>Muy buena relación calidad-precio</li></ul>",
     "FEATURE_2_TITLE": "Paneles solares flexibles",
-    "FEATURE_2_TEXT": "<ul><li>Potencia fiable y duradera</li><li>Descarga hasta el 80 %</li><li>Sin mantenimiento y herméticas</li><li>Baja autodescarga</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ultraligeros</li><li>Se adaptan perfectamente a superficies curvas</li><li>Instalación sencilla</li></ul>"
   },
   "CONVERTER": {
     "TITLE": "Descubre nuestros inversores",
     "SUBTITLE": "El inversor transforma la corriente continua de la batería en corriente alterna para alimentar tus aparatos eléctricos. La elección del inversor depende de la potencia de los equipos utilizados y de su sensibilidad eléctrica.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
-    "FEATURE_1_TITLE": "ONDA SINUSOIDAL PURA",
-    "FEATURE_1_TEXT": "<ul><li>+4500 ciclos / vida útil de hasta 10 años</li><li>Hasta un 200 % más de densidad energética</li><li>Gestión inteligente (BMS, equilibrado, seguridad)</li><li>Funcionamiento de -20 °C a +65 °C</li></ul>",
+    "FEATURE_1_TITLE": "Onda sinusoidal pura",
+    "FEATURE_1_TEXT": "<ul><li>Ideal para dispositivos sensibles</li></ul>",
     "FEATURE_2_TITLE": "Cuasi sinusoidal",
-    "FEATURE_2_TEXT": "<ul><li>Potencia fiable y duradera</li><li>Descarga hasta el 80 %</li><li>Sin mantenimiento y herméticas</li><li>Baja autodescarga</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ideal para equipos básicos</li></ul>"
   }
 }

@@ -33,6 +33,7 @@ import {
   busOutline,
   trailSignOutline,
   carOutline,
+  trashOutline,
 } from 'ionicons/icons';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { FormsModule } from '@angular/forms';
@@ -75,17 +76,29 @@ export class ConfiguratorPage {
   // Remplis chaque tableau avec tes appareils (name, power, hoursPerDay, quantity, startupFactor)
   private vehiclePresets: Record<string, { name: string; power: number; hoursPerDay: number; quantity: number; startupFactor: number }[]> = {
     'camping-car': [
-      { name: 'Frigo',        power: 45, hoursPerDay: 24, quantity: 1, startupFactor: 2 },
-      { name: 'Lumières LED', power: 20, hoursPerDay:  5, quantity: 1, startupFactor: 1 },
-      { name: 'Laptop',       power: 60, hoursPerDay:  4, quantity: 1, startupFactor: 1 },
+      { name: 'Eclairage', power: 20, hoursPerDay:  5, quantity: 1, startupFactor: 1 },
+      { name: 'Réfrigérateur', power: 45, hoursPerDay: 24, quantity: 1, startupFactor: 2 },
+      { name: 'Ordinateur', power: 60, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Prises USB', power: 5, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Chauffage / Ventilation', power: 100, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Pompe à eau', power: 30, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Télévision', power: 40, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Petit électroménager', power: 30, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
     ],
     'caravane': [
-      { name: 'Frigo',        power: 45, hoursPerDay: 24, quantity: 1, startupFactor: 2 },
-      { name: 'Lumières LED', power: 15, hoursPerDay:  4, quantity: 2, startupFactor: 1 },
+      { name: 'Eclairage', power: 15, hoursPerDay:  4, quantity: 2, startupFactor: 1 },
+      { name: 'Réfrigérateur', power: 45, hoursPerDay: 24, quantity: 1, startupFactor: 2 },
+      { name: 'Ordinateur', power: 60, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Prises USB', power: 5, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Pompe à eau', power: 30, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
     ],
     'van': [
-      { name: 'Lumières LED', power: 10, hoursPerDay:  4, quantity: 2, startupFactor: 1 },
-      { name: 'Laptop',       power: 60, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Eclairage', power: 10, hoursPerDay:  4, quantity: 2, startupFactor: 1 },
+      { name: 'Ordinateur', power: 60, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Prises USB', power: 5, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Chauffage / Ventilation', power: 100, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Petit électroménager', power: 30, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
+      { name: 'Glacière', power: 60, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
     ],
   };
 
@@ -103,7 +116,7 @@ export class ConfiguratorPage {
   });
 
   constructor() {
-    addIcons({ home, homeOutline, settingsOutline, barChartOutline, flashOutline, refreshOutline, busOutline, trailSignOutline, carOutline });
+    addIcons({ home, homeOutline, settingsOutline, barChartOutline, flashOutline, refreshOutline, busOutline, trailSignOutline, carOutline, trashOutline });
     this.translate.use(this.currentLang);
 
     const saved = this.state.loadConfig();

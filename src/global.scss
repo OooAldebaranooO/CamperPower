@@ -127,7 +127,7 @@ ion-content.vp-content {
 .home-shell {
   max-width: 980px;
   margin: 0 auto;
-  padding: 18px 16px 100px;
+  padding: 18px 16px 0px;
 }
 
 .hero-card {
@@ -145,7 +145,7 @@ ion-content.vp-content {
 
 .hero-card h1 {
   margin: 0 0 12px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.02;
   letter-spacing: -0.04em;
   font-weight: 800;
@@ -180,11 +180,11 @@ ion-content.vp-content {
 
 // Dans src/global.scss — ajoute à la fin
 .products-section { margin-top: 24px; }
-.products-title { font-size: 24px; font-weight: 600; margin-bottom: 16px; }
+.products-title { font-size: 1.4rem; font-weight: 600; margin-bottom: 16px; }
 .products-loader { display: flex; justify-content: center; padding: 24px 0; }
 .products-error, .products-empty { font-size: 14px; color: var(--ion-color-medium); text-align: center; padding: 12px 0; }
 .product-category { margin-bottom: 24px; }
-.category-title { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; margin-bottom: 12px; }
+.category-title { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; margin-bottom: 12px; justify-content:space-between; }
 .category-title .category-icon { font-size: 18px; }
 .category-title .category-spec { margin-left: auto; font-size: 12px; font-weight: 400; color: var(--ion-color-medium); }
 .product-scroll { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
@@ -208,7 +208,7 @@ ion-content.vp-content {
   }
 }
 
-.category-count { font-size: 11px; color: var(--ion-color-medium); background: var(--ion-color-light); padding: 2px 8px; border-radius: 20px; margin-left: 4px; }
+.category-count { font-size: 11px; color: var(--ion-color-medium); background: var(--ion-color-light); padding: 2px 8px; border-radius: 20px; margin-left: 4px; margin-left: auto; }
 
 .badge-new { position: absolute; top: 8px; left: 8px; background: var(--ion-color-primary); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.5px; z-index: 1; }
 .badge-quantity { position: absolute; top: 8px; left: 8px; background: var(--ion-color-warning); color: var(--ion-color-warning-contrast); font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; z-index: 1; }

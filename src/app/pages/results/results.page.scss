@@ -58,7 +58,7 @@ ion-select::part(icon) {
 
 .hero-card h1 {
   margin: 0 0 12px;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.02;
   letter-spacing: -0.04em;
   font-weight: 800;
@@ -151,7 +151,7 @@ ion-popover {
 
 @media (max-width: 640px) {
   .hero-card h1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .results-grid {

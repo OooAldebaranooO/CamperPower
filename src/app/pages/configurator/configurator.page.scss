@@ -2,6 +2,12 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.page-shell {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 18px 16px 0px;
+}
+
 .vp-content {
   /* --background: linear-gradient(180deg, #f7f7f8 0%, #eef1f4 100%); */
   background: #000000;
@@ -66,7 +72,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 14px;
-  min-height: 56px;
+  min-height: 45px;
   background: #f8f9fb;
   border: 1px solid #e6e8ec;
   border-radius: 18px;
@@ -96,7 +102,7 @@
   --border-radius: 18px;
   --padding-start: 14px;
   --inner-padding-end: 14px;
-  --min-height: 56px;
+  --min-height: 45px;
   border: 1px solid #e6e8ec;
   border-radius: 18px;
 }
@@ -130,7 +136,7 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
+  gap: 5px;
   margin-bottom: 14px;
 }
 
@@ -149,11 +155,12 @@
 }
 
 .remove-btn {
-  border: 0;
-  background: transparent;
-  color: #ee312f;
-  font-weight: 700;
-  padding: 6px 0;
+  color: #fff;
+  padding: 5px 0;
+  background: var(--ion-color-primary);
+  border-radius: 25px;
+  width: 25px;
+  height: 25px;
 }
 
 .consumption-pill {
@@ -198,10 +205,9 @@
 
 .vehicle-segment {
   margin-top: 1rem;
+  margin-bottom: 1rem;
   --background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  width: 365px;
-  margin-left: -15px;
 
   ion-segment-button {
     --color: rgba(255, 255, 255, 0.6);
@@ -215,7 +221,19 @@
       font-size: 1.3rem;
       margin-bottom: 2px;
     }
+
+    ion-label {
+      font-size: 0.65rem;
+      margin-top: 0px;
+    }
   }
+}
+
+.vehicle-icon {
+  width: 64px;
+  height: 64px;
+  margin-top: 10px;
+  object-fit: contain;
 }
 
 @media (max-width: 640px) {

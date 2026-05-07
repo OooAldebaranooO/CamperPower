@@ -97,17 +97,17 @@
     "SUBTITLE": "Das Hinzufügen von Solarmodulen trägt zur Aufladung der Batterie entsprechend Ihrem Verbrauch und Ihren Betriebsbedingungen bei.<br><br>Geben Sie Ihren täglichen Verbrauch an, um die benötigte Solarleistung für Ihre bordeigene Elektroinstallation zu schätzen.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
     "FEATURE_1_TITLE": "Monokristalline PERC-Solarmodule",
-    "FEATURE_1_TEXT": "<ul><li>+4500 Zyklen / Lebensdauer bis zu 10 Jahre</li><li>Bis zu 200 % mehr Energiedichte</li><li>Intelligentes Management (BMS, Balancierung, Sicherheit)</li><li>Betrieb von -20 °C bis +65 °C</li></ul>",
+    "FEATURE_1_TEXT": "<ul><li>Hervorragende Leistung auch bei schwachem Licht</li><li>Sehr gutes Preis-Leistungs-Verhältnis</li></ul>",
     "FEATURE_2_TITLE": "Flexible Solarmodule",
-    "FEATURE_2_TEXT": "<ul><li>Zuverlässige und langlebige Leistung</li><li>Entladung bis zu 80 %</li><li>Wartungsfrei & versiegelt</li><li>Geringe Selbstentladung</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ultraleicht</li><li>Passen sich perfekt an gebogene Oberflächen an</li><li>Einfache Installation</li></ul>"
   },
   "CONVERTER": {
     "TITLE": "Entdecken Sie unsere Wechselrichter",
     "SUBTITLE": "Der Wechselrichter wandelt den Gleichstrom der Batterie in Wechselstrom um, um Ihre Elektrogeräte zu versorgen. Die Wahl des Wechselrichters hängt von der Leistung der verwendeten Geräte und ihrer elektrischen Empfindlichkeit ab.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
-    "FEATURE_1_TITLE": "REINER SINUS",
-    "FEATURE_1_TEXT": "<ul><li>+4500 Zyklen / Lebensdauer bis zu 10 Jahre</li><li>Bis zu 200 % mehr Energiedichte</li><li>Intelligentes Management (BMS, Balancierung, Sicherheit)</li><li>Betrieb von -20 °C bis +65 °C</li></ul>",
+    "FEATURE_1_TITLE": "Reiner Sinus",
+    "FEATURE_1_TEXT": "<ul><li>Ideal für empfindliche Geräte</li></ul>",
     "FEATURE_2_TITLE": "Modifizierter Sinus",
-    "FEATURE_2_TEXT": "<ul><li>Zuverlässige und langlebige Leistung</li><li>Entladung bis zu 80 %</li><li>Wartungsfrei & versiegelt</li><li>Geringe Selbstentladung</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ideal für einfache Geräte</li></ul>"
   }
 }

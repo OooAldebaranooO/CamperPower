@@ -1,26 +1,26 @@
 <app-header></app-header>
 
 <ion-content [fullscreen]="true" class="vp-content">
-  <div class="home-shell">
+  <div class="page-shell">
     <section class="hero-card">
       <h1>{{ 'CONFIG.HERO_TITLE' | translate }}</h1>
       <p>{{ 'CONFIG.HERO_SUBTITLE' | translate }}</p>
-
-      <ion-segment [(ngModel)]="vehicleType" (ionChange)="onVehicleTypeChange($event)" class="vehicle-segment">
-        <ion-segment-button value="camping-car">
-          <ion-icon name="bus-outline"></ion-icon>
-          <ion-label>Camping-car</ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="caravane">
-          <ion-icon name="trail-sign-outline"></ion-icon>
-          <ion-label>Caravane</ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="van">
-          <ion-icon name="car-outline"></ion-icon>
-          <ion-label>Van</ion-label>
-        </ion-segment-button>
-      </ion-segment>
     </section>
+
+    <ion-segment [(ngModel)]="vehicleType" (ionChange)="onVehicleTypeChange($event)" class="vehicle-segment">
+      <ion-segment-button value="camping-car">
+        <img src="assets/icons/camping-car.png" alt="Camping-car" class="vehicle-icon" />
+        <ion-label>Camping-car</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="caravane">
+        <img src="assets/icons/caravane.png" alt="Caravane" class="vehicle-icon" />
+        <ion-label>Caravane</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="van">
+        <img src="assets/icons/van.png" alt="Van" class="vehicle-icon" />
+        <ion-label>Van</ion-label>
+      </ion-segment-button>
+    </ion-segment>
 
     <form [formGroup]="form" class="config-form">
       <section class="panel-card">
@@ -87,16 +87,15 @@
                   {{ appliances.at(i).get('name')?.value || ('CONFIG.NEW_DEVICE' | translate) }}
                 </div>
               </div>
-
-              <button type="button" class="remove-btn" (click)="removeAppliance(i)">
-                {{ 'COMMON.REMOVE' | translate }}
+              <button class="remove-btn">
+                <ion-icon name="trash-outline"></ion-icon>
               </button>
             </div>
 
             <div class="field-grid">
               <ion-item lines="none" class="field-card">
-                <ion-label position="fixed">{{ 'FIELDS.NAME' | translate }}</ion-label>
-                <ion-input type="text" formControlName="name"></ion-input>
+                <!--<ion-label position="fixed">{{ 'FIELDS.NAME' | translate }}</ion-label>-->
+                <ion-input type="text" formControlName="name" style="text-align: left;"></ion-input>
               </ion-item>
 
               <ion-item lines="none" class="field-card">

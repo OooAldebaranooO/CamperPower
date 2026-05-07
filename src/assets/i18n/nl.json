@@ -97,17 +97,17 @@
     "SUBTITLE": "Het toevoegen van zonnepanelen draagt bij aan het opladen van de batterij op basis van uw verbruik en gebruiksomstandigheden.<br><br>Vul uw dagelijks gebruik in om het benodigde zonnestroom voor uw ingebouwde elektrische installatie te schatten.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
     "FEATURE_1_TITLE": "Monokristallijne PERC-zonnepanelen",
-    "FEATURE_1_TEXT": "<ul><li>+4500 cycli / levensduur tot 10 jaar</li><li>Tot 200% meer energiedichtheid</li><li>Intelligent beheer (BMS, balancering, veiligheid)</li><li>Werking van -20°C tot +65°C</li></ul>",
+    "FEATURE_1_TEXT": "<ul><li>Uitstekende prestaties zelfs bij weinig licht</li><li>Zeer goede prijs-kwaliteitverhouding</li></ul>",
     "FEATURE_2_TITLE": "Flexibele zonnepanelen",
-    "FEATURE_2_TEXT": "<ul><li>Betrouwbaar en duurzaam vermogen</li><li>Ontlading tot 80%</li><li>Onderhoudsvrij & hermetisch afgesloten</li><li>Lage zelfontlading</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ultralicht</li><li>Passen zich perfect aan gebogen oppervlakken aan</li><li>Eenvoudige installatie</li></ul>"
   },
   "CONVERTER": {
     "TITLE": "Ontdek onze omvormers",
     "SUBTITLE": "De omvormer zet de gelijkstroom van de batterij om in wisselstroom om uw elektrische apparaten van stroom te voorzien. De keuze van de omvormer hangt af van het vermogen van de gebruikte apparatuur en hun elektrische gevoeligheid.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
-    "FEATURE_1_TITLE": "ZUIVERE SINUS",
-    "FEATURE_1_TEXT": "<ul><li>+4500 cycli / levensduur tot 10 jaar</li><li>Tot 200% meer energiedichtheid</li><li>Intelligent beheer (BMS, balancering, veiligheid)</li><li>Werking van -20°C tot +65°C</li></ul>",
+    "FEATURE_1_TITLE": "Zuivere sinus",
+    "FEATURE_1_TEXT": "<ul><li>Ideaal voor gevoelige apparaten</li></ul>",
     "FEATURE_2_TITLE": "Quasi-sinusvormig",
-    "FEATURE_2_TEXT": "<ul><li>Betrouwbaar en duurzaam vermogen</li><li>Ontlading tot 80%</li><li>Onderhoudsvrij & hermetisch afgesloten</li><li>Lage zelfontlading</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ideaal voor eenvoudige apparatuur</li></ul>"
   }
 }

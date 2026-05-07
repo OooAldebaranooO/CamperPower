@@ -15,7 +15,11 @@
 }
 
 .overview-card {
+  border-radius: 24px;
   overflow: hidden;
+  background: #1a1a1e;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -24,7 +28,7 @@
 .overview-img-wrap {
   flex-shrink: 0;
   width: 110px;
-  height: 90px;
+  height: 100%;
   overflow: hidden;
   background: #111;
 }
@@ -48,7 +52,7 @@
 }
 
 .overview-content {
-  padding: 16px 16px 0px 0px;
+  padding: 16px 5px 0px 0px;
   flex: 1;
 }
 
@@ -88,5 +92,15 @@
     color: #ffffff;
     background: #ee312f;
     border-radius: 24px;
+  }
+}
+
+::ng-deep .overview-text ul {
+  list-style: none;
+  padding-left: 10px;
+
+  li::before {
+    content: "⚡";
+    color: #000000;
   }
 }

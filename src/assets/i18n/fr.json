@@ -97,17 +97,17 @@
     "SUBTITLE": "L’ajout de panneaux solaires permet de contribuer à la recharge de la batterie en fonction de votre consommation et de vos conditions d’utilisation.<br><br>Renseignez votre usage quotidien pour estimer la puissance solaire nécessaire à votre installation électrique embarquée.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
     "FEATURE_1_TITLE": "Panneaux solaires monocristallins PERC",
-    "FEATURE_1_TEXT": "<ul><li>+4500 cycles / durée de vie jusqu'à 10 ans</li><li>Jusqu'à 200 % plus de densité énergétique</li><li>Gestion intelligente (BMS, équilibrage, sécurité)</li><li>Fonctionnement de -20°C à +65°C</li></ul>",
+    "FEATURE_1_TEXT": "<ul><li>Excellentes performances même faible luminosité</li><li>Très bon rapport qualité/prix</li></ul>",
     "FEATURE_2_TITLE": "Panneaux solaires flexibles",
-    "FEATURE_2_TEXT": "<ul><li>Puissance fiable et durable</li><li>Décharge jusqu’à 80 %</li><li>Sans entretien & étanches</li><li>Faible autodécharge</li></ul>"
+    "FEATURE_2_TEXT": "<ul><li>Ultra légers</li><li>S'adaptent parfaitement aux surfaces courbes</li><li>Installation facile</li></ul>"
   },
   "CONVERTER": {
     "TITLE": "Découvrez nos convertisseurs",
     "SUBTITLE": "Le convertisseur permet de transformer le courant continu de la batterie en courant alternatif pour alimenter vos appareils électriques. Le choix du convertisseur dépend de la puissance des équipements utilisés et de leur sensibilité électrique.",
     "CONTENT": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae sapien non nisi gravida posuere. Curabitur vehicula, sapien nec facilisis malesuada, ligula justo tempor turpis, sed pretium arcu nibh sed lorem. Vivamus a risus sed neque cursus fermentum.",
-    "FEATURE_1_TITLE": "PUR SINUS",
-    "FEATURE_1_TEXT": "<ul><li>+4500 cycles / durée de vie jusqu'à 10 ans</li><li>Jusqu'à 200 % plus de densité énergétique</li><li>Gestion intelligente (BMS, équilibrage, sécurité)</li><li>Fonctionnement de -20°C à +65°C</li></ul>",
-    "FEATURE_2_TITLE": "Quasi‑Sinusoïdaux",
-    "FEATURE_2_TEXT": "<ul><li>Puissance fiable et durable</li><li>Décharge jusqu’à 80 %</li><li>Sans entretien & étanches</li><li>Faible autodécharge</li></ul>"
+    "FEATURE_1_TITLE": "Pur Sinus",
+    "FEATURE_1_TEXT": "<ul><li>Idéal pour les appareils sensibles</li></ul>",
+    "FEATURE_2_TITLE": "Quasi-Sinusoïdaux",
+    "FEATURE_2_TEXT": "<ul><li>Idéal pour les équipements simples</li></ul>"
   }
 }
