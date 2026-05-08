@@ -87,7 +87,7 @@
                   {{ appliances.at(i).get('name')?.value || ('CONFIG.NEW_DEVICE' | translate) }}
                 </div>
               </div>
-              <button class="remove-btn">
+              <button class="remove-btn" (click)="removeAppliance(i)">
                 <ion-icon name="trash-outline"></ion-icon>
               </button>
             </div>

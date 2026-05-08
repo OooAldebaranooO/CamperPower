@@ -90,7 +90,7 @@ ion-content.vp-content {
   z-index: 100;
   display: flex;
   gap: 0px;
-  padding: 12px 12px calc(16px + env(safe-area-inset-bottom));
+  padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
   background: rgba(255, 0, 0, 0.5);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
