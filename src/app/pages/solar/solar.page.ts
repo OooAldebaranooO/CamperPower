@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './solar.page.html',
   styleUrls: ['./solar.page.scss'],
   standalone: true,
-  imports: [IonButton, IonContent, CommonModule, FormsModule, HeaderComponent, FooterComponent]
+  imports: [IonContent, CommonModule, FormsModule, HeaderComponent, FooterComponent]
 })
 export class SolarPage implements OnInit {
 

@@ -69,7 +69,10 @@
     "NO_PRODUCTS": "Ningún producto Vechline compatible con tu configuración",
     "NEW": "Nuevo",
     "PRICE": "Precio IVA incl.",
-    "PRODUCTS": "Productos"
+    "PRODUCTS": "Productos",
+    "EMAIL_SHARE_LABEL": "Recibir los resultados por correo electrónico",
+    "EMAIL_PLACEHOLDER": "su@email.com",
+    "EMAIL_SENT": "¡Resultados enviados con éxito!"
   },
   "DEALER": {
     "TITLE": "Encontrar un distribuidor",

@@ -1,17 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, computed } from '@angular/core';
-import { IonButton, IonContent, IonHeader, IonIcon, IonSelect, IonSelectOption, IonToolbar, IonSpinner, } from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonHeader, IonIcon, IonSelect, IonSelectOption, IonToolbar, IonSpinner } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { AppStateService } from '../../core/app-state.service';
 import { ProductService, Product } from '../../core/product.service';
 import { addIcons } from 'ionicons';
-import { home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, locationOutline, createOutline } from 'ionicons/icons';
+import { home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, locationOutline, createOutline, mailOutline } from 'ionicons/icons';
+import { FormsModule } from '@angular/forms';
+import emailjs from '@emailjs/browser';
 
 export interface SolarOption {
   product: Product;
-  quantity: number;       // nombre de panneaux nécessaires
-  totalW: number;         // puissance totale couverte
+  quantity: number;
+  totalW: number;
 }
 
 @Component({
@@ -21,13 +24,13 @@ export interface SolarOption {
     CommonModule, TranslatePipe,
     IonButton, IonContent, IonHeader, IonIcon,
     IonSelect, IonSelectOption, IonToolbar, IonSpinner,
+    FormsModule,
   ],
   templateUrl: './results.page.html',
   styleUrls: ['./results.page.scss'],
 })
 export class ResultsPage {
   private router         = inject(Router);
-  private translate      = inject(TranslateService);
   private state          = inject(AppStateService);
   private productService = inject(ProductService);
 
@@ -43,11 +46,9 @@ export class ResultsPage {
       .slice(0, 10)
   );
 
-  // Panneaux solaires avec cumul
   recommendedSolar = computed((): SolarOption[] => {
     const minW = this.result()?.recommendedSolarW ?? 0;
 
-    // Tous les panneaux avec une puissance définie, triés du plus puissant au moins puissant
     const allSolar = this.productService.products()
       .filter(p => p.category === 'solar' && (p.specs.powerW ?? 0) > 0)
       .sort((a, b) => (b.specs.powerW ?? 0) - (a.specs.powerW ?? 0));
@@ -55,16 +56,10 @@ export class ResultsPage {
     return allSolar
       .map((product): SolarOption => {
         const pw = product.specs.powerW ?? 1;
-        const quantity = Math.ceil(minW / pw); // nombre de panneaux nécessaires
-        return {
-          product,
-          quantity,
-          totalW: quantity * pw,
-        };
+        const quantity = Math.ceil(minW / pw);
+        return { product, quantity, totalW: quantity * pw };
       })
-      // On garde uniquement les options raisonnables (max 10 panneaux)
       .filter(opt => opt.quantity <= 10)
-      // Trie par nombre de panneaux croissant, puis par puissance unitaire décroissante
       .sort((a, b) => a.quantity - b.quantity || (b.product.specs.powerW ?? 0) - (a.product.specs.powerW ?? 0))
       .slice(0, 10);
   });
@@ -82,10 +77,17 @@ export class ResultsPage {
       this.recommendedInverters().length > 0
   );
 
-  constructor() {
+  shareEmail: string = '';
+  sendingEmail: boolean = false;
+  emailSent: boolean = false;
+
+  constructor(
+    private sanitizer: DomSanitizer,
+    private translate: TranslateService
+  ) {
     this.state.loadResult();
 
-    addIcons({ home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, locationOutline, createOutline, });
+    addIcons({ home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, locationOutline, createOutline, mailOutline });
     this.translate.use(this.currentLang);
     this.productService.loadProducts(this.currentLang);
   }
@@ -122,5 +124,57 @@ export class ResultsPage {
 
   goToDealer(): void {
     this.router.navigateByUrl('/dealer');
+  }
+
+  getHtml(key: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(this.translate.instant(key));
+  }
+
+  async sendResultByEmail() {
+    if (!this.shareEmail || !this.result()) return;
+
+    this.sendingEmail = true;
+    const r = this.result()!;
+
+    const batteriesList = this.recommendedBatteries()
+      .map(p => `- ${this.getLocalizedName(p.name)} (Réf. ${p.sku})${p.price ? ' - ' + this.formatPrice(p.price) : ''}`)
+      .join('\n');
+
+    const solarList = this.recommendedSolar()
+      .map(opt => `- ${this.getLocalizedName(opt.product.name)} (Réf. ${opt.product.sku})${opt.quantity > 1 ? ' x' + opt.quantity + (opt.product.price ? ' - ' + this.formatPrice(opt.product.price * opt.quantity) : '') : (opt.product.price ? ' - ' + this.formatPrice(opt.product.price) : '')}`)
+      .join('\n');
+
+    const inverterList = this.recommendedInverters()
+      .map(p => `- ${this.getLocalizedName(p.name)} (Réf. ${p.sku})${p.price ? ' - ' + this.formatPrice(p.price) : ''}`)
+      .join('\n');
+
+    try {
+      await emailjs.send(
+        'service_cap6p8u',
+        'template_5weikls',
+        {
+          to_email: this.shareEmail,
+          consumption: `${r.totalWhPerDay} Wh/jour`,
+          battery: `${r.recommendedBatteryAh} Ah`,
+          solar: `${r.recommendedSolarW} W`,
+          inverter: `${r.recommendedInverterW} W`,
+          batteries_list: batteriesList || 'Aucun produit trouvé',
+          solar_list: solarList || 'Aucun produit trouvé',
+          inverters_list: inverterList || 'Aucun produit trouvé',
+        },
+        'aHDOazn4W-S4RAEIo'
+      );
+      this.emailSent = true;
+      this.shareEmail = '';
+
+      setTimeout(() => {
+        this.emailSent = false;
+      }, 3000);
+
+    } catch (e) {
+      console.error('Erreur envoi email', e);
+    } finally {
+      this.sendingEmail = false;
+    }
   }
 }

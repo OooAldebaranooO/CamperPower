@@ -50,8 +50,28 @@
         </article>
       </div>
 
-      <div class="info-banner">
-        {{ 'RESULTS.INFO' | translate }}
+      <div class="info-banner" [innerHTML]="getHtml('RESULTS.INFO')"></div>
+
+      <div class="email-share">
+        <p class="email-share-label">{{ 'RESULTS.EMAIL_SHARE_LABEL' | translate }}</p>
+        <div class="email-share-row">
+          <input
+            type="email"
+            [(ngModel)]="shareEmail"
+            class="field-input"
+            placeholder="{{ 'RESULTS.EMAIL_PLACEHOLDER' | translate }}"
+          />
+          <ion-button
+            color="primary"
+            (click)="sendResultByEmail()"
+            [disabled]="sendingEmail || !shareEmail"
+            class="email-send-btn"
+          >
+            <ion-spinner *ngIf="sendingEmail" name="crescent" slot="icon-only"></ion-spinner>
+            <ion-icon *ngIf="!sendingEmail" name="mail-outline" slot="icon-only"></ion-icon>
+          </ion-button>
+        </div>
+        <p class="email-success" *ngIf="emailSent">✅ {{ 'RESULTS.EMAIL_SENT' | translate }}</p>
       </div>
 
       <!-- ── Produits recommandés ── -->
@@ -254,6 +274,13 @@
     </ng-template>
 
   </div><!-- /results-shell -->
+
+      <div class="cta">
+        <ion-button fill="outline" class="cta-btn" (click)="goToDealer()">
+          <ion-icon name="location-outline" slot="icon-only"></ion-icon>
+          Trouver une revendeur
+        </ion-button>
+      </div>
 </ion-content>
 
 <div class="sticky-actions">
@@ -262,9 +289,9 @@
     {{ 'RESULTS.EDIT' | translate }}
   </ion-button>
 
-  <ion-button fill="outline" class="reset-btn" (click)="goToDealer()">
+  <!--<ion-button fill="outline" class="reset-btn" (click)="goToDealer()">
     <ion-icon name="location-outline" slot="icon-only"></ion-icon>
-  </ion-button>
+  </ion-button>-->
 
   <ion-button fill="outline" class="reset-btn" (click)="goHome()">
     <ion-icon name="home-outline" slot="icon-only"></ion-icon>

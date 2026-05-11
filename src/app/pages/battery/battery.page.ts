@@ -14,7 +14,7 @@ import { IonButton, IonIcon } from '@ionic/angular/standalone';
   templateUrl: './battery.page.html',
   styleUrls: ['./battery.page.scss'],
   standalone: true,
-  imports: [IonButton, IonContent, CommonModule, TranslatePipe, FormsModule, HeaderComponent, FooterComponent]
+  imports: [IonContent, CommonModule, TranslatePipe, FormsModule, HeaderComponent, FooterComponent]
 })
 export class BatteryPage implements OnInit {
 

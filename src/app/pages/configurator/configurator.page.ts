@@ -1,12 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, inject, ViewChild } from '@angular/core';
-import {
-  FormArray,
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  Validators,
-} from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators, } from '@angular/forms';
 import {
   IonButton,
   IonContent,
@@ -90,7 +84,6 @@ export class ConfiguratorPage {
       { name: 'Réfrigérateur', power: 45, hoursPerDay: 24, quantity: 1, startupFactor: 2 },
       { name: 'Ordinateur', power: 60, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
       { name: 'Prises USB', power: 5, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
-      { name: 'Pompe à eau', power: 30, hoursPerDay:  3, quantity: 1, startupFactor: 1 },
     ],
     'van': [
       { name: 'Eclairage', power: 10, hoursPerDay:  4, quantity: 2, startupFactor: 1 },

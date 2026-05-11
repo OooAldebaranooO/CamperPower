@@ -69,7 +69,10 @@
     "NO_PRODUCTS": "Keine Vechline-Produkte kompatibel mit Ihrer Konfiguration",
     "NEW": "Neu",
     "PRICE": "Preis inkl. MwSt.",
-    "PRODUCTS": "Produkte"
+    "PRODUCTS": "Produkte",
+    "EMAIL_SHARE_LABEL": "Ergebnisse per E-Mail erhalten",
+    "EMAIL_PLACEHOLDER": "ihre@email.com",
+    "EMAIL_SENT": "Ergebnisse erfolgreich gesendet!"
   },
   "DEALER": {
     "TITLE": "Einen Händler finden",

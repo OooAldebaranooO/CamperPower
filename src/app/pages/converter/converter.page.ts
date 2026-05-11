@@ -13,7 +13,7 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './converter.page.html',
   styleUrls: ['./converter.page.scss'],
   standalone: true,
-  imports: [IonButton, IonContent, CommonModule, FormsModule, HeaderComponent, FooterComponent]
+  imports: [IonContent, CommonModule, FormsModule, HeaderComponent, FooterComponent]
 })
 export class ConverterPage implements OnInit {
 

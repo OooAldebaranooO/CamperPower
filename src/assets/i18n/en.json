@@ -69,7 +69,10 @@
     "NO_PRODUCTS": "No Vechline products compatible with your configuration",
     "NEW": "New",
     "PRICE": "Price incl. VAT",
-    "PRODUCTS": "Products"
+    "PRODUCTS": "Products",
+    "EMAIL_SHARE_LABEL": "Receive results by email",
+    "EMAIL_PLACEHOLDER": "your@email.com",
+    "EMAIL_SENT": "Results sent successfully!"
   },
   "DEALER": {
     "TITLE": "Find a dealer",

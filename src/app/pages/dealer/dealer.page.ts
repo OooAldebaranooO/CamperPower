@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { Geolocation } from '@capacitor/geolocation';
 import { Capacitor } from '@capacitor/core';
 
-const MY_MAPS_BASE = 'https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F';
+const MY_MAPS_BASE = 'https://www.google.com/maps/d/u/1/embed?mid=1zaRQFV0RLcyB3Yt6Y3RHTDVOCmaqORo&ehbc=2E312F';
 
 @Component({
   selector: 'app-dealer',
@@ -62,7 +62,7 @@ export class DealerPage {
       const lat = position.coords.latitude;
       const lng = position.coords.longitude;
 
-      const url = `https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F&ll=${lat},${lng}&z=10`;
+      const url = `https://www.google.com/maps/d/u/1/embed?mid=1zaRQFV0RLcyB3Yt6Y3RHTDVOCmaqORo&ehbc=2E312F&ll=${lat},${lng}&z=10`;
       this.mapUrl.set(
         this.sanitizer.bypassSecurityTrustResourceUrl(url)
       );
@@ -106,7 +106,7 @@ export class DealerPage {
           if (!results?.length) return;
           const lat = results[0].centre.coordinates[1];
           const lng = results[0].centre.coordinates[0];
-          const url = `https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F&ll=${lat},${lng}&z=10`;
+          const url = `https://www.google.com/maps/d/u/1/embed?mid=1zaRQFV0RLcyB3Yt6Y3RHTDVOCmaqORo&ehbc=2E312F&ll=${lat},${lng}&z=10`;
           this.mapUrl.set(this.sanitizer.bypassSecurityTrustResourceUrl(url));
         });
     } else {
@@ -118,7 +118,7 @@ export class DealerPage {
           if (!results?.length) return;
           const lat = parseFloat(results[0].lat);
           const lng = parseFloat(results[0].lon);
-          const url = `https://www.google.com/maps/d/u/1/embed?mid=10LQZ4Qxrww06HUz9g2qBgnnz5fL79mCb&ehbc=2E312F&ll=${lat},${lng}&z=10`;
+          const url = `https://www.google.com/maps/d/u/1/embed?mid=1zaRQFV0RLcyB3Yt6Y3RHTDVOCmaqORo&ehbc=2E312F&ll=${lat},${lng}&z=10`;
           this.mapUrl.set(this.sanitizer.bypassSecurityTrustResourceUrl(url));
         });
     }

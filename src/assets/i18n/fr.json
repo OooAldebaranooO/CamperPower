@@ -56,7 +56,7 @@
     "RECOMMENDED_BATTERY": "Batterie recommandée",
     "RECOMMENDED_SOLAR": "Panneaux solaires recommandés",
     "MINIMUM_INVERTER": "Convertisseur minimum",
-    "INFO": "Première estimation de votre installation électrique embarquée. Elle peut être affinée en fonction de votre batterie, de votre usage réel et de vos conditions d'utilisation afin de gagner en précision. N'hésitez pas à vous rapprocher de l'un de nos revendeurs partenaires pour finaliser votre choix.",
+    "INFO": "Première estimation de votre installation électrique embarquée.<br><br>Elle peut être affinée en fonction de votre batterie, de votre usage réel et de vos conditions d'utilisation afin de gagner en précision.<br><br>N'hésitez pas à vous rapprocher de l'un de nos revendeurs partenaires pour finaliser votre choix.",
     "EDIT": "Modifier ma configuration",
     "HOME": "Retour à l'accueil",
     "EMPTY_TITLE": "Aucun résultat disponible",
@@ -69,7 +69,10 @@
     "NO_PRODUCTS": "Aucun produit Vechline compatible avec votre configuration",
     "NEW": "Nouveau",
     "PRICE": "Tarif TTC",
-    "PRODUCTS": "Produits"
+    "PRODUCTS": "Produits",
+    "EMAIL_SHARE_LABEL": "Recevoir les résultats par e-mail",
+    "EMAIL_PLACEHOLDER": "votre@email.com",
+    "EMAIL_SENT": "Résultats envoyés avec succès !"
   },
     "DEALER": {
     "TITLE": "Trouver un revendeur",

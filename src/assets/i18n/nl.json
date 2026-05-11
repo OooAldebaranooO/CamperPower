@@ -69,7 +69,10 @@
     "NO_PRODUCTS": "Geen Vechline-producten compatibel met uw configuratie",
     "NEW": "Nieuw",
     "PRICE": "Prijs incl. btw",
-    "PRODUCTS": "Producten"
+    "PRODUCTS": "Producten",
+    "EMAIL_SHARE_LABEL": "Resultaten per e-mail ontvangen",
+    "EMAIL_PLACEHOLDER": "uw@email.com",
+    "EMAIL_SENT": "Resultaten succesvol verzonden!"
   },
   "DEALER": {
     "TITLE": "Een dealer vinden",
