@@ -2,6 +2,9 @@
   <ion-toolbar>
     <div class="topbar">
       <img src="assets/branding/vechline-logo.png" alt="VECHLINE" class="logo" />
+      <ion-button fill="clear" size="small" (click)="enableNotifications()">
+        <ion-icon name="notifications-outline" slot="icon-only"></ion-icon>
+      </ion-button>
       <ion-select interface="popover" [value]="currentLang" (ionChange)="changeLanguage($event.detail.value)" class="lang-select" label-placement="end">
         <ion-select-option value="fr">FR</ion-select-option>
         <ion-select-option value="en">EN</ion-select-option>

@@ -1,17 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import {
-  IonButton, IonContent, IonHeader, IonIcon,
-  IonSelect, IonSelectOption, IonToolbar,
-} from '@ionic/angular/standalone';
+import { IonButton, IonContent, IonIcon } from '@ionic/angular/standalone';
 import { Router } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { AppStateService } from '../../core/app-state.service';
 import { addIcons } from 'ionicons';
-import {
-  home, homeOutline, settingsOutline, barChartOutline,
-  openOutline, batteryHalfOutline, sunnyOutline, flashOutline,
-} from 'ionicons/icons';
+import { home, homeOutline, settingsOutline, barChartOutline, openOutline, batteryHalfOutline, sunnyOutline, flashOutline, } from 'ionicons/icons';
+import { HeaderComponent } from '../../shared/header/header.component';
 
 @Component({
   selector: 'app-home',
@@ -19,13 +14,10 @@ import {
   imports: [
     CommonModule,
     TranslatePipe,
-    IonHeader,
-    IonToolbar,
     IonContent,
     IonButton,
-    IonSelect,
-    IonSelectOption,
     IonIcon,
+    HeaderComponent,
   ],
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],

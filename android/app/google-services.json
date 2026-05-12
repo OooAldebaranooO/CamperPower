@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1066915093085",
+    "project_id": "vechline-configurator",
+    "storage_bucket": "vechline-configurator.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066915093085:android:c41e46b30ffc41c3938bb4",
+        "android_client_info": {
+          "package_name": "com.vechline_configurator"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3OeTdsUXifhx0uGjqTYdZUiRxBNCHn-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
