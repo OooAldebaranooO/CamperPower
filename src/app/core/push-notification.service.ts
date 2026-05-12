@@ -32,7 +32,14 @@ export class PushNotificationService {
 
   listenToMessages() {
     onMessage(messaging, (payload) => {
-      console.log('Notification reçue:', payload);
+        console.log('Notification reçue:', payload);
+
+        if (Notification.permission === 'granted') {
+        new Notification(payload.notification?.title ?? 'Nouveau message', {
+            body: payload.notification?.body,
+            icon: '/assets/icon/favicon.png'
+        });
+        }
     });
-  }
+    }
 }

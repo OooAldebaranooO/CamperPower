@@ -20,6 +20,7 @@ export class HeaderComponent {
 
   constructor(private pushService: PushNotificationService) {
     addIcons({ settingsOutline, homeOutline, notificationsOutline });
+    this.pushService.listenToMessages(); // ← ajoute ça
   }
 
   changeLanguage(lang: string): void {
