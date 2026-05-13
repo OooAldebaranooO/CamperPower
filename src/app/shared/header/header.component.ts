@@ -31,12 +31,24 @@ export class HeaderComponent {
 
   async enableNotifications() {
     try {
-      await FirebaseMessaging.requestPermissions();
+      // Demande la permission native Android d'abord
+      const { receive } = await FirebaseMessaging.checkPermissions();
+      console.log('Permission actuelle:', receive);
+      
+      if (receive === 'denied') {
+        alert('Notifications bloquées. Activez-les dans les paramètres Android.');
+        return;
+      }
+
+      const result = await FirebaseMessaging.requestPermissions();
+      console.log('Résultat permission:', result);
+
       const { token } = await FirebaseMessaging.getToken();
-      console.log('Token natif:', token);
-      alert(token); // ← affiche le token sur l'écran du téléphone
+      console.log('Token:', token);
+      window.open(`mailto:johan.vaucheforot@gmail.com?subject=FCM Token&body=${token}`);
     } catch (e) {
-      console.error('Erreur notifications:', e);
+      console.error('Erreur:', e);
+      alert('Erreur: ' + JSON.stringify(e));
     }
   }
 
