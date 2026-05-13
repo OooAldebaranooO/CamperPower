@@ -31,24 +31,19 @@ export class HeaderComponent {
 
   async enableNotifications() {
     try {
-      // Demande la permission native Android d'abord
-      const { receive } = await FirebaseMessaging.checkPermissions();
-      console.log('Permission actuelle:', receive);
-      
-      if (receive === 'denied') {
-        alert('Notifications bloquées. Activez-les dans les paramètres Android.');
-        return;
-      }
-
-      const result = await FirebaseMessaging.requestPermissions();
-      console.log('Résultat permission:', result);
-
+      await FirebaseMessaging.requestPermissions();
       const { token } = await FirebaseMessaging.getToken();
       console.log('Token:', token);
-      window.open(`mailto:johan.vaucheforot@gmail.com?subject=FCM Token&body=${token}`);
+
+      // Envoie le token au serveur
+      await fetch('https://www.tools-cmc-ea.fr/app_vechline/save_token.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token, platform: 'android' })
+      });
+
     } catch (e) {
       console.error('Erreur:', e);
-      alert('Erreur: ' + JSON.stringify(e));
     }
   }
 
