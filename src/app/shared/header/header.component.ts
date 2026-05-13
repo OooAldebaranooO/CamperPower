@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { IonHeader, IonToolbar, IonSelect, IonSelectOption, IonIcon, IonButton } from '@ionic/angular/standalone';
 import { TranslateService } from '@ngx-translate/core';
 import { AppStateService } from '../../core/app-state.service';
-import { PushNotificationService } from '../../core/push-notification.service';
 import { addIcons } from 'ionicons';
 import { settingsOutline, homeOutline, notificationsOutline } from 'ionicons/icons';
+import { FirebaseMessaging } from '@capacitor-firebase/messaging';
 
 @Component({
   selector: 'app-header',
@@ -18,9 +18,9 @@ export class HeaderComponent {
 
   currentLang = this.state.loadLanguage();
 
-  constructor(private pushService: PushNotificationService) {
+  constructor() {
     addIcons({ settingsOutline, homeOutline, notificationsOutline });
-    this.pushService.listenToMessages(); // ← ajoute ça
+    this.listenToMessages();
   }
 
   changeLanguage(lang: string): void {
@@ -30,9 +30,23 @@ export class HeaderComponent {
   }
 
   async enableNotifications() {
-    const token = await this.pushService.requestPermission();
-    if (token) {
-      console.log('Token enregistré:', token);
+    try {
+      await FirebaseMessaging.requestPermissions();
+      const { token } = await FirebaseMessaging.getToken();
+      console.log('Token natif:', token);
+      alert(token); // ← affiche le token sur l'écran du téléphone
+    } catch (e) {
+      console.error('Erreur notifications:', e);
     }
+  }
+
+  listenToMessages() {
+    FirebaseMessaging.addListener('notificationReceived', (notification) => {
+      console.log('Notification reçue:', notification);
+    });
+
+    FirebaseMessaging.addListener('notificationActionPerformed', (action) => {
+      console.log('Action notification:', action);
+    });
   }
 }

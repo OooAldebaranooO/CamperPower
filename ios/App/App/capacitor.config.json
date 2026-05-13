@@ -20,6 +20,7 @@
 		}
 	},
 	"packageClassList": [
+		"FirebaseMessagingPlugin",
 		"AppPlugin",
 		"CAPBrowserPlugin",
 		"GeolocationPlugin",
