@@ -31,19 +31,23 @@ export class HeaderComponent {
 
   async enableNotifications() {
     try {
+      alert('Début enableNotifications');
       await FirebaseMessaging.requestPermissions();
+      alert('Permissions OK');
       const { token } = await FirebaseMessaging.getToken();
-      console.log('Token:', token);
+      alert('Token: ' + token);
 
-      // Envoie le token au serveur
-      await fetch('https://www.tools-cmc-ea.fr/app_vechline/save_token.php', {
+      const response = await fetch('https://www.tools-cmc-ea.fr/app_vechline/save_token.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ token, platform: 'android' })
       });
 
+      const result = await response.json();
+      alert('Serveur: ' + JSON.stringify(result));
+
     } catch (e) {
-      console.error('Erreur:', e);
+      alert('Erreur: ' + JSON.stringify(e));
     }
   }
 
