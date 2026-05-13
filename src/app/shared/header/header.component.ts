@@ -31,9 +31,7 @@ export class HeaderComponent {
 
   async enableNotifications() {
     try {
-      alert('Début enableNotifications');
       await FirebaseMessaging.requestPermissions();
-      alert('Permissions OK');
       const { token } = await FirebaseMessaging.getToken();
       alert('Token: ' + token);
 
@@ -44,7 +42,7 @@ export class HeaderComponent {
       });
 
       const result = await response.json();
-      alert('Serveur: ' + JSON.stringify(result));
+      alert('Réponse serveur: ' + JSON.stringify(result)); // ← ici
 
     } catch (e) {
       alert('Erreur: ' + JSON.stringify(e));
