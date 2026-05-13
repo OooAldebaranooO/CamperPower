@@ -22,10 +22,47 @@ body {
 }
 
 .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+
+    ion-button {
+      --color: #ffffff;
+      margin: 0 8px;
+    }
+  }
+
+.topbar-right {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 10px 16px;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50px;
+  padding: 4px 4px 4px 12px;
+
+  .lang-select {
+    min-width: 40px;
+    font-weight: 700;
+    color: #ffffff;
+    --padding-start: 0;
+    --padding-end: 0;
+    justify-items: flex-start;
+  }
+
+  .notif-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+
+    ion-icon {
+      font-size: 18px;
+      color: #ffffff;
+    }
+  }
 }
 
 .logo {
